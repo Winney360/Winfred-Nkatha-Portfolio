@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero.png";
+import Navbar from "../components/Navbar";
 
 const Hero = () => {
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black px-4 pb-12 pt-20 md:px-8 md:pt-24">
+    <section className="relative min-h-screen overflow-hidden bg-black px-4 pb-12 pt-20 md:px-8 md:pt-24 rounded-[20px]">
+      <Navbar />
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 left-1/3 h-[32rem] w-[32rem] rounded-full bg-[#6b21a8]/30 blur-[120px]" />

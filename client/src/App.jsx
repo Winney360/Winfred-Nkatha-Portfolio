@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css'
-import Navbar from "./components/Navbar";
+
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import FeaturedProject from "./sections/FeaturedProject";
@@ -13,7 +13,7 @@ import Contact from "./sections/Contact";
 function App() {
   return (
     <>
-      <Navbar />
+      
       <Hero />
       <About />
       <FeaturedProject />
