@@ -14,37 +14,7 @@ const Hero = () => {
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl rounded-[28px] border border-violet-200/15 bg-[#05001a]/90 p-6 shadow-[0_40px_120px_rgba(168,85,247,0.15)] backdrop-blur-xl md:p-8">
-        <div className="rounded-[24px] border border-violet-200/12 bg-[#0a0420]/95 px-6 pb-8 pt-6 md:px-10 md:pb-12 md:pt-8">
-          {/* Navigation Strip */}
-          <div className="flex items-center justify-between rounded-2xl border border-violet-300/10 bg-[#1a0a3e]/60 px-6 py-3 backdrop-blur-md">
-            <span className="text-xs font-bold tracking-wider text-violet-100 md:text-sm">Developer</span>
-
-            <ul className="hidden items-center gap-8 text-[12px] text-violet-200/85 md:flex">
-              <li>
-                <a href="#about" className="transition-colors hover:text-violet-300">About</a>
-              </li>
-              <li>
-                <a href="#projects" className="transition-colors hover:text-violet-300">Projects</a>
-              </li>
-              <li>
-                <a href="#skills" className="transition-colors hover:text-violet-300">Skills</a>
-              </li>
-              <li>
-                <a href="#experience" className="transition-colors hover:text-violet-300">Experience</a>
-              </li>
-              <li>
-                <a href="#contact" className="transition-colors hover:text-violet-300">Contact</a>
-              </li>
-            </ul>
-
-            <a
-              href="#contact"
-              className="rounded-xl border border-violet-200/20 bg-linear-to-r from-[#e9dcff] to-[#c9b0ff] px-4 py-2 text-[11px] font-bold text-[#1f0f47] shadow-lg shadow-violet-600/30 transition-all duration-300 hover:shadow-violet-500/50 hover:scale-105"
-            >
-              Contact Me
-            </a>
-          </div>
-
+        
           {/* Main Content Grid */}
           <div className="relative grid items-center gap-12 pt-12 lg:grid-cols-2 lg:pt-16">
             {/* Left: Text Content */}
@@ -115,7 +85,7 @@ const Hero = () => {
               />
             </motion.div>
           </div>
-        </div>
+        
       </div>
     </section>
   );
