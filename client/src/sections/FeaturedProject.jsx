@@ -15,8 +15,10 @@ const FeaturedProject = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="ml-4 rounded-2xl overflow-hidden border border-indigo-700/40 bg-gradient-to-b from-[#090a16] to-[#05060f] shadow-2xl"
+        className="relative ml-4 rounded-2xl overflow-hidden border border-indigo-700/40 bg-gradient-to-b from-[#090a16] to-[#05060f] shadow-2xl"
       >
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-violet-400/25 via-violet-400/10 to-transparent blur-2xl" />
+        <div className="pointer-events-none absolute right-8 top-4 h-28 w-28 rounded-full bg-violet-400/20 blur-[70px]" />
         <div className="pt-8 md:pt-10 ">
           <div className="px-6 md:px-8">
             <div className="rounded-t-2xl rounded-b-none overflow-hidden border border-white/10 mb-0 ml-10 mr-10 mt-10">
