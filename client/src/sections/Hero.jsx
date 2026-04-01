@@ -1,13 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero.png";
-import Navbar from "../components/Navbar";
 
 const Hero = () => {
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black px-4 pb-12 pt-20 md:px-8 md:pt-24 rounded-[20px]">
-      <Navbar />
+    <section className="relative min-h-screen overflow-hidden bg-black px-4 pb-12 pt-5 md:px-8 md:pt-6">
+      <div className="relative z-20 w-full">
+        <nav className="rounded-xl border border-violet-300/15 bg-[#1a0a3e]/55 px-4 py-2 backdrop-blur-md md:px-6 md:py-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-violet-100 md:text-sm">Developer</span>
+
+            <ul className="hidden items-center gap-6 text-[10px] text-violet-200/85 md:flex">
+              <li><a href="#about" className="transition-colors hover:text-white">About</a></li>
+              <li><a href="#projects" className="transition-colors hover:text-white">Projects</a></li>
+              <li><a href="#skills" className="transition-colors hover:text-white">Skills</a></li>
+              <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
+              <li><a href="#contact" className="transition-colors hover:text-white">Contact</a></li>
+            </ul>
+
+            <a
+              href="#contact"
+              className="rounded-lg border border-violet-200/20 bg-linear-to-r from-[#e9dcff] to-[#c9b0ff] px-3 py-1.5 text-[10px] font-semibold text-[#1f0f47] shadow-md shadow-violet-900/25"
+            >
+              Contact Me
+            </a>
+          </div>
+        </nav>
+      </div>
+
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 left-1/3 h-[32rem] w-[32rem] rounded-full bg-[#6b21a8]/30 blur-[120px]" />
@@ -16,13 +37,13 @@ const Hero = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="relative z-10 grid items-center gap-12 pt-12 lg:grid-cols-2 lg:pt-16">
+      <div className="relative z-10 grid w-full items-center gap-12 pt-14 lg:grid-cols-2 lg:pt-16">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="max-w-[38rem] z-10"
+              className="z-10 max-w-[38rem]"
             >
               <h1 className="text-balance text-[2.4rem] font-black leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <span className="bg-linear-to-r from-[#e9dcff] to-[#c887ff] bg-clip-text text-transparent">Winfred Nkatha</span>.
@@ -69,17 +90,13 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="relative h-[28rem] w-full md:h-[32rem] lg:h-[36rem]"
+              className="pointer-events-none relative ml-auto h-[18rem] w-[18rem] self-end md:h-[22rem] md:w-[22rem] lg:h-[26rem] lg:w-[26rem]"
             >
-              {/* Multi-layer glow effect */}
-              <div className="absolute -inset-12 rounded-3xl bg-linear-to-br from-[#d8b4fe]/40 via-[#c084fc]/25 to-[#7e22ce]/10 blur-[100px] opacity-60" />
-              <div className="absolute top-1/3 -right-16 h-[28rem] w-[28rem] rounded-full bg-[#d084ff]/30 blur-[100px]" />
-              
-              {/* Image with rounded corners */}
+              {/* Transparent PNG image only */}
               <motion.img
                 src={heroImage}
                 alt="3D Glowing Mesh Portfolio"
-                className="relative h-full w-full rounded-2xl object-cover shadow-2xl"
+                className="relative h-full w-full bg-transparent object-contain"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
