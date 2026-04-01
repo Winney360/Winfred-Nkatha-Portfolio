@@ -50,7 +50,7 @@ const Hero = () => {
               className="z-10 w-full lg:w-3/4"
             >
               <h1 className="text-balance text-[2.4rem] font-black leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
-                Hi, I&apos;m <span className="bg-linear-to-r from-[#e9dcff] to-[#c887ff] bg-clip-text text-transparent">Winfred Nkatha</span>.
+                Hi, I&apos;m <span className="text-[#9143d9] font-semibold">Winfred Nkatha</span>.
                 <br />
                 Frontend-Focused Full
                 <br />
