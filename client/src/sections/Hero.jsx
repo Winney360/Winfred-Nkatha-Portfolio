@@ -6,7 +6,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black px-4 pb-12 pt-5 md:px-8 md:pt-6">
-      <div className="relative z-20 w-full">
+      <div className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 md:px-8 md:pt-6">
         <nav className="rounded-xl border border-violet-300/15 bg-[#1a0a3e]/55 px-4 py-2 backdrop-blur-md md:px-6 md:py-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-violet-100 md:text-sm">Developer</span>
@@ -36,14 +36,14 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/4 h-[28rem] w-[28rem] rounded-full bg-[#a855f7]/20 blur-[100px]" />
       </div>
 
-      {/* Main Content Grid */}
-      <div className="relative z-10 grid w-full items-center gap-12 pt-14 lg:grid-cols-2 lg:pt-16">
+      {/* Main Content */}
+      <div className="relative z-10 w-full pt-14 lg:pt-16">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="z-10 max-w-[38rem]"
+              className="z-10 max-w-[38rem] pr-20 md:pr-40 lg:pr-56"
             >
               <h1 className="text-balance text-[2.4rem] font-black leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <span className="bg-linear-to-r from-[#e9dcff] to-[#c887ff] bg-clip-text text-transparent">Winfred Nkatha</span>.
@@ -85,12 +85,12 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right: Hero Reference Image with Glow */}
+            {/* Bottom-right hero image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none relative ml-auto h-[18rem] w-[18rem] self-end md:h-[22rem] md:w-[22rem] lg:h-[26rem] lg:w-[26rem]"
+              className="pointer-events-none absolute -bottom-12 -right-10 z-0 h-[16rem] w-[16rem] md:-bottom-16 md:-right-14 md:h-[20rem] md:w-[20rem] lg:-bottom-20 lg:-right-16 lg:h-[24rem] lg:w-[24rem]"
             >
               {/* Transparent PNG image only */}
               <motion.img
