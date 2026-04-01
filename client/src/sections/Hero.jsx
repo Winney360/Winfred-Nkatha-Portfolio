@@ -51,9 +51,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.75, delay: 0.15, ease: "easeOut" }}
-            className="relative h-[290px] w-full overflow-hidden rounded-2xl border border-violet-400/15 bg-linear-to-br from-[#0d0520] to-[#0a0318] md:h-[360px]"
+            className="relative h-72.5 w-full overflow-hidden rounded-2xl border border-violet-400/15 bg-linear-to-br from-[#0d0520] to-[#0a0318] md:h-90"
           >
-            <div className="absolute -bottom-16 -right-16 h-[330px] w-[330px] rounded-full bg-[#c085ff]/22 blur-3xl" />
+            <div className="absolute -bottom-16 -right-16 h-82.5 w-82.5 rounded-full bg-[#c085ff]/22 blur-3xl" />
             <div className="absolute -top-12 -left-8 h-40 w-40 rounded-full bg-[#8758ff]/14 blur-2xl" />
 
             <svg viewBox="0 0 520 380" className="absolute inset-0 h-full w-full" aria-hidden="true">
