@@ -11,20 +11,22 @@ const Hero = () => {
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-violet-100 md:text-sm">Developer</span>
 
-            <ul className="hidden items-center gap-6 text-[10px] text-violet-200/85 md:flex">
-              <li><a href="#about" className="transition-colors hover:text-white">About</a></li>
-              <li><a href="#projects" className="transition-colors hover:text-white">Projects</a></li>
-              <li><a href="#skills" className="transition-colors hover:text-white">Skills</a></li>
-              <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
-              <li><a href="#contact" className="transition-colors hover:text-white">Contact</a></li>
-            </ul>
+            <div className="ml-auto flex items-center gap-8">
+              <ul className="hidden items-center gap-8 text-[15px] text-violet-200/85 md:flex">
+                <li><a href="#about" className="transition-colors hover:text-white">About</a></li>
+                <li><a href="#projects" className="transition-colors hover:text-white">Projects</a></li>
+                <li><a href="#skills" className="transition-colors hover:text-white">Skills</a></li>
+                <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
+                <li><a href="#contact" className="transition-colors hover:text-white">Contact</a></li>
+              </ul>
 
-            <a
-              href="#contact"
-              className="rounded-lg border border-violet-200/20 bg-linear-to-r from-[#e9dcff] to-[#c9b0ff] px-3 py-1.5 text-[10px] font-semibold text-[#1f0f47] shadow-md shadow-violet-900/25"
-            >
-              Contact Me
-            </a>
+              <a
+                href="#contact"
+                className="rounded-lg border border-violet-200/20 bg-linear-to-r from-[#e9dcff] to-[#c9b0ff] px-3 py-1.5 text-[10px] font-semibold text-[#1f0f47] shadow-md shadow-violet-900/25"
+              >
+                Contact Me
+              </a>
+            </div>
           </div>
         </nav>
       </div>
@@ -37,7 +39,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full pt-14 lg:pt-16">
+      <div className="relative z-10 w-full pt-14 lg:pt-16 mt-15">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
