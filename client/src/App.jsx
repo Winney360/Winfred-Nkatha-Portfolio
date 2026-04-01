@@ -3,7 +3,9 @@ import Navbar from "./components/Navbar";
 
 
 import Hero from "./sections/Hero";
-import Projects from "./sections/Projects";
+
+import FeaturedProject from "./sections/FeaturedProject";
+import Skills from "./sections/Skills";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
       <Hero />
       <FeaturedProject />
       <Projects />
-      {/* Skills, Experience, SocialProof, Contact will be added here */}
+      <Skills />
+      {/* Experience, SocialProof, Contact will be added here */}
     </>
   );
 }
