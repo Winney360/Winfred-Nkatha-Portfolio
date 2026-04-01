@@ -1,7 +1,9 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 
-import FeaturedProject from "./sections/FeaturedProject";
+
+import Hero from "./sections/Hero";
+import Projects from "./sections/Projects";
 
 function App() {
   return (
@@ -9,7 +11,8 @@ function App() {
       <Navbar />
       <Hero />
       <FeaturedProject />
-      {/* Projects, Skills, Experience, SocialProof, Contact will be added here */}
+      <Projects />
+      {/* Skills, Experience, SocialProof, Contact will be added here */}
     </>
   );
 }
