@@ -33,13 +33,13 @@ const Hero = () => {
 
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 left-1/3 h-[32rem] w-[32rem] rounded-full bg-[#6b21a8]/30 blur-[120px]" />
-        <div className="absolute -bottom-32 -right-32 h-[40rem] w-[40rem] rounded-full bg-[#7e22ce]/25 blur-[120px]" />
-        <div className="absolute top-1/2 right-1/4 h-[28rem] w-[28rem] rounded-full bg-[#a855f7]/20 blur-[100px]" />
+        <div className="absolute -top-32 left-1/3 h-128 w-lg rounded-full bg-[#6b21a8]/30 blur-[120px]" />
+        <div className="absolute -bottom-32 -right-32 h-160 w-160 rounded-full bg-[#7e22ce]/25 blur-[120px]" />
+        <div className="absolute top-1/2 right-1/4 h-112 w-md rounded-full bg-[#a855f7]/20 blur-[100px]" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full pt-14 lg:pt-16 mt-15">
+      <div className="relative z-10 w-full pt-14 lg:pt-16 mt-15 ml-5">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -81,9 +81,9 @@ const Hero = () => {
                 className="mt-8 flex items-center gap-3 text-[11px] tracking-wide text-violet-300/70"
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-violet-400" />
-                <span>5+ Years Experience</span>
+                <span>2+ Years Experience</span>
                 <div className="h-1 w-1 rounded-full bg-violet-400/60" />
-                <span>10+ Projects Shipped</span>
+                <span>7+ Projects Shipped</span>
               </motion.div>
             </motion.div>
 
@@ -92,7 +92,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute -bottom-12 -right-10 z-0 h-[16rem] w-[16rem] md:-bottom-16 md:-right-14 md:h-[20rem] md:w-[20rem] lg:-bottom-20 lg:-right-16 lg:h-[24rem] lg:w-[24rem]"
+              className="pointer-events-none absolute -bottom-0 right-0 z-0 h-96 w-96 md:-bottom-48 md:h-screen md:w-1/2 lg:-bottom-64 lg:h-screen lg:w-1/2"
             >
               {/* Transparent PNG image only */}
               <motion.img
