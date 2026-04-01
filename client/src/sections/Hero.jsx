@@ -49,7 +49,7 @@ const Hero = () => {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="z-10 w-full lg:w-3/4"
             >
-              <h1 className="text-balance text-[2.4rem] font-black leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
+              <h1 className="text-balance text-[2.4rem] font-bold leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <span className="text-[#9143d9] font-semibold">Winfred Nkatha</span>.
                 <br />
                 Frontend-Focused Full
@@ -94,7 +94,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute -bottom-0 right-0 z-0 h-96 w-96 md:-bottom-48 md:h-screen md:w-1/2 lg:-bottom-64 lg:h-screen lg:w-1/2"
+              className="pointer-events-none absolute bottom-0 right-0 z-0 h-96 w-96 md:-bottom-48 md:h-screen md:w-1/2 md:-mr-16 lg:-bottom-64 lg:h-screen lg:w-1/2 lg:-mr-20"
             >
               {/* Image subtle purple glow */}
               <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
