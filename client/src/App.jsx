@@ -7,7 +7,9 @@ import Hero from "./sections/Hero";
 import FeaturedProject from "./sections/FeaturedProject";
 
 import Projects from "./sections/Projects";
-import Experience from "./sections/Experience";
+
+import Skills from "./sections/Skills";
+import SocialProof from "./sections/SocialProof";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
       <Projects />
       <Skills />
       <Experience />
-      {/* SocialProof, Contact will be added here */}
+      <SocialProof />
+      {/* Contact will be added here */}
     </>
   );
 }
