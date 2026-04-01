@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaFigma, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiExpress, SiMongodb, SiVercel, SiVisualstudiocode } from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiExpress, SiMongodb, SiVercel } from "react-icons/si";
+import { VscCode } from "react-icons/vsc";
 
 const skills = [
   {
@@ -40,7 +41,7 @@ const skills = [
     proof: "Designed full UI systems",
   },
   {
-    icon: <SiVisualstudiocode className="text-blue-400 text-3xl" />,
+    icon: <VscCode className="text-blue-400 text-3xl" />,
     name: "VS Code",
     proof: "Daily driver for all projects",
   },
