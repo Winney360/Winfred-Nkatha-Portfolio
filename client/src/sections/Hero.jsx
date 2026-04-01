@@ -36,6 +36,8 @@ const Hero = () => {
         <div className="absolute -top-32 left-1/3 h-128 w-lg rounded-full bg-[#6b21a8]/30 blur-[120px]" />
         <div className="absolute -bottom-32 -right-32 h-160 w-160 rounded-full bg-[#7e22ce]/25 blur-[120px]" />
         <div className="absolute top-1/2 right-1/4 h-112 w-md rounded-full bg-[#a855f7]/20 blur-[100px]" />
+        {/* Top-left subtle purple glow */}
+        <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-[#a855f7]/25 blur-[100px] opacity-60" />
       </div>
 
       {/* Main Content */}
@@ -94,6 +96,10 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="pointer-events-none absolute -bottom-0 right-0 z-0 h-96 w-96 md:-bottom-48 md:h-screen md:w-1/2 lg:-bottom-64 lg:h-screen lg:w-1/2"
             >
+              {/* Image subtle purple glow */}
+              <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
+              <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-[#9333ea]/25 blur-[90px]" />
+              
               {/* Transparent PNG image only */}
               <motion.img
                 src={heroImage}
