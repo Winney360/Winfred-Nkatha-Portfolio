@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-20">
+    <section id="contact" className="max-w-3xl mx-auto px-4 py-20">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
