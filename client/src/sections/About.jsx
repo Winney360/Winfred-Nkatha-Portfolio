@@ -1,35 +1,67 @@
 import React from "react";
 import { motion } from "framer-motion";
+import aboutImage from "../assets/about.png";
 
 const About = () => {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-20" id="about">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
-      >
-        About
-      </motion.h2>
+    <section className="relative overflow-hidden px-4 py-20 md:px-8" id="about">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/3 top-10 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[90px]" />
+        <div className="absolute -bottom-16 right-10 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[110px]" />
+      </div>
+
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 36 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-10 md:p-14 backdrop-blur-xl"
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        className="relative mx-auto max-w-6xl rounded-[28px] border border-violet-200/10 bg-linear-to-br from-[#080315] via-[#0c0620] to-[#12092b] p-6 shadow-[0_30px_80px_rgba(76,29,149,0.35)] backdrop-blur-xl md:p-10"
       >
-        <p className="text-purple-200 text-lg md:text-xl mb-6 text-center">
-          I’m a high-end Silicon Valley developer and frontend designer. I build intuitive, scalable, and beautifully designed digital experiences for the modern web.
-        </p>
-        <ul className="text-purple-300 text-base md:text-lg space-y-3 list-disc list-inside">
-          <li>Engineering mindset & product-driven development.</li>
-          <li>Experience in frontend, backend, and full-stack projects.</li>
-          <li>Focus on performance, UX, and scalability.</li>
-          <li>Proven track record: delivered 5+ real-world applications.</li>
-          <li>Passionate about solving real business problems with code.</li>
-        </ul>
+        <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">About</h2>
+            <p className="mt-2 text-lg text-violet-100/95 md:text-xl">
+              A High-end Silicon Valley developer and frontend designer.
+            </p>
+
+            <div className="mt-7 space-y-4 text-sm leading-relaxed text-violet-200/85 md:text-base">
+              <p>
+                I am obsessed with excellence in modern frontend development,
+                design systems, and high-performance user interfaces.
+              </p>
+              <p>
+                My engineering mindset and product-focused approach let me solve
+                complex problems while keeping every interaction polished,
+                accessible, and conversion-oriented.
+              </p>
+              <p>
+                I blend frontend craftsmanship with backend awareness so products
+                remain scalable, maintainable, and fast in real-world use.
+              </p>
+              <p>
+                I help teams ship experiences users trust, enjoy, and return to.
+              </p>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="relative mx-auto w-full max-w-[320px]"
+          >
+            <div className="relative overflow-hidden rounded-2xl border border-violet-300/15 bg-linear-to-b from-[#2a0d4b] via-[#1a0a34] to-[#0f0820] p-3 shadow-[0_20px_60px_rgba(124,58,237,0.45)]">
+              <div className="absolute inset-0 bg-radial from-violet-400/25 via-violet-500/10 to-transparent" />
+              <div className="absolute -right-12 top-1/4 h-36 w-36 rounded-full bg-violet-400/20 blur-[70px]" />
+              <img
+                src={aboutImage}
+                alt="Developer portrait"
+                className="relative z-10 h-[360px] w-full object-contain"
+              />
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );
