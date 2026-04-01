@@ -53,7 +53,7 @@ const SocialProof = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="bg-gradient-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-8 flex flex-col items-center text-center backdrop-blur-xl"
+            className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-8 flex flex-col items-center text-center backdrop-blur-xl"
           >
             <img
               src={t.avatar}

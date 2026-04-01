@@ -76,7 +76,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.07, duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-center bg-gradient-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-7 hover:scale-105 hover:shadow-purple-700/30 transition-transform backdrop-blur-xl"
+            className="flex flex-col items-center bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-7 hover:scale-105 hover:shadow-purple-700/30 transition-transform backdrop-blur-xl"
           >
             <div className="mb-3">{skill.icon}</div>
             <div className="text-lg font-semibold text-white mb-1">{skill.name}</div>
