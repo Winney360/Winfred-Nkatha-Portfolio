@@ -83,7 +83,7 @@ const Hero = () => {
                 className="mt-8 flex items-center gap-3 text-[11px] tracking-wide text-violet-300/70"
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-violet-400" />
-                <span>2+ Years Experience</span>
+                <span>1+ Years Experience</span>
                 <div className="h-1 w-1 rounded-full bg-violet-400/60" />
                 <span>7+ Projects Shipped</span>
               </motion.div>

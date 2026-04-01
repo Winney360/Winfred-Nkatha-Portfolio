@@ -15,11 +15,11 @@ function App() {
     <>
       
       <Hero />
-      <About />
       <FeaturedProject />
       <Projects />
       <Skills />
       <Experience />
+      <About />
       <SocialProof />
       <Contact />
     </>
