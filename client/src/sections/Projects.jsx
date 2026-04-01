@@ -61,7 +61,7 @@ const Projects = () => {
             onClick={() => setSelected(cat)}
             className={`px-5 py-2 rounded-full font-medium border transition-colors text-sm shadow-md backdrop-blur-md
               ${selected === cat
-                ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white border-purple-700"
+                ? "bg-linear-to-r from-purple-600 to-indigo-600 text-white border-purple-700"
                 : "bg-black/40 text-purple-200 border-purple-700/30 hover:bg-purple-900/30 hover:text-white"}
             `}
           >
@@ -78,12 +78,12 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="relative group bg-gradient-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-xl overflow-hidden hover:shadow-purple-700/30 transition-shadow"
+            className="relative group bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-xl overflow-hidden hover:shadow-purple-700/30 transition-shadow"
           >
             {/* Overlay on hover */}
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center z-10">
               <div className="flex gap-3 mb-3">
-                <a href={project.live} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform">
+                <a href={project.live} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg bg-linear-to-r from-purple-600 to-indigo-600 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform">
                   Live Demo <FaExternalLinkAlt className="text-sm" />
                 </a>
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg border border-purple-500 text-purple-200 font-semibold bg-black/40 flex items-center gap-2 hover:bg-purple-900/30 hover:text-white transition-colors">
@@ -93,7 +93,7 @@ const Projects = () => {
               <div className="text-purple-200 text-xs text-center px-4">{project.impact}</div>
             </div>
             {/* Card Content */}
-            <div className="p-7 flex flex-col gap-3 min-h-[260px]">
+            <div className="p-7 flex flex-col gap-3 min-h-65">
               <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
               <p className="text-purple-200 text-sm mb-2">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-2">
