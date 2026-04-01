@@ -43,7 +43,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="z-10 max-w-[38rem] pr-20 md:pr-40 lg:pr-56"
+              className="z-10 w-full lg:w-3/4"
             >
               <h1 className="text-balance text-[2.4rem] font-black leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <span className="bg-linear-to-r from-[#e9dcff] to-[#c887ff] bg-clip-text text-transparent">Winfred Nkatha</span>.
