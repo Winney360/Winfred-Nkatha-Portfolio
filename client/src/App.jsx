@@ -1,3 +1,18 @@
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./sections/Hero";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      {/* FeaturedProject, Projects, Skills, Experience, SocialProof, Contact will be added here */}
+    </>
+  );
+}
+
+export default App;
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
