@@ -9,7 +9,9 @@ import FeaturedProject from "./sections/FeaturedProject";
 import Projects from "./sections/Projects";
 
 import Skills from "./sections/Skills";
-import SocialProof from "./sections/SocialProof";
+
+import Experience from "./sections/Experience";
+import Contact from "./sections/Contact";
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
       <Skills />
       <Experience />
       <SocialProof />
-      {/* Contact will be added here */}
+      <Contact />
     </>
   );
 }
