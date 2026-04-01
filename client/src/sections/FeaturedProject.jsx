@@ -5,9 +5,9 @@ import featuredImg from "../assets/featured.png";
 const FeaturedProject = () => {
   return (
     <section className="relative w-full min-h-screen mt-0 mb-20 px-4 md:px-8 z-10 bg-gradient-to-b from-[#0a0d1f] to-[#060812]">
-      <div className="mb-4">
+      <div className="mb-4 mt-0 ml-4">
         <h2 className="text-white text-2xl md:text-3xl font-bold leading-tight">Featured Project Case Study</h2>
-        <p className="text-slate-300/90 text-sm mt-1">Breakdown snippet with realistic application to case study.</p>
+        <p className="text-slate-300/90 text-sm mt-1 ">Breakdown snippet with realistic application to case study.</p>
       </div>
 
       <motion.div
@@ -15,11 +15,11 @@ const FeaturedProject = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="rounded-2xl overflow-hidden border border-indigo-700/40 bg-gradient-to-b from-[#090a16] to-[#05060f] shadow-2xl"
+        className="ml-4 rounded-2xl overflow-hidden border border-indigo-700/40 bg-gradient-to-b from-[#090a16] to-[#05060f] shadow-2xl"
       >
-        <div className="p-6 md:p-8">
-          <div className="rounded-xl border border-indigo-500/30 bg-[#0b0d1b] p-2 md:p-3">
-            <div className="rounded-lg overflow-hidden border border-white/10">
+        <div className="pt-8 md:pt-10 ">
+          <div className="px-6 md:px-8">
+            <div className="rounded-t-2xl rounded-b-none overflow-hidden border border-white/10 mb-0 ml-10 mr-10 mt-10">
               <img
                 src={featuredImg}
                 alt="Project dashboard preview"
@@ -27,13 +27,13 @@ const FeaturedProject = () => {
               />
             </div>
           </div>
-          <div className="mt-5 grid grid-cols-1 md:grid-cols-3 border border-white/10 rounded-lg overflow-hidden bg-black/35">
-            <div className="p-4 md:p-5 border-b md:border-b-0 md:border-r border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full border-t border-white/20 bg-black/25 md:divide-x md:divide-white/20">
+            <div className="p-4 md:p-5">
             <h3 className="text-white text-xs md:text-sm font-bold uppercase tracking-wide">The Problem</h3>
             <p className="text-slate-300 text-sm mt-2 leading-relaxed">Reducing financial reporting complexity for small businesses.</p>
             </div>
 
-            <div className="p-4 md:p-5 border-b md:border-b-0 md:border-r border-white/10">
+            <div className="p-4 md:p-5">
               <h3 className="text-white text-xs md:text-sm font-bold uppercase tracking-wide">The Solution</h3>
               <p className="text-slate-300 text-sm mt-2 leading-relaxed">React + Node.js dashboard with interactive charts.</p>
             </div>
