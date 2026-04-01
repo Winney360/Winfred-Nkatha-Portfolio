@@ -22,7 +22,7 @@ const FeaturedProject = () => {
       >
         {/* Project Mockup */}
         <div className="flex-1 flex justify-center items-center">
-          <div className="w-[320px] h-[220px] md:w-[420px] md:h-[280px] bg-gradient-to-tr from-purple-700/60 to-indigo-700/40 rounded-2xl shadow-lg flex items-center justify-center overflow-hidden border border-purple-500/20">
+          <div className="w-[320px] h-55 md:w-105 md:h-70 bg-linear-to-tr from-purple-700/60 to-indigo-700/40 rounded-2xl shadow-lg flex items-center justify-center overflow-hidden border border-purple-500/20">
             {/* Replace with real image */}
             <span className="text-purple-200 text-lg font-semibold">Project Mockup</span>
           </div>
@@ -47,7 +47,7 @@ const FeaturedProject = () => {
             <div className="text-white text-sm">Reduced reporting time by 40%. Enabled data-driven decisions, saving 200+ hours annually.</div>
           </div>
           <div className="flex gap-4 mt-2">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="px-5 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-lg flex items-center gap-2 hover:scale-105 transition-transform">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="px-5 py-2 rounded-lg bg-linear-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-lg flex items-center gap-2 hover:scale-105 transition-transform">
               Live Demo <FaExternalLinkAlt className="text-sm" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer" className="px-5 py-2 rounded-lg border border-purple-500 text-purple-200 font-semibold bg-black/40 flex items-center gap-2 hover:bg-purple-900/30 hover:text-white transition-colors">
