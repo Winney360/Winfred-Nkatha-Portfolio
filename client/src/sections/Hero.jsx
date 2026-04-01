@@ -15,10 +15,8 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/4 h-[28rem] w-[28rem] rounded-full bg-[#a855f7]/20 blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl rounded-[28px] border border-violet-200/15 bg-[#05001a]/90 p-6 shadow-[0_40px_120px_rgba(168,85,247,0.15)] backdrop-blur-xl md:p-8">
-        
-          {/* Main Content Grid */}
-          <div className="relative grid items-center gap-12 pt-12 lg:grid-cols-2 lg:pt-16">
+      {/* Main Content Grid */}
+      <div className="relative z-10 grid items-center gap-12 pt-12 lg:grid-cols-2 lg:pt-16">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -86,8 +84,6 @@ const Hero = () => {
                 transition={{ duration: 0.4 }}
               />
             </motion.div>
-          </div>
-        
       </div>
     </section>
   );
