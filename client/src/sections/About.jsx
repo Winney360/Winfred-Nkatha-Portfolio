@@ -57,7 +57,7 @@ const About = () => {
               <img
                 src={aboutImage}
                 alt="Developer portrait"
-                className="relative z-10 h-[360px] w-full object-contain"
+                className="relative z-10 h-[360px] w-full object-cover object-center"
               />
             </div>
           </motion.div>
