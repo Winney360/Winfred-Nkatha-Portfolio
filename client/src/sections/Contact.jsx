@@ -55,7 +55,7 @@ const Contact = () => {
         viewport={{ once: true, amount: 0.7 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         onSubmit={handleSubmit}
-        className="bg-gradient-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-8 flex flex-col gap-5 backdrop-blur-xl"
+        className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-8 flex flex-col gap-5 backdrop-blur-xl"
       >
         <input
           type="text"
@@ -86,7 +86,7 @@ const Contact = () => {
         />
         <button
           type="submit"
-          className="px-7 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-xl hover:scale-105 hover:shadow-purple-500/40 transition-transform text-lg disabled:opacity-60"
+          className="px-7 py-3 rounded-xl bg-linear-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-xl hover:scale-105 hover:shadow-purple-500/40 transition-transform text-lg disabled:opacity-60"
           disabled={status === "loading"}
         >
           {status === "loading" ? "Sending..." : status === "success" ? "Sent!" : "Send Message"}

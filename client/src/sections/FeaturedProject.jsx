@@ -12,13 +12,13 @@ const techStack = [
 
 const FeaturedProject = () => {
   return (
-    <section className="relative w-full max-w-6xl mx-auto mt-[-40px] mb-20 px-4 z-10">
+    <section className="relative w-full max-w-6xl mx-auto -mt-10 mb-20 px-4 z-10">
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="bg-gradient-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-3xl shadow-2xl border border-purple-900/40 p-8 md:p-14 flex flex-col md:flex-row gap-10 items-center backdrop-blur-xl"
+        className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-3xl shadow-2xl border border-purple-900/40 p-8 md:p-14 flex flex-col md:flex-row gap-10 items-center backdrop-blur-xl"
       >
         {/* Project Mockup */}
         <div className="flex-1 flex justify-center items-center">

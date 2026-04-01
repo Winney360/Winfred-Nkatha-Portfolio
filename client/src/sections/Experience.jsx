@@ -54,10 +54,10 @@ const Experience = () => {
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
             className="mb-12 relative"
           >
-            <div className="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-700 to-indigo-700 flex items-center justify-center shadow-lg border-2 border-purple-900/60">
+            <div className="absolute -left-5 top-2 w-8 h-8 rounded-full bg-linear-to-br from-purple-700 to-indigo-700 flex items-center justify-center shadow-lg border-2 border-purple-900/60">
               <FaBriefcase className="text-white text-lg" />
             </div>
-            <div className="bg-gradient-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-7 ml-2">
+            <div className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-7 ml-2">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div className="text-lg font-semibold text-white">{exp.role}</div>
                 <div className="text-purple-300 text-sm font-medium mt-1 md:mt-0">{exp.date}</div>

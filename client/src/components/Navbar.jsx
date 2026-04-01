@@ -14,7 +14,7 @@ const Navbar = () => {
           <li className="hover:text-purple-400 transition-colors cursor-pointer">Experience</li>
           <li className="hover:text-purple-400 transition-colors cursor-pointer">Contact</li>
         </ul>
-        <button className="ml-6 px-5 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform">Contact Me</button>
+        <button className="ml-6 px-5 py-2 rounded-lg bg-linear-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform">Contact Me</button>
       </div>
     </nav>
   );
