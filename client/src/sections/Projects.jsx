@@ -4,33 +4,65 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projectsData = [
   {
-    title: "AI-Powered Analytics Dashboard",
-    description: "Real-time analytics platform leveraging AI for actionable insights.",
+    title: "Project Nebula: AI-Powered Platform",
+    description: "Smart analytics workspace with live KPI tracking and trend detection.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     impact: "Reduced reporting time by 40% and enabled data-driven decisions.",
     live: "#",
     github: "#",
     category: "Full Stack",
+    accent: "from-[#5b5ef7] via-[#7e4cff] to-[#c08dff]",
   },
   {
-    title: "Modern SaaS Landing Page",
-    description: "High-converting, responsive landing page for SaaS startups.",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    impact: "Increased signups by 25% through optimized UX.",
+    title: "Signal Vista: SaaS Control Center",
+    description: "Enterprise dashboard UI with account management and growth insights.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
+    impact: "Improved operator efficiency by 28% with cleaner data visualization.",
+    live: "#",
+    github: "#",
+    category: "Full Stack",
+    accent: "from-[#30384f] via-[#424866] to-[#8188b1]",
+  },
+  {
+    title: "Flow Ledger: Finance Workspace",
+    description: "Clean transaction and report interface with role-based admin tools.",
+    tech: ["React", "Vite", "Tailwind CSS"],
+    impact: "Cut monthly close cycle by 2 days with process automation.",
     live: "#",
     github: "#",
     category: "Frontend",
+    accent: "from-[#f4f5fc] via-[#dbe2ff] to-[#b7c8ff]",
   },
   {
-    title: "AI Chatbot Assistant",
-    description: "Conversational AI assistant for customer support automation.",
-    tech: ["React", "Node.js", "OpenAI API"],
-    impact: "Automated 60% of support queries, saving 100+ hours/month.",
+    title: "Pulse CRM: AI-Powered Platform",
+    description: "Pipeline management suite with scoring, reminders, and collaboration.",
+    tech: ["Next.js", "Supabase", "Tailwind CSS"],
+    impact: "Raised lead conversion by 19% through predictive recommendations.",
+    live: "#",
+    github: "#",
+    category: "Frontend",
+    accent: "from-[#6456df] via-[#8d6cfb] to-[#c0a7ff]",
+  },
+  {
+    title: "Nimbus Market: AI Campaign Studio",
+    description: "Marketing command center for campaign setup and performance tracking.",
+    tech: ["React", "Node.js", "PostgreSQL"],
+    impact: "Reduced campaign setup time by 35% for growth teams.",
     live: "#",
     github: "#",
     category: "AI",
+    accent: "from-[#e8ebf6] via-[#cfd7ed] to-[#9faecf]",
   },
-  // Add more projects as needed
+  {
+    title: "Orbit Ops: Workflow Console",
+    description: "Operational cockpit with queue monitoring and alert triage workflows.",
+    tech: ["React", "Express", "Redis"],
+    impact: "Dropped critical incident response times by 42%.",
+    live: "#",
+    github: "#",
+    category: "AI",
+    accent: "from-[#2d3148] via-[#3d4261] to-[#7e86ba]",
+  },
 ];
 
 const categories = ["All", "Frontend", "Full Stack", "AI"];
@@ -43,26 +75,35 @@ const Projects = () => {
       : projectsData.filter((p) => p.category === selected);
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto px-4 py-20">
+    <section
+      id="projects"
+      className="relative overflow-hidden bg-black px-4 py-18 md:px-8"
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/3 top-12 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[90px]" />
+        <div className="absolute -bottom-20 right-8 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[110px]" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.7 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-3xl md:text-4xl font-bold text-white mb-10 text-center"
+        className="mb-5 text-3xl font-bold tracking-tight text-white md:text-4xl"
       >
         Projects
       </motion.h2>
       {/* Filter Buttons */}
-      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+      <div className="mb-9 flex flex-wrap gap-2.5">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelected(cat)}
-            className={`px-5 py-2 rounded-full font-medium border transition-colors text-sm shadow-md backdrop-blur-md
+            className={`rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors
               ${selected === cat
-                ? "bg-linear-to-r from-purple-600 to-indigo-600 text-white border-purple-700"
-                : "bg-black/40 text-purple-200 border-purple-700/30 hover:bg-purple-900/30 hover:text-white"}
+                ? "border-indigo-300/35 bg-[#5c56e8] text-white"
+                : "border-white/15 bg-[#171a2f]/90 text-slate-300 hover:bg-[#232744] hover:text-white"}
             `}
           >
             {cat}
@@ -70,7 +111,7 @@ const Projects = () => {
         ))}
       </div>
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((project, idx) => (
           <motion.div
             key={project.title}
@@ -78,35 +119,71 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="relative group bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-xl overflow-hidden hover:shadow-purple-700/30 transition-shadow"
+            className="group overflow-hidden rounded-2xl border border-indigo-200/15 bg-[#0d1022]/95 shadow-[0_10px_25px_rgba(3,8,25,0.45)] transition-transform duration-300 hover:-translate-y-1"
           >
-            {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center z-10">
-              <div className="flex gap-3 mb-3">
-                <a href={project.live} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg bg-linear-to-r from-purple-600 to-indigo-600 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform">
-                  Live Demo <FaExternalLinkAlt className="text-sm" />
-                </a>
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-lg border border-purple-500 text-purple-200 font-semibold bg-black/40 flex items-center gap-2 hover:bg-purple-900/30 hover:text-white transition-colors">
-                  GitHub <FaGithub className="text-lg" />
-                </a>
+            {/* Card preview */}
+            <div className="relative p-3 pb-0">
+              <div className={`relative h-40 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br ${project.accent}`}>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.42),transparent_24%),radial-gradient(circle_at_75%_80%,rgba(80,35,170,0.28),transparent_38%)]" />
+                <div className="absolute left-3 right-3 top-3 rounded-lg border border-black/20 bg-black/35 p-2 backdrop-blur-sm">
+                  <div className="mb-2 flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/50" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="h-2 rounded bg-white/50" />
+                    <div className="h-2 w-10/12 rounded bg-white/35" />
+                  </div>
+                </div>
+                <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-1.5">
+                  <div className="h-10 rounded-md border border-white/20 bg-black/30" />
+                  <div className="h-10 rounded-md border border-white/20 bg-black/25" />
+                  <div className="h-10 rounded-md border border-white/20 bg-black/20" />
+                </div>
               </div>
-              <div className="text-purple-200 text-xs text-center px-4">{project.impact}</div>
             </div>
+
             {/* Card Content */}
-            <div className="p-7 flex flex-col gap-3 min-h-65">
-              <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
-              <p className="text-purple-200 text-sm mb-2">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-2">
+            <div className="flex min-h-[16.5rem] flex-col gap-3 p-4 pt-3">
+              <h3 className="line-clamp-2 text-base font-semibold text-white">{project.title}</h3>
+              <p className="line-clamp-2 text-sm text-slate-300">{project.description}</p>
+
+              <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((tech) => (
-                  <span key={tech} className="px-2 py-1 rounded-full bg-purple-800/60 text-purple-200 text-xs font-medium border border-purple-600/30">
+                  <span
+                    key={tech}
+                    className="rounded-md border border-indigo-200/15 bg-indigo-500/10 px-2 py-1 text-[11px] text-indigo-100"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="text-purple-400 text-xs font-medium mt-auto">{project.category}</div>
+
+              <p className="line-clamp-2 text-xs text-slate-400">{project.impact}</p>
+
+              <div className="mt-auto flex gap-2 pt-2">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#5c56e8] px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#6b66ee]"
+                >
+                  Live Demo <FaExternalLinkAlt className="text-[10px]" />
+                </a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition-colors hover:bg-white/10"
+                >
+                  GitHub Repo <FaGithub className="text-sm" />
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );
