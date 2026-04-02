@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
+import {
+  SiChartdotjs,
+  SiExpress,
+  SiMongodb,
+  SiNextdotjs,
+  SiPostgresql,
+  SiRedis,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 
 const projectsData = [
   {
@@ -66,6 +78,36 @@ const projectsData = [
 ];
 
 const categories = ["All", "Frontend", "Full Stack", "AI"];
+
+const techIcons = {
+  React: FaReact,
+  "Node.js": FaNodeJs,
+  Express: SiExpress,
+  MongoDB: SiMongodb,
+  "Tailwind CSS": SiTailwindcss,
+  TypeScript: SiTypescript,
+  "Chart.js": SiChartdotjs,
+  Vite: SiVite,
+  "Next.js": SiNextdotjs,
+  Supabase: SiSupabase,
+  PostgreSQL: SiPostgresql,
+  Redis: SiRedis,
+};
+
+const techIconColors = {
+  React: "text-[#61dafb]",
+  "Node.js": "text-[#68a063]",
+  Express: "text-[#cbd5e1]",
+  MongoDB: "text-[#47a248]",
+  "Tailwind CSS": "text-[#38bdf8]",
+  TypeScript: "text-[#3178c6]",
+  "Chart.js": "text-[#ff6384]",
+  Vite: "text-[#f9c74f]",
+  "Next.js": "text-[#f5f5f5]",
+  Supabase: "text-[#3ecf8e]",
+  PostgreSQL: "text-[#336791]",
+  Redis: "text-[#dc382d]",
+};
 
 const Projects = () => {
   const [selected, setSelected] = useState("All");
@@ -151,12 +193,21 @@ const Projects = () => {
 
               <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-md border border-indigo-200/15 bg-indigo-500/10 px-2 py-1 text-[11px] text-indigo-100"
-                  >
-                    {tech}
-                  </span>
+                  (() => {
+                    const Icon = techIcons[tech] || FaGithub;
+                    const iconColorClass = techIconColors[tech] || "text-indigo-100";
+                    return (
+                      <span
+                        key={tech}
+                        title={tech}
+                        aria-label={tech}
+                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-indigo-200/15 bg-indigo-500/10 text-indigo-100"
+                      >
+                        <Icon className={`text-sm ${iconColorClass}`} />
+                        <span className="sr-only">{tech}</span>
+                      </span>
+                    );
+                  })()
                 ))}
               </div>
 
