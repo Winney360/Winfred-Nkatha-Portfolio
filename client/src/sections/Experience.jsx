@@ -68,7 +68,7 @@ const Experience = () => {
           Experience / Journey
         </motion.h2>
         <div className="relative md:px-10">
-          <div className="absolute left-[8px] top-0 h-full md:left-1/2 md:-translate-x-1/2">
+          <div className="absolute left-2 top-0 h-full md:left-1/2 md:-translate-x-1/2">
             <div className="h-full w-px bg-linear-to-b from-[#6f5ce7]/10 via-[#8a75ff]/65 to-[#6f5ce7]/10" />
           </div>
 
@@ -109,7 +109,7 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  <span className="pointer-events-none absolute left-[8px] top-3 h-3 w-3 -translate-x-1/2 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)] md:left-1/2 md:-translate-x-1/2" />
+                  <span className="pointer-events-none absolute left-2 top-3 h-3 w-3 -translate-x-1/2 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)] md:left-1/2 md:-translate-x-1/2" />
                 </motion.div>
               );
             })}

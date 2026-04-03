@@ -244,8 +244,8 @@ const Projects = () => {
 
             {/* Card Content */}
             <div className="flex min-h-66 flex-1 flex-col gap-3 p-4 pt-3">
-              <h3 className="line-clamp-2 min-h-[3rem] text-base font-semibold text-white">{project.title}</h3>
-              <p className="line-clamp-2 min-h-[2.5rem] text-sm text-slate-300">{project.description}</p>
+              <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-white">{project.title}</h3>
+              <p className="line-clamp-2 min-h-10 text-sm text-slate-300">{project.description}</p>
 
               <div className="flex min-h-7 flex-wrap content-start gap-1.5">
                 {project.tech.map((tech) => (
@@ -272,7 +272,7 @@ const Projects = () => {
                 ))}
               </div>
 
-              <p className="-mt-1 line-clamp-2 min-h-[2.25rem] text-xs text-slate-400">{project.impact}</p>
+              <p className="-mt-1 line-clamp-2 min-h-9 text-xs text-slate-400">{project.impact}</p>
 
               <div className="mt-auto flex gap-2 pt-2">
                 <a
