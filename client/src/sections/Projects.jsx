@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
+import assignmentPreview from "../assets/projects/Asssignment.png";
 import {
   SiChartdotjs,
   SiExpress,
@@ -18,12 +19,12 @@ const projectsData = [
   {
     title: "Assignment Hub : Assignment Distribution Platform",
     description: "A MERN platform where teachers upload assignments and students access them using unique codes.",
-    image: "",
+    image: assignmentPreview,
     imageAlt: "Assignment Hub preview",
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     impact: "Improved assignment access for students and streamlined distribution for teachers.",
     live: "https://assignment-hub-eight.vercel.app",
-    github: "#",
+    github: "https://github.com/Winney360/Assignment-hub.git",
     category: "Full Stack",
     accent: "from-[#5b5ef7] via-[#7e4cff] to-[#c08dff]",
   },
