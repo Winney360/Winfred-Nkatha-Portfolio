@@ -1,14 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
+import claudeLogo from "../assets/claude.png";
+import cursorLogo from "../assets/cursor.png";
 import vscodeIcon from "../assets/vscode.png";
 import figmaLogo from "../assets/figma-logo.svg";
+import githubLogo from "../assets/github.png";
+import html5Logo from "../assets/html5.png";
 import mongodbLogo from "../assets/mongodb.svg";
+import mysqlLogo from "../assets/mysql.png";
+import postmanLogo from "../assets/postman.png";
 import {
   SiExpress,
   SiGit,
   SiJavascript,
   SiNodedotjs,
-  SiOpenai,
   SiReact,
   SiTailwindcss,
 } from "react-icons/si";
@@ -32,12 +37,12 @@ const groupedSkills = {
 };
 
 const clusterNodes = [
-  { label: "AI", icon: SiOpenai, color: "text-cyan-300", pos: "top-[10px] left-[103px]" },
-  { label: "Figma", icon: figmaLogo, color: "text-pink-400", pos: "top-[52px] left-[174px]", isImage: true },
-  { label: "VS Code", icon: vscodeIcon, color: "text-blue-400", pos: "top-[129px] left-[174px]", isImage: true },
-  { label: "Tools", icon: SiGit, color: "text-orange-400", pos: "top-[172px] left-[103px]" },
-  { label: "Libraries", icon: SiReact, color: "text-cyan-400", pos: "top-[129px] left-[32px]" },
-  { label: "Frontend", icon: SiJavascript, color: "text-yellow-300", pos: "top-[52px] left-[32px]" },
+  { label: "Claude", icon: claudeLogo, pos: "top-[10px] left-[103px]", isImage: true },
+  { label: "MySQL", icon: mysqlLogo, pos: "top-[52px] left-[174px]", isImage: true },
+  { label: "Postman", icon: postmanLogo, pos: "top-[129px] left-[174px]", isImage: true },
+  { label: "Cursor", icon: cursorLogo, pos: "top-[172px] left-[103px]", isImage: true },
+  { label: "GitHub", icon: githubLogo, pos: "top-[129px] left-[32px]", isImage: true },
+  { label: "HTML5", icon: html5Logo, pos: "top-[52px] left-[32px]", isImage: true },
 ];
 
 const Skills = () => {
