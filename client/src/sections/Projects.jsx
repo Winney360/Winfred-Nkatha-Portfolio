@@ -5,6 +5,8 @@ import assignmentPreview from "../assets/projects/Assignment.png";
 import commitPreview from "../assets/projects/commit.png";
 import crochetPreview from "../assets/projects/crochet.png";
 import cropPreview from "../assets/projects/crop.png";
+import html5Logo from "../assets/html5.png";
+import mongodbLogo from "../assets/mongodb.svg";
 import unsaidPreview from "../assets/projects/unsaid.png";
 import resumePreview from "../assets/projects/resume.png";
 import {
@@ -74,7 +76,7 @@ const projectsData = [
     description: "An AI-powered platform that translates raw emotions into clear, respectful communication to help users express themselves effectively.",
     image: unsaidPreview,
     imageAlt: "UNSAID preview",
-    tech: ["React", "Node.js", "PostgreSQL", "google-generative-ai"],
+    tech: ["React", "Node.js", "google-generative-ai"],
     impact: "Improved emotional clarity and enabled safer, more structured communication.",
     live: "https://unsaid-green.vercel.app/",
     github: "https://github.com/Winney360/Unsaid.git",
@@ -125,6 +127,11 @@ const techIconColors = {
   Supabase: "text-[#3ecf8e]",
   PostgreSQL: "text-[#336791]",
   Redis: "text-[#dc382d]",
+};
+
+const techAssetIcons = {
+  HTML: html5Logo,
+  MongoDB: mongodbLogo,
 };
 
 const Projects = () => {
@@ -226,6 +233,7 @@ const Projects = () => {
               <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((tech) => (
                   (() => {
+                    const assetIcon = techAssetIcons[tech];
                     const Icon = techIcons[tech] || FaGithub;
                     const iconColorClass = techIconColors[tech] || "text-violet-100";
                     return (
@@ -235,7 +243,11 @@ const Projects = () => {
                         aria-label={tech}
                         className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-violet-300/20 bg-violet-500/15 text-violet-100"
                       >
-                        <Icon className={`text-sm ${iconColorClass}`} />
+                        {assetIcon ? (
+                          <img src={assetIcon} alt="" className="h-4 w-4 object-contain" />
+                        ) : (
+                          <Icon className={`text-sm ${iconColorClass}`} />
+                        )}
                         <span className="sr-only">{tech}</span>
                       </span>
                     );
