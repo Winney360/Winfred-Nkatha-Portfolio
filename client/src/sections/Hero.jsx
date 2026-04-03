@@ -6,7 +6,7 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black px-4 pb-12 pt-5 md:px-8 md:pt-6">
+    <section className="relative min-h-[88vh] overflow-hidden bg-black px-4 pb-6 pt-5 md:min-h-screen md:px-8 md:pb-12 md:pt-6">
       <div className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 md:px-8 md:pt-6">
         <nav className="relative rounded-xl border border-violet-300/15 bg-[#1a0a3e]/55 px-4 py-2 backdrop-blur-md md:px-6 md:py-3">
           <div className="flex items-center justify-between">
@@ -97,7 +97,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full pt-14 lg:pt-16 mt-15 ml-5">
+      <div className="relative z-10 mt-12 w-full pt-14 ml-5 lg:pt-16 md:mt-15">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
