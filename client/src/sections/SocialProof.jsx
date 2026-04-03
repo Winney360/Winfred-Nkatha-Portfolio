@@ -23,8 +23,13 @@ const githubDarkTheme = {
 };
 
 const SocialProof = () => {
+  const githubStartYear = 2025;
   const currentYear = new Date().getFullYear();
-  const yearOptions = ["last", currentYear, currentYear - 1, currentYear - 2, currentYear - 3];
+  const availableYears = Array.from(
+    { length: Math.max(0, currentYear - githubStartYear + 1) },
+    (_, index) => currentYear - index
+  );
+  const yearOptions = ["last", ...availableYears];
   const [selectedYear, setSelectedYear] = useState(currentYear);
 
   return (
