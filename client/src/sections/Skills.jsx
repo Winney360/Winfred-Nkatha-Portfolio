@@ -37,12 +37,12 @@ const groupedSkills = {
 };
 
 const clusterNodes = [
-  { label: "Claude", icon: claudeLogo, pos: "top-[10px] left-[103px]", isImage: true },
-  { label: "MySQL", icon: mysqlLogo, pos: "top-[52px] left-[174px]", isImage: true },
-  { label: "Postman", icon: postmanLogo, pos: "top-[129px] left-[174px]", isImage: true },
-  { label: "Cursor", icon: cursorLogo, pos: "top-[172px] left-[103px]", isImage: true },
-  { label: "GitHub", icon: githubLogo, pos: "top-[129px] left-[32px]", isImage: true },
-  { label: "HTML5", icon: html5Logo, pos: "top-[52px] left-[32px]", isImage: true },
+  { label: "Claude", icon: claudeLogo, pos: "top-[12px] left-[127px]", isImage: true },
+  { label: "MySQL", icon: mysqlLogo, pos: "top-[64px] left-[214px]", isImage: true },
+  { label: "Postman", icon: postmanLogo, pos: "top-[159px] left-[214px]", isImage: true },
+  { label: "Cursor", icon: cursorLogo, pos: "top-[212px] left-[127px]", isImage: true },
+  { label: "GitHub", icon: githubLogo, pos: "top-[159px] left-[39px]", isImage: true },
+  { label: "HTML5", icon: html5Logo, pos: "top-[64px] left-[39px]", isImage: true },
 ];
 
 const Skills = () => {
@@ -62,7 +62,7 @@ const Skills = () => {
       >
         <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">Skills</h2>
 
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-14">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-4">
           <div className="space-y-4">
             {Object.entries(groupedSkills).map(([groupName, items]) => (
               <div key={groupName}>
@@ -73,7 +73,7 @@ const Skills = () => {
                     return (
                       <div
                         key={skill.name}
-                        className="group flex h-[7.5rem] w-[7.5rem] flex-none flex-col items-center justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-2 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+                        className="group flex h-30 w-[7.5rem] flex-none flex-col items-center justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-2 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
                       >
                         {skill.isImage ? (
                           <img src={skill.icon} alt={skill.name} className="mb-1 h-8 w-8 object-contain" />
@@ -89,12 +89,12 @@ const Skills = () => {
             ))}
           </div>
 
-          <div className="mx-auto w-full max-w-[320px] pt-2">
-            <div className="relative mx-auto h-65 w-65">
-              <div className="absolute left-1/2 top-1/2 h-49.5 w-49.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/18" />
-              <div className="absolute left-1/2 top-1/2 h-21 w-21 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/35 bg-[#141b3f]/95 shadow-[0_0_35px_rgba(168,85,247,0.45)]" />
+          <div className="mx-auto w-full max-w-[360px] pt-1 lg:mx-0 lg:justify-self-start">
+            <div className="relative mx-auto h-[320px] w-[320px]">
+              <div className="absolute left-1/2 top-1/2 h-[244px] w-[244px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/18" />
+              <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/35 bg-[#141b3f]/95 shadow-[0_0_45px_rgba(168,85,247,0.52)]" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                <p className="text-[22px] font-bold leading-none text-white">85%</p>
+                <p className="text-[24px] font-bold leading-none text-white">85%</p>
               </div>
 
               {clusterNodes.map((node) => {
@@ -102,14 +102,14 @@ const Skills = () => {
                 return (
                   <div
                     key={node.label}
-                    className={`absolute ${node.pos} flex h-19 w-19 flex-col items-center justify-center border border-violet-300/22 bg-[#121737]/85 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
+                    className={`absolute ${node.pos} flex h-[88px] w-[88px] flex-col items-center justify-center border border-violet-300/22 bg-[#121737]/85 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
                   >
                     {node.isImage ? (
-                      <img src={node.icon} alt={node.label} className="mb-1 h-4 w-4 object-contain" />
+                      <img src={node.icon} alt={node.label} className="mb-1 h-5 w-5 object-contain" />
                     ) : (
                       <Icon className={`mb-1 text-[15px] ${node.color}`} />
                     )}
-                    <p className="text-[9px] text-slate-200">{node.label}</p>
+                    <p className="text-[10px] text-slate-200">{node.label}</p>
                   </div>
                 );
               })}
