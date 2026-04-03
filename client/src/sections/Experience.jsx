@@ -4,17 +4,17 @@ import { FaBriefcase } from "react-icons/fa";
 
 const experience = [
   {
-    role: "Frontend Engineer",
-    company: "Company Name",
-    date: "Jan '24 – 2026",
-    logo: "",
+    role: "Team lead / Backend Engineer",
+    company: "Guild Code",
+    date: "Feb '24 2026 - Present",
+    logo: "/guild.jpeg",
     description:
-      "Built polished product experiences, improved front-end performance, and collaborated closely with design and product teams.",
+      "Leading backend development as the sole backend engineer, building a scalable system for a community platform.",
   },
   {
-    role: "Full Stack Developer Intern",
-    company: "StartupHub",
-    date: "Sep '23 – Dec '23",
+    role: "UI/UX Student",
+    company: "FaithTech Digital Program",
+    date: "Feb '26 – April '26",
     logo: "",
     description:
       "Shipped internal tooling, streamlined onboarding flows, and delivered analytics views used by the team.",
@@ -74,7 +74,7 @@ const Experience = () => {
                       <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-start md:flex-row-reverse" : "justify-start"}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
                           {exp.logo ? (
-                            <img src={exp.logo} alt={exp.company} className="h-full w-full rounded-md object-contain p-1.5" />
+                            <img src={exp.logo} alt={exp.company} className="h-full w-full rounded-md object-cover" />
                           ) : (
                             <span className="text-[11px] font-bold tracking-wide text-slate-700">
                               {getInitials(exp.company)}
