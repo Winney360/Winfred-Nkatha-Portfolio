@@ -198,7 +198,7 @@ const Projects = () => {
         ))}
       </div>
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr">
         {filtered.map((project, idx) => (
           <motion.div
             key={project.title}
@@ -206,7 +206,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="group overflow-hidden rounded-2xl border border-violet-300/20 bg-[#1a112b]/92 shadow-[0_10px_25px_rgba(17,7,34,0.55)] transition-transform duration-300 hover:-translate-y-1"
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-violet-300/20 bg-[#1a112b]/92 shadow-[0_10px_25px_rgba(17,7,34,0.55)] transition-transform duration-300 hover:-translate-y-1"
           >
             {/* Card preview */}
             <div className="relative p-3 pb-0">
@@ -243,11 +243,11 @@ const Projects = () => {
             </div>
 
             {/* Card Content */}
-            <div className="flex min-h-66 flex-col gap-3 p-4 pt-3">
-              <h3 className="line-clamp-2 text-base font-semibold text-white">{project.title}</h3>
-              <p className="line-clamp-2 text-sm text-slate-300">{project.description}</p>
+            <div className="flex min-h-66 flex-1 flex-col gap-3 p-4 pt-3">
+              <h3 className="line-clamp-2 min-h-[3rem] text-base font-semibold text-white">{project.title}</h3>
+              <p className="line-clamp-2 min-h-[2.5rem] text-sm text-slate-300">{project.description}</p>
 
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex min-h-7 flex-wrap content-start gap-1.5">
                 {project.tech.map((tech) => (
                   (() => {
                     const assetIcon = techAssetIcons[tech];
@@ -272,7 +272,7 @@ const Projects = () => {
                 ))}
               </div>
 
-              <p className="line-clamp-2 text-xs text-slate-400">{project.impact}</p>
+              <p className="-mt-1 line-clamp-2 min-h-[2.25rem] text-xs text-slate-400">{project.impact}</p>
 
               <div className="mt-auto flex gap-2 pt-2">
                 <a
