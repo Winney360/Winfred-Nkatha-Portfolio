@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaCss3Alt, FaExternalLinkAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import assignmentPreview from "../assets/projects/Assignment.png";
 import commitPreview from "../assets/projects/commit.png";
 import crochetPreview from "../assets/projects/crochet.png";
@@ -20,8 +20,10 @@ import {
   SiRedis,
   SiSupabase,
   SiTailwindcss,
+  SiTensorflow,
   SiTypescript,
   SiVite,
+  SiPython,
 } from "react-icons/si";
 
 const projectsData = [
@@ -110,6 +112,9 @@ const techIcons = {
   TypeScript: SiTypescript,
   "Chart.js": SiChartdotjs,
   JavaScript: SiJavascript,
+  CSS3: FaCss3Alt,
+  python: SiPython,
+  TensorFlow: SiTensorflow,
   "gemini-1.5-pro": SiGooglegemini,
   "google-generative-ai": SiGooglegemini,
   Vite: SiVite,
@@ -128,6 +133,9 @@ const techIconColors = {
   TypeScript: "text-[#3178c6]",
   "Chart.js": "text-[#ff6384]",
   JavaScript: "text-[#facc15]",
+  CSS3: "text-[#1572b6]",
+  python: "text-[#3776ab]",
+  TensorFlow: "text-[#ff6f00]",
   "gemini-1.5-pro": "text-[#8ab4f8]",
   "google-generative-ai": "text-[#8ab4f8]",
   Vite: "text-[#f9c74f]",
@@ -139,6 +147,7 @@ const techIconColors = {
 
 const techAssetIcons = {
   HTML: html5Logo,
+  HTML5: html5Logo,
   MongoDB: mongodbLogo,
 };
 
