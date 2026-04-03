@@ -16,11 +16,13 @@ import {
 
 const projectsData = [
   {
-    title: "Project Nebula: AI-Powered Platform",
-    description: "Smart analytics workspace with live KPI tracking and trend detection.",
+    title: "Assignment Hub : Assignment Distribution Platform",
+    description: "A MERN platform where teachers upload assignments and students access them using unique codes.",
+    image: "",
+    imageAlt: "Assignment Hub preview",
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    impact: "Reduced reporting time by 40% and enabled data-driven decisions.",
-    live: "#",
+    impact: "Improved assignment access for students and streamlined distribution for teachers.",
+    live: "https://assignment-hub-eight.vercel.app",
     github: "#",
     category: "Full Stack",
     accent: "from-[#5b5ef7] via-[#7e4cff] to-[#c08dff]",
@@ -28,6 +30,8 @@ const projectsData = [
   {
     title: "Signal Vista: SaaS Control Center",
     description: "Enterprise dashboard UI with account management and growth insights.",
+    image: "",
+    imageAlt: "Signal Vista preview",
     tech: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
     impact: "Improved operator efficiency by 28% with cleaner data visualization.",
     live: "#",
@@ -38,6 +42,8 @@ const projectsData = [
   {
     title: "Flow Ledger: Finance Workspace",
     description: "Clean transaction and report interface with role-based admin tools.",
+    image: "",
+    imageAlt: "Flow Ledger preview",
     tech: ["React", "Vite", "Tailwind CSS"],
     impact: "Cut monthly close cycle by 2 days with process automation.",
     live: "#",
@@ -48,6 +54,8 @@ const projectsData = [
   {
     title: "Pulse CRM: AI-Powered Platform",
     description: "Pipeline management suite with scoring, reminders, and collaboration.",
+    image: "",
+    imageAlt: "Pulse CRM preview",
     tech: ["Next.js", "Supabase", "Tailwind CSS"],
     impact: "Raised lead conversion by 19% through predictive recommendations.",
     live: "#",
@@ -58,6 +66,8 @@ const projectsData = [
   {
     title: "Nimbus Market: AI Campaign Studio",
     description: "Marketing command center for campaign setup and performance tracking.",
+    image: "",
+    imageAlt: "Nimbus Market preview",
     tech: ["React", "Node.js", "PostgreSQL"],
     impact: "Reduced campaign setup time by 35% for growth teams.",
     live: "#",
@@ -68,6 +78,8 @@ const projectsData = [
   {
     title: "Orbit Ops: Workflow Console",
     description: "Operational cockpit with queue monitoring and alert triage workflows.",
+    image: "",
+    imageAlt: "Orbit Ops preview",
     tech: ["React", "Express", "Redis"],
     impact: "Dropped critical incident response times by 42%.",
     live: "#",
@@ -165,24 +177,35 @@ const Projects = () => {
           >
             {/* Card preview */}
             <div className="relative p-3 pb-0">
-              <div className={`relative h-40 overflow-hidden rounded-xl border border-white/10 bg-linear-to-br ${project.accent}`}>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.42),transparent_24%),radial-gradient(circle_at_75%_80%,rgba(80,35,170,0.28),transparent_38%)]" />
-                <div className="absolute left-3 right-3 top-3 rounded-lg border border-black/20 bg-black/35 p-2 backdrop-blur-sm">
-                  <div className="mb-2 flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/50" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-                  </div>
-                  <div className="space-y-1.5">
-                    <div className="h-2 rounded bg-white/50" />
-                    <div className="h-2 w-10/12 rounded bg-white/35" />
-                  </div>
-                </div>
-                <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-1.5">
-                  <div className="h-10 rounded-md border border-white/20 bg-black/30" />
-                  <div className="h-10 rounded-md border border-white/20 bg-black/25" />
-                  <div className="h-10 rounded-md border border-white/20 bg-black/20" />
-                </div>
+              <div className={`relative h-40 overflow-hidden rounded-xl border border-white/10 ${project.image ? "bg-black/30" : `bg-linear-to-br ${project.accent}`}`}>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt || `${project.title} preview`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.42),transparent_24%),radial-gradient(circle_at_75%_80%,rgba(80,35,170,0.28),transparent_38%)]" />
+                    <div className="absolute left-3 right-3 top-3 rounded-lg border border-black/20 bg-black/35 p-2 backdrop-blur-sm">
+                      <div className="mb-2 flex items-center gap-1.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/50" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <div className="h-2 rounded bg-white/50" />
+                        <div className="h-2 w-10/12 rounded bg-white/35" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-1.5">
+                      <div className="h-10 rounded-md border border-white/20 bg-black/30" />
+                      <div className="h-10 rounded-md border border-white/20 bg-black/25" />
+                      <div className="h-10 rounded-md border border-white/20 bg-black/20" />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
