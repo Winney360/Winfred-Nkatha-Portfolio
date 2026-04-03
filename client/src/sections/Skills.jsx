@@ -67,20 +67,20 @@ const Skills = () => {
             {Object.entries(groupedSkills).map(([groupName, items]) => (
               <div key={groupName}>
                 <h3 className="mb-2 text-[20px] font-medium text-white">{groupName}</h3>
-                <div className="flex flex-wrap gap-10">
+                <div className="grid grid-cols-3 gap-1.5 md:flex md:flex-wrap md:gap-10">
                   {items.map((skill) => {
                     const Icon = skill.icon;
                     return (
                       <div
                         key={skill.name}
-                        className="group flex h-30 w-30 flex-none flex-col items-center justify-center rounded-xl border border-violet-300/20 bg-[#221238]/72 p-2 shadow-lg shadow-black/25 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+                        className="group flex aspect-square w-full max-w-22 flex-col items-center justify-center rounded-xl border border-violet-300/20 bg-[#221238]/72 p-1.5 shadow-lg shadow-black/25 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5 md:h-30 md:w-30 md:max-w-none md:flex-none md:p-2"
                       >
                         {skill.isImage ? (
-                          <img src={skill.icon} alt={skill.name} className="mb-1 h-8 w-8 object-contain" />
+                          <img src={skill.icon} alt={skill.name} className="mb-1 h-6 w-6 object-contain md:h-8 md:w-8" />
                         ) : (
-                          <Icon className={`mb-1 text-[1.75rem] ${skill.color}`} />
+                          <Icon className={`mb-1 text-[1.25rem] md:text-[1.75rem] ${skill.color}`} />
                         )}
-                        <p className="text-[11px] leading-tight text-slate-100">{skill.name}</p>
+                        <p className="text-[10px] leading-tight text-slate-100 md:text-[11px]">{skill.name}</p>
                       </div>
                     );
                   })}
@@ -90,7 +90,7 @@ const Skills = () => {
           </div>
 
           <div className="mx-auto w-full max-w-96 pt-1 lg:mx-0 lg:justify-self-start lg:-ml-40">
-            <div className="relative mx-auto h-96 w-105 origin-center scale-110 lg:scale-115">
+            <div className="relative mx-auto h-96 w-105 origin-center -translate-x-4 scale-110 md:translate-x-0 lg:scale-115">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7e22ce]/35 blur-[110px]" />
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a855f7]/25 blur-[85px]" />
               <div className="absolute left-1/2 top-1/2 h-61 w-61 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-400/45" />
