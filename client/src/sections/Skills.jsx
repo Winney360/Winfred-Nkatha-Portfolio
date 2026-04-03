@@ -62,25 +62,25 @@ const Skills = () => {
       >
         <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">Skills</h2>
 
-        <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="space-y-5">
+        <div className="grid items-start justify-center gap-10 lg:grid-cols-[260px_320px]">
+          <div className="space-y-4">
             {Object.entries(groupedSkills).map(([groupName, items]) => (
               <div key={groupName}>
-                <h3 className="mb-3 text-lg font-semibold text-white">{groupName}</h3>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <h3 className="mb-2 text-[20px] font-medium text-white">{groupName}</h3>
+                <div className="grid grid-cols-3 gap-2">
                   {items.map((skill) => {
                     const Icon = skill.icon;
                     return (
                       <div
                         key={skill.name}
-                        className="group flex h-21 flex-col justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-3.5 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+                        className="group flex h-14 w-16 flex-col items-center justify-center rounded-lg border border-indigo-200/15 bg-[#111733]/80 p-1.5 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
                       >
                         {skill.isImage ? (
-                          <img src={skill.icon} alt={skill.name} className="mb-1.5 h-7 w-7 object-contain" />
+                          <img src={skill.icon} alt={skill.name} className="mb-0.5 h-6 w-6 object-contain" />
                         ) : (
-                          <Icon className={`mb-1.5 text-[1.65rem] ${skill.color}`} />
+                          <Icon className={`mb-0.5 text-[1.4rem] ${skill.color}`} />
                         )}
-                        <p className="text-xs text-slate-100">{skill.name}</p>
+                        <p className="text-[8px] leading-tight text-slate-100">{skill.name}</p>
                       </div>
                     );
                   })}
