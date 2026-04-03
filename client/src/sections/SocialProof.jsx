@@ -5,7 +5,7 @@ import { GitHubCalendar } from "react-github-calendar";
 
 const testimonials = [
   {
-    name: "Shikuku",
+    name: "Shikuku - client",
     quote:
        "Winfred did an outstanding job building my crochet website. The layout, responsiveness, and attention to detail went beyond my expectations, resulting in a product that felt professional and complete.",
   },
