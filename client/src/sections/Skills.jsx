@@ -37,12 +37,12 @@ const groupedSkills = {
 };
 
 const clusterNodes = [
-  { label: "Claude", icon: claudeLogo, pos: "top-[12px] left-[127px]", isImage: true },
-  { label: "MySQL", icon: mysqlLogo, pos: "top-[64px] left-[214px]", isImage: true },
-  { label: "Postman", icon: postmanLogo, pos: "top-[159px] left-[214px]", isImage: true },
-  { label: "Cursor", icon: cursorLogo, pos: "top-[212px] left-[127px]", isImage: true },
-  { label: "GitHub", icon: githubLogo, pos: "top-[159px] left-[39px]", isImage: true },
-  { label: "HTML5", icon: html5Logo, pos: "top-[64px] left-[39px]", isImage: true },
+  { label: "Claude", icon: claudeLogo, pos: "top-[30px] left-[167px]", isImage: true },
+  { label: "MySQL", icon: mysqlLogo, pos: "top-[99px] left-[274px]", isImage: true },
+  { label: "Postman", icon: postmanLogo, pos: "top-[210px] left-[267px]", isImage: true },
+  { label: "Cursor", icon: cursorLogo, pos: "top-[269px] left-[167px]", isImage: true },
+  { label: "GitHub", icon: githubLogo, pos: "top-[210px] left-[58px]", isImage: true },
+  { label: "HTML5", icon: html5Logo, pos: "top-[100px] left-[59px]", isImage: true },
 ];
 
 const Skills = () => {
