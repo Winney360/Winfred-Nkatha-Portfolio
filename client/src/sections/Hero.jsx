@@ -69,10 +69,11 @@ const Hero = () => {
                   View My Work
                 </a>
                 <a
-                  href="#contact"
+                  href="/resume.pdf"
+                  download
                   className="rounded-xl border border-violet-400/40 bg-violet-600/20 px-7 py-3 text-sm font-bold text-violet-100 transition-all duration-300 hover:bg-violet-600/35 hover:text-white hover:border-violet-300/60"
                 >
-                  Get In Touch
+                  Download Resume
                 </a>
               </div>
 
