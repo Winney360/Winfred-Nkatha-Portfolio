@@ -70,9 +70,9 @@ const Experience = () => {
                   transition={{ delay: idx * 0.08, duration: 0.65, ease: "easeOut" }}
                   className="relative grid items-center gap-4 md:grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] md:gap-6"
                 >
-                  <div className={`order-2 md:order-none ${isLeft ? "md:col-start-1 md:text-right" : "md:col-start-3"}`}>
-                    <div className="mx-auto max-w-md md:mx-0">
-                      <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-end md:flex-row-reverse" : "justify-start"}`}>
+                  <div className={`order-2 md:order-none ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-3 md:justify-self-start"}`}>
+                    <div className="mx-auto max-w-md">
+                      <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-start md:flex-row-reverse" : "justify-start"}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
                           {exp.logo ? (
                             <img src={exp.logo} alt={exp.company} className="h-full w-full rounded-md object-contain p-1.5" />
@@ -85,6 +85,7 @@ const Experience = () => {
                         <div className={`${isLeft ? "text-right" : "text-left"}`}>
                           <div className="text-[11px] font-medium tracking-[0.2em] text-[#b19cff]">{exp.date}</div>
                           <h3 className="mt-1 text-lg font-semibold text-white md:text-[1.05rem]">{exp.role}</h3>
+                          <div className="mt-1 text-xs text-[#9f8bc3]">{exp.company}</div>
                         </div>
                       </div>
                       <p className={`max-w-sm text-sm leading-6 text-[#a89bc7] ${isLeft ? "ml-auto text-right" : "text-left"}`}>
