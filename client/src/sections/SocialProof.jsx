@@ -96,7 +96,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-hidden [&_svg]:w-full [&_svg]:h-auto">
+          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-hidden text-[#8b949e] [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#8b949e]">
             <GitHubCalendar
               username={githubUsername}
               year={selectedYear}
@@ -108,6 +108,7 @@ const SocialProof = () => {
               showColorLegend={false}
               showMonthLabels={true}
               showTotalCount={true}
+              style={{ color: "#8b949e" }}
               labels={{
                 totalCount:
                   selectedYear === "last"
