@@ -56,7 +56,7 @@ const getInitials = (name) =>
 
 const Experience = () => {
   return (
-    <section className="w-full bg-linear-to-b from-[#070311] via-[#0b0618] to-[#090413]">
+    <section id="experience" className="w-full bg-linear-to-b from-[#070311] via-[#0b0618] to-[#090413]">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 py-24">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -68,7 +68,7 @@ const Experience = () => {
           Experience / Journey
         </motion.h2>
         <div className="relative md:px-10">
-          <div className="absolute left-1/2 top-0 hidden h-full -translate-x-1/2 md:block">
+          <div className="absolute left-[8px] top-0 h-full md:left-1/2 md:-translate-x-1/2">
             <div className="h-full w-px bg-linear-to-b from-[#6f5ce7]/10 via-[#8a75ff]/65 to-[#6f5ce7]/10" />
           </div>
 
@@ -83,10 +83,10 @@ const Experience = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.45 }}
                   transition={{ delay: idx * 0.08, duration: 0.65, ease: "easeOut" }}
-                  className="relative grid items-start gap-4 md:grid-cols-2 md:gap-x-16"
+                  className="relative grid items-start gap-4 pl-10 md:pl-0 md:grid-cols-2 md:gap-x-16"
                 >
                   <div className={`order-2 md:order-0 ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-2 md:justify-self-start"}`}>
-                    <div className="mx-auto max-w-md">
+                    <div className="w-full max-w-md md:mx-auto">
                       <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-start md:flex-row-reverse" : "justify-start"}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
                           {exp.logo ? (
@@ -97,19 +97,19 @@ const Experience = () => {
                             </span>
                           )}
                         </div>
-                        <div className={`${isLeft ? "text-right" : "text-left"}`}>
+                        <div className={`${isLeft ? "text-left md:text-right" : "text-left"}`}>
                           <div className="text-[11px] font-medium tracking-[0.2em] text-[#b19cff]">{exp.date}</div>
                           <h3 className="mt-1 text-lg font-semibold text-white md:text-[1.05rem]">{exp.role}</h3>
                           <div className="mt-1 text-xs text-[#9f8bc3]">{exp.company}</div>
                         </div>
                       </div>
-                      <p className={`max-w-sm text-sm leading-6 text-[#a89bc7] ${isLeft ? "ml-auto text-right" : "text-left"}`}>
+                      <p className={`max-w-sm text-sm leading-6 text-[#a89bc7] ${isLeft ? "text-left md:ml-auto md:text-right" : "text-left"}`}>
                         {exp.description}
                       </p>
                     </div>
                   </div>
 
-                  <span className="pointer-events-none absolute left-1/2 top-3 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)] md:block" />
+                  <span className="pointer-events-none absolute left-[8px] top-3 h-3 w-3 -translate-x-1/2 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)] md:left-1/2 md:-translate-x-1/2" />
                 </motion.div>
               );
             })}
