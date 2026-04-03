@@ -1,90 +1,107 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaFigma, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiExpress, SiMongodb, SiVercel } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
+import {
+  SiExpress,
+  SiFigma,
+  SiGit,
+  SiJavascript,
+  SiNodedotjs,
+  SiOpenai,
+  SiReact,
+  SiTailwindcss,
+  SiVisualstudiocode,
+} from "react-icons/si";
 
-const skills = [
-  {
-    icon: <FaReact className="text-cyan-400 text-3xl" />,
-    name: "React",
-    proof: "Built 4 production apps",
-  },
-  {
-    icon: <SiTailwindcss className="text-sky-400 text-3xl" />,
-    name: "Tailwind CSS",
-    proof: "Designed 5+ scalable UIs",
-  },
-  {
-    icon: <SiJavascript className="text-yellow-300 text-3xl" />,
-    name: "JavaScript",
-    proof: "5 years experience, 10+ projects",
-  },
-  {
-    icon: <FaNodeJs className="text-green-400 text-3xl" />,
-    name: "Node.js",
-    proof: "Developed REST APIs with auth",
-  },
-  {
-    icon: <SiExpress className="text-gray-200 text-3xl" />,
-    name: "Express",
-    proof: "Built scalable backend services",
-  },
-  {
-    icon: <SiMongodb className="text-green-500 text-3xl" />,
-    name: "MongoDB",
-    proof: "Designed performant schemas",
-  },
-  {
-    icon: <FaFigma className="text-pink-400 text-3xl" />,
-    name: "Figma",
-    proof: "Designed full UI systems",
-  },
-  {
-    icon: <VscCode className="text-blue-400 text-3xl" />,
-    name: "VS Code",
-    proof: "Daily driver for all projects",
-  },
-  {
-    icon: <FaGithub className="text-white text-3xl" />,
-    name: "GitHub",
-    proof: "1000+ commits, open source",
-  },
-  {
-    icon: <SiVercel className="text-white text-3xl" />,
-    name: "Vercel",
-    proof: "Deployed 10+ apps",
-  },
+const groupedSkills = {
+  Frontend: [
+    { name: "React", icon: SiReact, color: "text-cyan-400" },
+    { name: "Tailwind CSS v4", icon: SiTailwindcss, color: "text-sky-400" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-300" },
+  ],
+  Backend: [
+    { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
+    { name: "Express", icon: SiExpress, color: "text-slate-200" },
+  ],
+  Tools: [
+    { name: "Git", icon: SiGit, color: "text-orange-400" },
+    { name: "Figma", icon: SiFigma, color: "text-pink-400" },
+    { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-400" },
+  ],
+};
+
+const clusterNodes = [
+  { label: "AI", icon: SiOpenai, color: "text-cyan-300", pos: "top-[10px] left-[103px]" },
+  { label: "Figma", icon: SiFigma, color: "text-pink-400", pos: "top-[52px] left-[174px]" },
+  { label: "VS Code", icon: SiVisualstudiocode, color: "text-blue-400", pos: "top-[129px] left-[174px]" },
+  { label: "Tools", icon: SiGit, color: "text-orange-400", pos: "top-[172px] left-[103px]" },
+  { label: "Libraries", icon: SiReact, color: "text-cyan-400", pos: "top-[129px] left-[32px]" },
+  { label: "Frontend", icon: SiJavascript, color: "text-yellow-300", pos: "top-[52px] left-[32px]" },
 ];
 
 const Skills = () => {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-20">
-      <motion.h2
+    <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="skills">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/3 top-10 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[90px]" />
+        <div className="absolute -bottom-16 right-10 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[110px]" />
+      </div>
+
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-3xl md:text-4xl font-bold text-white mb-10 text-center"
+        className="relative z-10 mx-auto w-full max-w-6xl"
       >
-        Skills
-      </motion.h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-        {skills.map((skill, idx) => (
-          <motion.div
-            key={skill.name}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: idx * 0.07, duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-center bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-7 hover:scale-105 hover:shadow-purple-700/30 transition-transform backdrop-blur-xl"
-          >
-            <div className="mb-3">{skill.icon}</div>
-            <div className="text-lg font-semibold text-white mb-1">{skill.name}</div>
-            <div className="text-purple-200 text-xs text-center">{skill.proof}</div>
-          </motion.div>
-        ))}
-      </div>
+        <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">Skills</h2>
+
+        <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="space-y-5">
+            {Object.entries(groupedSkills).map(([groupName, items]) => (
+              <div key={groupName}>
+                <h3 className="mb-3 text-lg font-semibold text-white">{groupName}</h3>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {items.map((skill) => {
+                    const Icon = skill.icon;
+                    return (
+                      <div
+                        key={skill.name}
+                        className="group flex h-21 flex-col justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-3.5 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+                      >
+                        <Icon className={`mb-1.5 text-[1.65rem] ${skill.color}`} />
+                        <p className="text-xs text-slate-100">{skill.name}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto w-full max-w-[320px] pt-2">
+            <div className="relative mx-auto h-65 w-65">
+              <div className="absolute left-1/2 top-1/2 h-49.5 w-49.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/18" />
+              <div className="absolute left-1/2 top-1/2 h-21 w-21 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/35 bg-[#141b3f]/95 shadow-[0_0_35px_rgba(168,85,247,0.45)]" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                <p className="text-[22px] font-bold leading-none text-white">85%</p>
+              </div>
+
+              {clusterNodes.map((node) => {
+                const Icon = node.icon;
+                return (
+                  <div
+                    key={node.label}
+                    className={`absolute ${node.pos} flex h-19 w-19 flex-col items-center justify-center border border-violet-300/22 bg-[#121737]/85 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
+                  >
+                    <Icon className={`mb-1 text-[15px] ${node.color}`} />
+                    <p className="text-[9px] text-slate-200">{node.label}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

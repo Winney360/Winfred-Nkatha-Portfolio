@@ -165,7 +165,7 @@ const Projects = () => {
           >
             {/* Card preview */}
             <div className="relative p-3 pb-0">
-              <div className={`relative h-40 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br ${project.accent}`}>
+              <div className={`relative h-40 overflow-hidden rounded-xl border border-white/10 bg-linear-to-br ${project.accent}`}>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.42),transparent_24%),radial-gradient(circle_at_75%_80%,rgba(80,35,170,0.28),transparent_38%)]" />
                 <div className="absolute left-3 right-3 top-3 rounded-lg border border-black/20 bg-black/35 p-2 backdrop-blur-sm">
                   <div className="mb-2 flex items-center gap-1.5">
@@ -187,7 +187,7 @@ const Projects = () => {
             </div>
 
             {/* Card Content */}
-            <div className="flex min-h-[16.5rem] flex-col gap-3 p-4 pt-3">
+            <div className="flex min-h-66 flex-col gap-3 p-4 pt-3">
               <h3 className="line-clamp-2 text-base font-semibold text-white">{project.title}</h3>
               <p className="line-clamp-2 text-sm text-slate-300">{project.description}</p>
 
