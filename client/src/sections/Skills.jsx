@@ -1,15 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import vscodeIcon from "../assets/vscode.png";
+import figmaLogo from "../assets/figma-logo.svg";
+import mongodbLogo from "../assets/mongodb.svg";
 import {
   SiExpress,
-  SiFigma,
   SiGit,
   SiJavascript,
   SiNodedotjs,
   SiOpenai,
   SiReact,
   SiTailwindcss,
-  SiVisualstudiocode,
 } from "react-icons/si";
 
 const groupedSkills = {
@@ -21,18 +22,19 @@ const groupedSkills = {
   Backend: [
     { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
     { name: "Express", icon: SiExpress, color: "text-slate-200" },
+    { name: "MongoDB", icon: mongodbLogo, color: "text-green-500", isImage: true },
   ],
   Tools: [
     { name: "Git", icon: SiGit, color: "text-orange-400" },
-    { name: "Figma", icon: SiFigma, color: "text-pink-400" },
-    { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-400" },
+    { name: "Figma", icon: figmaLogo, color: "text-pink-400", isImage: true },
+    { name: "VS Code", icon: vscodeIcon, color: "text-blue-400", isImage: true },
   ],
 };
 
 const clusterNodes = [
   { label: "AI", icon: SiOpenai, color: "text-cyan-300", pos: "top-[10px] left-[103px]" },
-  { label: "Figma", icon: SiFigma, color: "text-pink-400", pos: "top-[52px] left-[174px]" },
-  { label: "VS Code", icon: SiVisualstudiocode, color: "text-blue-400", pos: "top-[129px] left-[174px]" },
+  { label: "Figma", icon: figmaLogo, color: "text-pink-400", pos: "top-[52px] left-[174px]", isImage: true },
+  { label: "VS Code", icon: vscodeIcon, color: "text-blue-400", pos: "top-[129px] left-[174px]", isImage: true },
   { label: "Tools", icon: SiGit, color: "text-orange-400", pos: "top-[172px] left-[103px]" },
   { label: "Libraries", icon: SiReact, color: "text-cyan-400", pos: "top-[129px] left-[32px]" },
   { label: "Frontend", icon: SiJavascript, color: "text-yellow-300", pos: "top-[52px] left-[32px]" },
@@ -68,7 +70,11 @@ const Skills = () => {
                         key={skill.name}
                         className="group flex h-21 flex-col justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-3.5 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
                       >
-                        <Icon className={`mb-1.5 text-[1.65rem] ${skill.color}`} />
+                        {skill.isImage ? (
+                          <img src={skill.icon} alt={skill.name} className="mb-1.5 h-7 w-7 object-contain" />
+                        ) : (
+                          <Icon className={`mb-1.5 text-[1.65rem] ${skill.color}`} />
+                        )}
                         <p className="text-xs text-slate-100">{skill.name}</p>
                       </div>
                     );
@@ -93,7 +99,11 @@ const Skills = () => {
                     key={node.label}
                     className={`absolute ${node.pos} flex h-19 w-19 flex-col items-center justify-center border border-violet-300/22 bg-[#121737]/85 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
                   >
-                    <Icon className={`mb-1 text-[15px] ${node.color}`} />
+                    {node.isImage ? (
+                      <img src={node.icon} alt={node.label} className="mb-1 h-4 w-4 object-contain" />
+                    ) : (
+                      <Icon className={`mb-1 text-[15px] ${node.color}`} />
+                    )}
                     <p className="text-[9px] text-slate-200">{node.label}</p>
                   </div>
                 );
