@@ -50,7 +50,22 @@ const Hero = () => {
               className="z-10 w-full lg:w-3/4"
             >
               <h1 className="text-balance text-[2.4rem] font-bold leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
-                Hi, I&apos;m <span className="text-[#9143d9] font-semibold">Winfred Nkatha</span>.
+                Hi, I&apos;m <motion.span 
+                  className="text-[#9143d9] font-semibold"
+                  style={{
+                    backgroundImage: "linear-gradient(90deg, #9143d9, #d946ef, #9143d9)",
+                    backgroundSize: "200% 100%",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    textShadow: "0 0 30px rgba(217, 70, 239, 0.6)",
+                    filter: "drop-shadow(0 0 20px rgba(217, 70, 239, 0.5))"
+                  }}
+                  animate={{ backgroundPosition: ["0% 0%", "100% 0%", "0% 0%"] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  Winfred Nkatha
+                </motion.span>.
                 <br />
                 Frontend-Focused Full
                 <br />
@@ -58,7 +73,7 @@ const Hero = () => {
               </h1>
 
               <p className="mt-6 max-w-2xl text-sm leading-relaxed text-violet-200/80 md:text-base">
-                Crafting intuitive, scalable, and beautifully designed digital experiences for the modern web. I specialize in building fast, responsive applications with modern technologies.
+                I build fast, scalable, and visually polished web applications using React, JavaScript, and AI integration—turning ideas into seamless, user-centered digital experiences.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -84,7 +99,7 @@ const Hero = () => {
                 className="mt-8 flex items-center gap-3 text-[11px] tracking-wide text-violet-300/70"
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-violet-400" />
-                <span>1+ Years Experience</span>
+                <span>1+ Year Hands-on Experience</span>
                 <div className="h-1 w-1 rounded-full bg-violet-400/60" />
                 <span>7+ Projects Shipped</span>
               </motion.div>
