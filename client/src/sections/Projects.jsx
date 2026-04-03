@@ -33,7 +33,7 @@ const projectsData = [
     live: "#",
     github: "#",
     category: "Full Stack",
-    accent: "from-[#30384f] via-[#424866] to-[#8188b1]",
+    accent: "from-[#32204d] via-[#4a2a73] to-[#8a63be]",
   },
   {
     title: "Flow Ledger: Finance Workspace",
@@ -43,7 +43,7 @@ const projectsData = [
     live: "#",
     github: "#",
     category: "Frontend",
-    accent: "from-[#f4f5fc] via-[#dbe2ff] to-[#b7c8ff]",
+    accent: "from-[#f5efff] via-[#e7d8ff] to-[#c9a5ff]",
   },
   {
     title: "Pulse CRM: AI-Powered Platform",
@@ -63,7 +63,7 @@ const projectsData = [
     live: "#",
     github: "#",
     category: "AI",
-    accent: "from-[#e8ebf6] via-[#cfd7ed] to-[#9faecf]",
+    accent: "from-[#eee4ff] via-[#d8c2ff] to-[#ad8cef]",
   },
   {
     title: "Orbit Ops: Workflow Console",
@@ -73,7 +73,7 @@ const projectsData = [
     live: "#",
     github: "#",
     category: "AI",
-    accent: "from-[#2d3148] via-[#3d4261] to-[#7e86ba]",
+    accent: "from-[#2a1d40] via-[#3b255e] to-[#7d5fc2]",
   },
 ];
 
@@ -144,8 +144,8 @@ const Projects = () => {
             onClick={() => setSelected(cat)}
             className={`rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors
               ${selected === cat
-                ? "border-indigo-300/35 bg-[#5c56e8] text-white"
-                : "border-white/15 bg-[#171a2f]/90 text-slate-300 hover:bg-[#232744] hover:text-white"}
+                  ? "border-violet-300/40 bg-[#7c3aed] text-white"
+                  : "border-white/15 bg-[#1e1234]/90 text-slate-300 hover:bg-[#2a1947] hover:text-white"}
             `}
           >
             {cat}
@@ -161,7 +161,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="group overflow-hidden rounded-2xl border border-indigo-200/15 bg-[#0d1022]/95 shadow-[0_10px_25px_rgba(3,8,25,0.45)] transition-transform duration-300 hover:-translate-y-1"
+            className="group overflow-hidden rounded-2xl border border-violet-300/20 bg-[#1a112b]/92 shadow-[0_10px_25px_rgba(17,7,34,0.55)] transition-transform duration-300 hover:-translate-y-1"
           >
             {/* Card preview */}
             <div className="relative p-3 pb-0">
@@ -195,13 +195,13 @@ const Projects = () => {
                 {project.tech.map((tech) => (
                   (() => {
                     const Icon = techIcons[tech] || FaGithub;
-                    const iconColorClass = techIconColors[tech] || "text-indigo-100";
+                    const iconColorClass = techIconColors[tech] || "text-violet-100";
                     return (
                       <span
                         key={tech}
                         title={tech}
                         aria-label={tech}
-                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-indigo-200/15 bg-indigo-500/10 text-indigo-100"
+                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-violet-300/20 bg-violet-500/15 text-violet-100"
                       >
                         <Icon className={`text-sm ${iconColorClass}`} />
                         <span className="sr-only">{tech}</span>
@@ -218,7 +218,7 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#5c56e8] px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#6b66ee]"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#7c3aed] px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#8b5cf6]"
                 >
                   Live Demo <FaExternalLinkAlt className="text-[10px]" />
                 </a>
