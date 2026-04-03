@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import assignmentPreview from "../assets/projects/Asssignment.png";
+import commitPreview from "../assets/projects/commit.png";
 import {
   SiChartdotjs,
   SiExpress,
@@ -29,14 +30,14 @@ const projectsData = [
     accent: "from-[#5b5ef7] via-[#7e4cff] to-[#c08dff]",
   },
   {
-    title: "Signal Vista: SaaS Control Center",
-    description: "Enterprise dashboard UI with account management and growth insights.",
-    image: "",
-    imageAlt: "Signal Vista preview",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-    impact: "Improved operator efficiency by 28% with cleaner data visualization.",
-    live: "#",
-    github: "#",
+    title: "DailyCommit : Daily Consistency Tracker",
+    description: "A productivity app that enables users to track daily commits and improve habit consistency.",
+    image: commitPreview,
+    imageAlt: "DailyCommit preview",
+    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB","JavaScript"],
+    impact: "Improved user consistency and habit-building.",
+    live: "https://daily-commit-theta.vercel.app/",
+    github: "https://github.com/Winney360/dailyCommit.git",
     category: "Full Stack",
     accent: "from-[#32204d] via-[#4a2a73] to-[#8a63be]",
   },
