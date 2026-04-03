@@ -40,19 +40,18 @@ const getInitials = (name) =>
 
 const Experience = () => {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="mb-10 text-3xl font-bold text-white md:text-4xl"
-      >
-        Experience / Journey
-      </motion.h2>
-      <div className="relative overflow-hidden rounded-[28px] border border-[#43305f]/70 bg-linear-to-br from-[#0b0714] via-[#100a1c] to-[#0d0817] px-4 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_24px_80px_rgba(0,0,0,0.55)] md:px-10">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(145,115,255,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(95,63,180,0.18),transparent_30%)]" />
-        <div className="relative">
+    <section className="w-full bg-linear-to-b from-[#070311] via-[#0b0618] to-[#090413]">
+      <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 py-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-10 text-3xl font-bold text-white md:text-4xl"
+        >
+          Experience / Journey
+        </motion.h2>
+        <div className="relative md:px-10">
           <div className="absolute left-1/2 top-0 hidden h-full -translate-x-1/2 md:block">
             <div className="h-full w-px bg-linear-to-b from-[#6f5ce7]/10 via-[#8a75ff]/65 to-[#6f5ce7]/10" />
           </div>
