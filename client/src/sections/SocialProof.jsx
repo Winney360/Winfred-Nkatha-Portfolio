@@ -33,7 +33,7 @@ const SocialProof = () => {
   const [selectedYear, setSelectedYear] = useState(currentYear);
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-20">
+    <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8">
       <style>{`
         .react-activity-calendar__tooltip {
           background: linear-gradient(135deg, #2a1240 0%, #3f1a63 100%) !important;
@@ -53,6 +53,8 @@ const SocialProof = () => {
           fill: #3f1a63 !important;
         }
       `}</style>
+
+      <div className="mx-auto w-full max-w-6xl">
 
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
@@ -168,6 +170,7 @@ const SocialProof = () => {
             </a>
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );
