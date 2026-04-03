@@ -69,7 +69,7 @@ const Experience = () => {
                   transition={{ delay: idx * 0.08, duration: 0.65, ease: "easeOut" }}
                   className="relative grid items-start gap-4 md:grid-cols-2 md:gap-x-16"
                 >
-                  <div className={`order-2 md:order-none ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-2 md:justify-self-start"}`}>
+                  <div className={`order-2 md:order-0 ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-2 md:justify-self-start"}`}>
                     <div className="mx-auto max-w-md">
                       <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-start md:flex-row-reverse" : "justify-start"}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">

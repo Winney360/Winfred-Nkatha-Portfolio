@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL || "https://calendly.com/";
 
 const socialLinks = [
   {
@@ -107,12 +108,17 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-2 text-sm text-white/70">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
+            >
               <span className="inline-flex h-5 w-5 items-center justify-center border border-white/15 text-[10px] text-[#c9b3ff]">
                 ⓘ
               </span>
-              <span>Calendly booking (optional)</span>
-            </div>
+              <span>Book a Calendly meeting</span>
+            </a>
           </div>
         </motion.div>
 

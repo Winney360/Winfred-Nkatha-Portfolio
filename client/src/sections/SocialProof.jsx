@@ -71,7 +71,7 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-2xl border border-slate-700/80 bg-gradient-to-b from-slate-900/95 to-[#081326] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
+          className="rounded-2xl border border-slate-700/80 bg-linear-to-b from-slate-900/95 to-[#081326] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
         >
           {testimonials.map((t, idx) => (
             <div key={t.name}>
@@ -150,7 +150,7 @@ const SocialProof = () => {
               {githubDarkTheme.dark.map((color) => (
                 <span
                   key={color}
-                  className="h-[9px] w-[9px] rounded-[2px]"
+                  className="h-2.25 w-2.25 rounded-xs"
                   style={{ backgroundColor: color }}
                 />
               ))}
