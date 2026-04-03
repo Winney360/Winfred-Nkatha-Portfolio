@@ -25,7 +25,7 @@ const githubDarkTheme = {
 const SocialProof = () => {
   const currentYear = new Date().getFullYear();
   const yearOptions = ["last", currentYear, currentYear - 1, currentYear - 2, currentYear - 3];
-  const [selectedYear, setSelectedYear] = useState("last");
+  const [selectedYear, setSelectedYear] = useState(currentYear);
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-20">
