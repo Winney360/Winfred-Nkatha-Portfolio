@@ -89,8 +89,8 @@ const Skills = () => {
             ))}
           </div>
 
-          <div className="mx-auto w-full max-w-96 pt-1 lg:mx-0 lg:justify-self-start">
-            <div className="relative mx-auto h-96 w-[420px] origin-center scale-110 lg:scale-115">
+          <div className="mx-auto w-full max-w-96 pt-1 lg:mx-0 lg:justify-self-start lg:-ml-40">
+            <div className="relative mx-auto h-96 w-105 origin-center scale-110 lg:scale-115">
               <div className="absolute left-1/2 top-1/2 h-61 w-61 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/18" />
               <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/35 bg-[#141b3f]/95 shadow-[0_0_45px_rgba(168,85,247,0.52)]" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
