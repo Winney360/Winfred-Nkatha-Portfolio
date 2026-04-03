@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { GitHubCalendar } from "react-github-calendar";
@@ -23,6 +23,10 @@ const githubDarkTheme = {
 };
 
 const SocialProof = () => {
+  const currentYear = new Date().getFullYear();
+  const yearOptions = ["last", currentYear, currentYear - 1, currentYear - 2, currentYear - 3];
+  const [selectedYear, setSelectedYear] = useState("last");
+
   return (
     <section className="max-w-6xl mx-auto px-4 py-20">
       <motion.h2
@@ -62,24 +66,48 @@ const SocialProof = () => {
           transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
           className="rounded-2xl border border-[#30363d] bg-[#0d1117] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
         >
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between gap-3 mb-4">
             <h3 className="text-[#c9d1d9] text-sm font-semibold">Contribution graph</h3>
-            <FaGithub className="text-[#8b949e] text-base" />
+
+            <div className="flex items-center gap-2">
+              <label htmlFor="github-year" className="text-[11px] text-[#8b949e]">
+                Year
+              </label>
+              <select
+                id="github-year"
+                value={selectedYear}
+                onChange={(e) =>
+                  setSelectedYear(e.target.value === "last" ? "last" : Number(e.target.value))
+                }
+                className="h-7 rounded-md border border-[#30363d] bg-[#010409] px-2 text-[11px] text-[#c9d1d9] outline-none focus:border-[#58a6ff]"
+              >
+                {yearOptions.map((year) => (
+                  <option key={year} value={year}>
+                    {year === "last" ? "Last 12 months" : year}
+                  </option>
+                ))}
+              </select>
+              <FaGithub className="text-[#8b949e] text-base" />
+            </div>
           </div>
 
-          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-x-auto">
+          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-hidden [&_svg]:w-full [&_svg]:h-auto">
             <GitHubCalendar
               username={githubUsername}
+              year={selectedYear}
               colorScheme="dark"
               theme={githubDarkTheme}
-              blockSize={11}
-              blockMargin={4}
-              fontSize={12}
+              blockSize={10}
+              blockMargin={3}
+              fontSize={11}
               showColorLegend={false}
               showMonthLabels={true}
               showTotalCount={true}
               labels={{
-                totalCount: "{{count}} contributions in the last year",
+                totalCount:
+                  selectedYear === "last"
+                    ? "{{count}} contributions in the last year"
+                    : "{{count}} contributions in {{year}}",
               }}
             />
 
