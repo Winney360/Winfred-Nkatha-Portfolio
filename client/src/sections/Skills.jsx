@@ -67,13 +67,13 @@ const Skills = () => {
             {Object.entries(groupedSkills).map(([groupName, items]) => (
               <div key={groupName}>
                 <h3 className="mb-2 text-[20px] font-medium text-white">{groupName}</h3>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="flex flex-wrap gap-10">
                   {items.map((skill) => {
                     const Icon = skill.icon;
                     return (
                       <div
                         key={skill.name}
-                        className="group flex h-[7.5rem] w-[7.5rem] flex-col items-center justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-2 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+                        className="group flex h-[7.5rem] w-[7.5rem] flex-none flex-col items-center justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-2 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
                       >
                         {skill.isImage ? (
                           <img src={skill.icon} alt={skill.name} className="mb-1 h-8 w-8 object-contain" />
