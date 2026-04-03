@@ -5,32 +5,18 @@ import { FaGithub } from "react-icons/fa";
 const testimonials = [
   {
     name: "Alex Johnson",
-    title: "CTO, StartupHub",
     quote:
-      "A rare blend of engineering precision and design sense. Delivered our analytics dashboard ahead of schedule and exceeded all expectations.",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      "Seamless delivery and technical depth. The product quality was above our expectations from day one.",
   },
   {
-    name: "Priya Patel",
-    title: "Lead Designer, TeamX",
+    name: "Ava Chen",
     quote:
-      "Transformed our product’s UI/UX. Collaboration was seamless and the results were world-class.",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Michael Lee",
-    title: "Mentor & Senior Engineer",
-    quote:
-      "Consistently delivers high-impact solutions. A true problem solver with a passion for quality.",
-    avatar: "https://randomuser.me/api/portraits/men/65.jpg",
+      "Strong ownership, clear communication, and clean execution. The implementation was reliable and fast.",
   },
 ];
 
-const githubStats = {
-  contributions: "1,200+ commits in 2025",
-  stars: "350+ repo stars",
-  followers: "500+ followers",
-};
+const githubUsername = "Winney360";
+const githubGraphUrl = `https://ghchart.rshah.org/${githubUsername}`;
 
 const SocialProof = () => {
   return (
@@ -40,53 +26,71 @@ const SocialProof = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.7 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-3xl md:text-4xl font-bold text-white mb-12 text-center"
+        className="text-3xl md:text-4xl font-bold text-white mb-10"
       >
         Social Proof
       </motion.h2>
-      {/* Testimonials */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {testimonials.map((t, idx) => (
-          <motion.div
-            key={t.name}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-8 flex flex-col items-center text-center backdrop-blur-xl"
-          >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="rounded-2xl border border-slate-700/80 bg-gradient-to-b from-slate-900/95 to-[#081326] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
+        >
+          {testimonials.map((t, idx) => (
+            <div key={t.name}>
+              <div className="text-amber-300 text-xs tracking-[0.18em] mb-2">★★★★★</div>
+              <p className="text-slate-200/90 text-sm leading-relaxed">{t.quote}</p>
+              <div className="mt-3 flex items-center gap-2 text-slate-300 text-xs">
+                <span className="h-6 w-6 rounded-full bg-slate-700" />
+                <span>{t.name}</span>
+              </div>
+              {idx !== testimonials.length - 1 && <div className="my-4 h-px bg-slate-700/60" />}
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
+          className="rounded-2xl border border-slate-700/80 bg-gradient-to-b from-slate-900/95 to-[#081326] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
+        >
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-slate-100 text-sm font-semibold">Contribution graphs</h3>
+            <FaGithub className="text-slate-300 text-base" />
+          </div>
+
+          <div className="mb-4 rounded-lg border border-slate-700/70 bg-slate-950/40 p-2">
             <img
-              src={t.avatar}
-              alt={t.name}
-              className="w-16 h-16 rounded-full mb-4 border-2 border-purple-700 object-cover"
+              src={githubGraphUrl}
+              alt={`${githubUsername} GitHub contribution graph`}
+              className="w-full rounded-md"
+              loading="lazy"
+              referrerPolicy="no-referrer"
             />
-            <div className="text-white font-semibold text-lg mb-1">{t.name}</div>
-            <div className="text-purple-400 text-xs mb-2">{t.title}</div>
-            <div className="text-purple-200 text-sm italic">“{t.quote}”</div>
-          </motion.div>
-        ))}
+          </div>
+
+          <div className="flex items-center justify-between text-[10px] text-slate-400">
+            <span>Less</span>
+            <span>More</span>
+          </div>
+
+          <div className="mt-5 rounded-lg border border-slate-700/70 bg-slate-950/50 px-3 py-2 text-xs text-slate-300">
+            <a
+              href={`https://github.com/${githubUsername}`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 hover:text-slate-100 transition-colors"
+            >
+              <FaGithub className="text-sm" />
+              View full profile activity
+            </a>
+          </div>
+        </motion.div>
       </div>
-      {/* GitHub Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="flex flex-col md:flex-row items-center justify-center gap-8"
-      >
-        <div className="flex items-center gap-3 bg-black/40 border border-purple-900/40 rounded-xl px-6 py-4 shadow-md">
-          <FaGithub className="text-white text-2xl" />
-          <div className="text-purple-200 text-sm font-medium">{githubStats.contributions}</div>
-        </div>
-        <div className="flex items-center gap-3 bg-black/40 border border-purple-900/40 rounded-xl px-6 py-4 shadow-md">
-          <FaGithub className="text-white text-2xl" />
-          <div className="text-purple-200 text-sm font-medium">{githubStats.stars}</div>
-        </div>
-        <div className="flex items-center gap-3 bg-black/40 border border-purple-900/40 rounded-xl px-6 py-4 shadow-md">
-          <FaGithub className="text-white text-2xl" />
-          <div className="text-purple-200 text-sm font-medium">{githubStats.followers}</div>
-        </div>
-      </motion.div>
     </section>
   );
 };
