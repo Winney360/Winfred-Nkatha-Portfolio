@@ -91,7 +91,7 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
-          className="rounded-2xl border border-[#30363d] bg-[#0d1117] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
+          className="rounded-2xl border border-violet-500/30 bg-linear-to-b from-[#190d2e] to-[#10081d] p-5 shadow-[0_10px_35px_rgba(76,29,149,.35)]"
         >
           <div className="flex items-center justify-between gap-3 mb-4">
             <h3 className="text-[#c9d1d9] text-sm font-semibold">Contribution graph</h3>
@@ -118,7 +118,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-visible text-[#8b949e] [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#8b949e]">
+          <div className="mb-4 rounded-lg border border-violet-500/25 bg-[#120a22] px-3 pt-3 pb-2 overflow-visible text-violet-200/75 [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#c4b5fd]">
             <GitHubCalendar
               username={githubUsername}
               year={selectedYear}
@@ -130,7 +130,7 @@ const SocialProof = () => {
               showColorLegend={false}
               showMonthLabels={true}
               showTotalCount={true}
-              style={{ color: "#8b949e" }}
+              style={{ color: "#c4b5fd" }}
               tooltips={{
                 activity: {
                   text: (activity) =>
@@ -145,7 +145,7 @@ const SocialProof = () => {
               }}
             />
 
-            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-[#7d8590]">
+            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-violet-300/70">
               <span className="mr-0.5">Less</span>
               {githubDarkTheme.dark.map((color) => (
                 <span
@@ -158,7 +158,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mt-2 rounded-lg border border-[#30363d] bg-[#010409] px-3 py-2 text-xs text-[#8b949e]">
+          <div className="mt-2 rounded-lg border border-violet-500/25 bg-[#0f081b] px-3 py-2 text-xs text-violet-200/75">
             <a
               href={`https://github.com/${githubUsername}`}
               target="_blank"
