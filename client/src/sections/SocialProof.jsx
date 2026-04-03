@@ -34,6 +34,26 @@ const SocialProof = () => {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-20">
+      <style>{`
+        .react-activity-calendar__tooltip {
+          background: linear-gradient(135deg, #2a1240 0%, #3f1a63 100%) !important;
+          color: #f3e8ff !important;
+          border: 1px solid #7e22ce !important;
+          box-shadow: 0 10px 30px rgba(76, 29, 149, 0.45) !important;
+          z-index: 9999 !important;
+        }
+
+        .react-activity-calendar__tooltip[data-color-scheme='dark'] {
+          background: linear-gradient(135deg, #2a1240 0%, #3f1a63 100%) !important;
+          color: #f3e8ff !important;
+        }
+
+        .react-activity-calendar__tooltip .react-activity-calendar__tooltip-arrow,
+        .react-activity-calendar__tooltip[data-color-scheme='dark'] .react-activity-calendar__tooltip-arrow {
+          fill: #3f1a63 !important;
+        }
+      `}</style>
+
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +116,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-hidden text-[#8b949e] [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#8b949e]">
+          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-visible text-[#8b949e] [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#8b949e]">
             <GitHubCalendar
               username={githubUsername}
               year={selectedYear}
@@ -109,6 +129,12 @@ const SocialProof = () => {
               showMonthLabels={true}
               showTotalCount={true}
               style={{ color: "#8b949e" }}
+              tooltips={{
+                activity: {
+                  text: (activity) =>
+                    `${activity.count} contribution${activity.count === 1 ? "" : "s"}`,
+                },
+              }}
               labels={{
                 totalCount:
                   selectedYear === "last"
