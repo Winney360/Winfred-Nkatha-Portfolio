@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
-import assignmentPreview from "../assets/projects/Asssignment.png";
+import assignmentPreview from "../assets/projects/Assignment.png";
 import commitPreview from "../assets/projects/commit.png";
+import crochetPreview from "../assets/projects/crochet.png";
+import cropPreview from "../assets/projects/crop.png";
+import unsaidPreview from "../assets/projects/unsaid.png";
+import resumePreview from "../assets/projects/resume.png";
 import {
   SiChartdotjs,
   SiExpress,
@@ -26,7 +30,7 @@ const projectsData = [
     impact: "Improved assignment access for students and streamlined distribution for teachers.",
     live: "https://assignment-hub-eight.vercel.app",
     github: "https://github.com/Winney360/Assignment-hub.git",
-    category: "Full Stack",
+    categories: ["Full Stack"],
     accent: "from-[#5b5ef7] via-[#7e4cff] to-[#c08dff]",
   },
   {
@@ -38,55 +42,55 @@ const projectsData = [
     impact: "Improved user consistency and habit-building.",
     live: "https://daily-commit-theta.vercel.app/",
     github: "https://github.com/Winney360/dailyCommit.git",
-    category: "Full Stack",
+    categories: ["Full Stack"],
     accent: "from-[#32204d] via-[#4a2a73] to-[#8a63be]",
   },
   {
-    title: "Flow Ledger: Finance Workspace",
-    description: "Clean transaction and report interface with role-based admin tools.",
-    image: "",
-    imageAlt: "Flow Ledger preview",
-    tech: ["React", "Vite", "Tailwind CSS"],
-    impact: "Cut monthly close cycle by 2 days with process automation.",
-    live: "#",
-    github: "#",
-    category: "Frontend",
+    title: "Crochet Portfolio & Management Platform",
+    description: "A responsive website designed to showcase crochet designs and enhance the client’s online presence.",
+    image: crochetPreview,
+    imageAlt: "Crochet Portfolio preview",
+    tech: ["React", "Vite", "Tailwind CSS", "Express", ""],
+    impact: "Improved visibility and streamlined content and staff management.",
+    live: "https://shikuku-crochet.vercel.app/",
+    github: "https://github.com/Winney360/Crochet.git",
+    categories: ["Frontend","Full Stack"],
     accent: "from-[#f5efff] via-[#e7d8ff] to-[#c9a5ff]",
   },
   {
-    title: "Pulse CRM: AI-Powered Platform",
-    description: "Pipeline management suite with scoring, reminders, and collaboration.",
-    image: "",
-    imageAlt: "Pulse CRM preview",
-    tech: ["Next.js", "Supabase", "Tailwind CSS"],
-    impact: "Raised lead conversion by 19% through predictive recommendations.",
-    live: "#",
-    github: "#",
-    category: "Frontend",
+    title: "CropConnect : Agriculture Platform",
+    description: "A platform designed to connect farmers with markets and improve access to agricultural resources.",
+    image: cropPreview,
+    imageAlt: "CropConnect preview",
+    tech: ["React", "MongoDB", "Tailwind CSS"],
+    impact: "Improved market access and streamlined communication between farmers and buyers.",
+    live: "https://agri-flow-ten.vercel.app/",
+    github: "https://github.com/Winney360/AgriFlow.git",
+    categories: ["Full Stack"],
     accent: "from-[#6456df] via-[#8d6cfb] to-[#c0a7ff]",
   },
   {
-    title: "Nimbus Market: AI Campaign Studio",
-    description: "Marketing command center for campaign setup and performance tracking.",
-    image: "",
-    imageAlt: "Nimbus Market preview",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    impact: "Reduced campaign setup time by 35% for growth teams.",
-    live: "#",
-    github: "#",
-    category: "AI",
+    title: "UNSAID : Emotional Translation Platform",
+    description: "An AI-powered platform that translates raw emotions into clear, respectful communication to help users express themselves effectively.",
+    image: unsaidPreview,
+    imageAlt: "UNSAID preview",
+    tech: ["React", "Node.js", "PostgreSQL", "google-generative-ai"],
+    impact: "Improved emotional clarity and enabled safer, more structured communication.",
+    live: "https://unsaid-green.vercel.app/",
+    github: "https://github.com/Winney360/Unsaid.git",
+    categories: ["AI"],
     accent: "from-[#eee4ff] via-[#d8c2ff] to-[#ad8cef]",
   },
   {
-    title: "Orbit Ops: Workflow Console",
-    description: "Operational cockpit with queue monitoring and alert triage workflows.",
-    image: "",
-    imageAlt: "Orbit Ops preview",
-    tech: ["React", "Express", "Redis"],
-    impact: "Dropped critical incident response times by 42%.",
-    live: "#",
-    github: "#",
-    category: "AI",
+    title: "Resume Matcher : AI Resume Matching System",
+    description: "An AI-powered system that matches resumes to job descriptions based on semantic similarity and relevance.",
+    image: resumePreview,
+    imageAlt: "Resume Matcher preview",
+    tech: ["HTML","CSS",  "python", "TensorFlow"],
+    impact: "Enhanced hiring efficiency through intelligent resume-to-job matching.",
+    live: "https://www.loom.com/share/89ffd0ec4ac24f2f9fb45f3b6225fb99?sid=743ae42e-4231-4e82-bd04-f2be17f53eb4",
+    github: "https://github.com/ireneiroha/Building_AI_Powered_Job_Description_and_Resume_Matching_System.git",
+    categories: ["AI"],
     accent: "from-[#2a1d40] via-[#3b255e] to-[#7d5fc2]",
   },
 ];
@@ -128,7 +132,10 @@ const Projects = () => {
   const filtered =
     selected === "All"
       ? projectsData
-      : projectsData.filter((p) => p.category === selected);
+      : projectsData.filter((p) => {
+          const assignedCategories = p.categories || (p.category ? [p.category] : []);
+          return assignedCategories.includes(selected);
+        });
 
   return (
     <section
