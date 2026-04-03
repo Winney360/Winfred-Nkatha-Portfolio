@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import { GitHubCalendar } from "react-github-calendar";
 
 const testimonials = [
   {
@@ -16,7 +17,10 @@ const testimonials = [
 ];
 
 const githubUsername = "Winney360";
-const githubGraphUrl = `https://ghchart.rshah.org/${githubUsername}`;
+
+const githubDarkTheme = {
+  dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+};
 
 const SocialProof = () => {
   return (
@@ -56,34 +60,36 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
-          className="rounded-2xl border border-slate-700/80 bg-gradient-to-b from-slate-900/95 to-[#081326] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
+          className="rounded-2xl border border-[#30363d] bg-[#0d1117] p-5 shadow-[0_10px_35px_rgba(2,8,23,.45)]"
         >
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-slate-100 text-sm font-semibold">Contribution graphs</h3>
-            <FaGithub className="text-slate-300 text-base" />
+            <h3 className="text-[#c9d1d9] text-sm font-semibold">Contribution graph</h3>
+            <FaGithub className="text-[#8b949e] text-base" />
           </div>
 
-          <div className="mb-4 rounded-lg border border-slate-700/70 bg-slate-950/40 p-2">
-            <img
-              src={githubGraphUrl}
-              alt={`${githubUsername} GitHub contribution graph`}
-              className="w-full rounded-md"
-              loading="lazy"
-              referrerPolicy="no-referrer"
+          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] p-3 overflow-x-auto">
+            <GitHubCalendar
+              username={githubUsername}
+              colorScheme="dark"
+              theme={githubDarkTheme}
+              blockSize={11}
+              blockMargin={4}
+              fontSize={12}
+              hideColorLegend={false}
+              hideMonthLabels={false}
+              hideTotalCount={false}
+              labels={{
+                totalCount: "{{count}} contributions in the last year",
+              }}
             />
           </div>
 
-          <div className="flex items-center justify-between text-[10px] text-slate-400">
-            <span>Less</span>
-            <span>More</span>
-          </div>
-
-          <div className="mt-5 rounded-lg border border-slate-700/70 bg-slate-950/50 px-3 py-2 text-xs text-slate-300">
+          <div className="mt-2 rounded-lg border border-[#30363d] bg-[#010409] px-3 py-2 text-xs text-[#8b949e]">
             <a
               href={`https://github.com/${githubUsername}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 hover:text-slate-100 transition-colors"
+              className="inline-flex items-center gap-2 hover:text-[#c9d1d9] transition-colors"
             >
               <FaGithub className="text-sm" />
               View full profile activity
