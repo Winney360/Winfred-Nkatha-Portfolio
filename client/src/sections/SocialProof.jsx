@@ -67,7 +67,7 @@ const SocialProof = () => {
             <FaGithub className="text-[#8b949e] text-base" />
           </div>
 
-          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] p-3 overflow-x-auto">
+          <div className="mb-4 rounded-lg border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-x-auto">
             <GitHubCalendar
               username={githubUsername}
               colorScheme="dark"
@@ -75,13 +75,25 @@ const SocialProof = () => {
               blockSize={11}
               blockMargin={4}
               fontSize={12}
-              hideColorLegend={false}
-              hideMonthLabels={false}
-              hideTotalCount={false}
+              showColorLegend={false}
+              showMonthLabels={true}
+              showTotalCount={true}
               labels={{
                 totalCount: "{{count}} contributions in the last year",
               }}
             />
+
+            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-[#7d8590]">
+              <span className="mr-0.5">Less</span>
+              {githubDarkTheme.dark.map((color) => (
+                <span
+                  key={color}
+                  className="h-[9px] w-[9px] rounded-[2px]"
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+              <span className="ml-0.5">More</span>
+            </div>
           </div>
 
           <div className="mt-2 rounded-lg border border-[#30363d] bg-[#010409] px-3 py-2 text-xs text-[#8b949e]">
