@@ -73,7 +73,7 @@ const Skills = () => {
                     return (
                       <div
                         key={skill.name}
-                        className="group flex h-30 w-30 flex-none flex-col items-center justify-center rounded-xl border border-indigo-200/15 bg-[#111733]/80 p-2 shadow-lg shadow-black/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
+                        className="group flex h-30 w-30 flex-none flex-col items-center justify-center rounded-xl border border-violet-300/20 bg-[#221238]/72 p-2 shadow-lg shadow-black/25 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
                       >
                         {skill.isImage ? (
                           <img src={skill.icon} alt={skill.name} className="mb-1 h-8 w-8 object-contain" />
@@ -92,7 +92,7 @@ const Skills = () => {
           <div className="mx-auto w-full max-w-96 pt-1 lg:mx-0 lg:justify-self-start lg:-ml-40">
             <div className="relative mx-auto h-96 w-105 origin-center scale-110 lg:scale-115">
               <div className="absolute left-1/2 top-1/2 h-61 w-61 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/18" />
-              <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/35 bg-[#141b3f]/95 shadow-[0_0_45px_rgba(168,85,247,0.52)]" />
+              <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/40 bg-[#2a1545]/92 shadow-[0_0_55px_rgba(168,85,247,0.58)]" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
                 <p className="text-[14px] font-bold leading-none text-white">Intermediate</p>
               </div>
@@ -102,7 +102,7 @@ const Skills = () => {
                 return (
                   <div
                     key={node.label}
-                    className={`absolute ${node.pos} flex h-22 w-22 flex-col items-center justify-center border border-violet-300/22 bg-[#121737]/85 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
+                    className={`absolute ${node.pos} flex h-22 w-22 flex-col items-center justify-center border border-violet-300/28 bg-[#24133b]/82 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
                   >
                     {node.isImage ? (
                       <img src={node.icon} alt={node.label} className="mb-1 h-5 w-5 object-contain" />
