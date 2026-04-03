@@ -90,7 +90,7 @@ const Contact = () => {
           <div className="mt-8 space-y-4 text-sm text-white/80">
             <a href="mailto:nkathawinnie94@gmail.com" className="flex items-center gap-3 transition-colors hover:text-white">
               <FaEnvelope className="text-[#c9b3ff]" />
-              <span>alexcen.github.com</span>
+              <span>nkathawinnie94@gmail.com</span>
             </a>
 
             <div className="flex items-center gap-4 pt-1 text-white/75">
