@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const socialLinks = [
   {
@@ -21,6 +26,7 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
@@ -30,12 +36,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate async send
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("loading");
-    setTimeout(() => {
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
-    }, 1200);
+
+    emailjs
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      })
+      .then(() => {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        if (formRef.current) {
+          formRef.current.reset();
+        }
+      })
+      .catch(() => {
+        setStatus("error");
+      });
   };
 
   return (
@@ -101,6 +123,7 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
             onSubmit={handleSubmit}
+            ref={formRef}
             className="space-y-4"
           >
             <div>
@@ -156,7 +179,7 @@ const Contact = () => {
               disabled={status === "loading"}
               className="h-11 w-full bg-linear-to-r from-[#7c3aed] to-[#a855f7] text-sm font-medium text-white shadow-[0_10px_28px_rgba(124,58,237,0.35)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {status === "loading" ? "Sending..." : "Contact"}
+              {status === "loading" ? "Sending..." : status === "success" ? "Sent!" : status === "error" ? "Try again" : "Contact"}
             </button>
           </motion.form>
         </div>
