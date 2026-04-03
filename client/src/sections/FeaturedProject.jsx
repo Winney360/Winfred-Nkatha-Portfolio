@@ -6,8 +6,8 @@ const FeaturedProject = () => {
   return (
     <section className="relative w-full min-h-screen mt-0 mb-0 px-4 md:px-8 pb-15 md:pb-28 z-10 bg-linear-to-b from-[#0a0d1f] to-[#060812]">
       <div className="mb-4 mt-0 ml-4">
-        <h2 className="text-white text-2xl md:text-3xl font-bold leading-tight">Featured Project Case Study</h2>
-        <p className="text-slate-300/90 text-sm mt-1 ">Breakdown snippet with realistic application to case study.</p>
+        <h2 className="text-white text-2xl md:text-3xl font-bold leading-tight">Featured Project : Crochet Website</h2>
+        <p className="text-slate-300/90 text-sm mt-1 ">A modern, responsive website designed to showcase crochet designs and enhance the client’s online presence, making their work accessible to a wider audience.</p>
       </div>
 
       <motion.div
@@ -32,19 +32,21 @@ const FeaturedProject = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 w-full border-t border-white/20 bg-black/25 md:divide-x md:divide-white/20">
             <div className="p-4 md:p-5">
             <h3 className="text-white text-xs md:text-sm font-bold uppercase tracking-wide">The Problem</h3>
-            <p className="text-slate-300 text-sm mt-2 leading-relaxed">Reducing financial reporting complexity for small businesses.</p>
+            <p className="text-slate-300 text-sm mt-2 leading-relaxed">A modern, responsive website designed to showcase crochet designs and enhance the client’s online presence, making their work accessible to a wider audience.</p>
             </div>
 
             <div className="p-4 md:p-5">
               <h3 className="text-white text-xs md:text-sm font-bold uppercase tracking-wide">The Solution</h3>
-              <p className="text-slate-300 text-sm mt-2 leading-relaxed">React + Node.js dashboard with interactive charts.</p>
+              <p className="text-slate-300 text-sm mt-2 leading-relaxed">A React-based responsive website built to display crochet designs in a clean, visually appealing layout, along with an admin panel for managing staff and content.</p>
             </div>
 
             <div className="p-4 md:p-5">
               <h3 className="text-white text-xs md:text-sm font-bold uppercase tracking-wide">Measurable Impact</h3>
               <div className="text-slate-300 text-sm mt-2 leading-relaxed space-y-1">
-                <p>- Reduced lead time by 40%</p>
-                <p>- Automated reporting saving 10 hours/week</p>
+                <p>- Increased online visibility and user engagement</p>
+                <p>- Improved usability and interaction with the platform</p>
+                <p>- Reduced staff workload through the admin panel</p>
+                <p></p>
               </div>
             </div>
           </div>
