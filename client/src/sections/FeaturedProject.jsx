@@ -4,9 +4,9 @@ import featuredImg from "../assets/featured.png";
 
 const FeaturedProject = () => {
   return (
-    <section className="relative w-full min-h-screen mt-0 mb-0 px-4 md:px-8 pb-15 md:pb-28 z-10 bg-linear-to-b from-[#0a0d1f] to-[#060812]">
+    <section className="relative w-full min-h-screen mt-0 mb-0 px-4 md:px-8 pt-10 md:pt-14 pb-15 md:pb-28 z-10 bg-linear-to-b from-[#0a0d1f] to-[#060812]">
       <div className="mb-4 mt-0 ml-4">
-        <h2 className="text-white text-2xl md:text-3xl font-bold leading-tight">Featured Project : Crochet Website</h2>
+        <h2 className="text-white text-2xl md:text-3xl font-bold leading-tight ">Featured Project : Crochet Website</h2>
         <p className="text-slate-300/90 text-sm mt-1 ">A modern, responsive website designed to showcase crochet designs and enhance the client’s online presence, making their work accessible to a wider audience.</p>
       </div>
 
