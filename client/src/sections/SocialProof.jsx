@@ -78,7 +78,9 @@ const SocialProof = () => {
               <div className="text-amber-300 text-xs tracking-[0.18em] mb-2">★★★★★</div>
               <p className="text-slate-200/90 text-sm leading-relaxed">{t.quote}</p>
               <div className="mt-3 flex items-center gap-2 text-slate-300 text-xs">
-                <span className="h-6 w-6 rounded-full bg-slate-700" />
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-700 text-[11px] font-semibold text-slate-100">
+                  {t.name.trim().charAt(0).toUpperCase()}
+                </span>
                 <span>{t.name}</span>
               </div>
               {idx !== testimonials.length - 1 && <div className="my-4 h-px bg-slate-700/60" />}
