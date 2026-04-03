@@ -6,17 +6,17 @@ const socialLinks = [
   {
     icon: <FaGithub className="text-white text-xl" />,
     label: "GitHub",
-    url: "https://github.com/yourusername",
+    url: "https://github.com/Winney360",
   },
   {
     icon: <FaLinkedin className="text-blue-400 text-xl" />,
     label: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/winfred-nkatha-858023261",
   },
   {
     icon: <FaWhatsapp className="text-green-400 text-xl" />,
     label: "WhatsApp",
-    url: "https://wa.me/1234567890",
+    url: "https://wa.me/254791995578",
   },
 ];
 
@@ -39,80 +39,131 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="max-w-3xl mx-auto px-4 py-20">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
-      >
-        Let’s build something impactful together.
-      </motion.h2>
-      <motion.form
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        onSubmit={handleSubmit}
-        className="bg-linear-to-br from-[#1a0826]/80 to-[#2d0a4b]/80 rounded-2xl border border-purple-900/40 shadow-lg p-8 flex flex-col gap-5 backdrop-blur-xl"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-          className="px-5 py-3 rounded-lg bg-black/40 border border-purple-700/30 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          value={form.email}
-          onChange={handleChange}
-          required
-          className="px-5 py-3 rounded-lg bg-black/40 border border-purple-700/30 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
-        />
-        <textarea
-          name="message"
-          placeholder="Message"
-          value={form.message}
-          onChange={handleChange}
-          required
-          rows={5}
-          className="px-5 py-3 rounded-lg bg-black/40 border border-purple-700/30 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
-        />
-        <button
-          type="submit"
-          className="px-7 py-3 rounded-xl bg-linear-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-xl hover:scale-105 hover:shadow-purple-500/40 transition-transform text-lg disabled:opacity-60"
-          disabled={status === "loading"}
+    <section id="contact" className="relative overflow-hidden bg-[#05020a] px-4 py-20 md:px-8">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-white/5 to-transparent" />
+        <div className="absolute left-1/3 top-8 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[100px]" />
+        <div className="absolute -bottom-20 right-0 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[120px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="overflow-hidden rounded-[28px] border border-white/10 bg-linear-to-r from-[#140d22] via-[#1b0f2d] to-[#2a1244] shadow-[0_24px_80px_rgba(10,6,20,0.75)]"
         >
-          {status === "loading" ? "Sending..." : status === "success" ? "Sent!" : "Send Message"}
-        </button>
-      </motion.form>
-      <div className="flex flex-col items-center mt-10 gap-2">
-        <div className="text-purple-300 text-sm mb-2">Or reach out directly:</div>
-        <div className="flex gap-4 mb-2">
-          <a href="mailto:developer@email.com" className="flex items-center gap-2 text-purple-200 hover:text-white transition-colors">
-            <FaEnvelope className="text-xl" /> developer@email.com
-          </a>
-        </div>
-        <div className="flex gap-6 mt-2">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:scale-110 transition-transform"
-              aria-label={link.label}
-            >
-              {link.icon}
-            </a>
-          ))}
-        </div>
+          <div className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
+            <div className="p-6 md:p-8 lg:p-10">
+              <div className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#b58cff]">
+                Contact
+              </div>
+              <h2 className="mt-2 max-w-md text-3xl font-semibold leading-[1.05] text-white md:text-[2.75rem]">
+                Let’s build something impactful together.
+              </h2>
+              <p className="mt-4 max-w-sm text-sm leading-6 text-white/70 md:text-base">
+                Let&apos;s build something impactful.
+              </p>
+
+              <div className="mt-8 space-y-4 text-sm text-white/80">
+                <a href="mailto:nkathawinnie94@gmail.com" className="flex items-center gap-3 transition-colors hover:text-white">
+                  <FaEnvelope className="text-[#c9b3ff]" />
+                  <span>alexcen.github.com</span>
+                </a>
+
+                <div className="flex items-center gap-4 pt-1 text-white/75">
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-transform hover:scale-110"
+                      aria-label={link.label}
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-white/70">
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/15 text-[10px] text-[#c9b3ff]">
+                    ⓘ
+                  </span>
+                  <span>Calendly booking (optional)</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#120b1f]/55 p-6 md:p-8 lg:p-10">
+              <motion.form
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.65, ease: "easeOut" }}
+                onSubmit={handleSubmit}
+                className="space-y-4"
+              >
+                <div>
+                  <label className="mb-2 block text-sm text-white/90" htmlFor="name">
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    className="h-11 w-full rounded-lg border border-white/10 bg-black/45 px-4 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm text-white/90" htmlFor="email">
+                    Email <span className="text-[#d9c4ff]">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    className="h-11 w-full rounded-lg border border-white/10 bg-black/45 px-4 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm text-white/90" htmlFor="message">
+                    Messags
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Type your message..."
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="w-full resize-none rounded-lg border border-white/10 bg-black/45 px-4 py-3 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="h-11 w-full rounded-lg bg-linear-to-r from-[#7c3aed] to-[#a855f7] text-sm font-medium text-white shadow-[0_10px_28px_rgba(124,58,237,0.35)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {status === "loading" ? "Sending..." : "Contact"}
+                </button>
+              </motion.form>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
