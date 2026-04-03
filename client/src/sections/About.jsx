@@ -19,27 +19,25 @@ const About = () => {
       >
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
           <div className="md:order-2">
-            <h2 className="text-3xl font-bold text-white md:text-4xl">About</h2>
+            <h2 className="-mt-2 text-3xl font-bold text-white md:text-4xl">About</h2>
             <p className="mt-2 text-lg text-violet-100/95 md:text-xl">
-              A High-end Silicon Valley developer and frontend designer.
+              Full-Stack Developer specializing in frontend engineering and scalable web applications.
             </p>
 
             <div className="mt-7 space-y-4 text-sm leading-relaxed text-violet-200/85 md:text-base">
               <p>
-                I am obsessed with excellence in modern frontend development,
-                design systems, and high-performance user interfaces.
+                I design and build responsive, high-performance web applications using
+                React, Node.js, and modern web technologies, with a strong focus on user
+                experience and clean, maintainable code.
               </p>
               <p>
-                My engineering mindset and product-focused approach let me solve
-                complex problems while keeping every interaction polished,
-                accessible, and conversion-oriented.
+                I combine frontend development with backend understanding to build systems
+                that are scalable, efficient, and production-ready.
               </p>
               <p>
-                I blend frontend craftsmanship with backend awareness so products
-                remain scalable, maintainable, and fast in real-world use.
-              </p>
-              <p>
-                I help teams ship experiences users trust, enjoy, and return to.
+                My experience includes building full-stack applications, contributing to
+                community-driven platforms, and working in collaborative team environments
+                where I take ownership of features and delivery.
               </p>
             </div>
           </div>

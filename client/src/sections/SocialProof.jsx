@@ -5,14 +5,14 @@ import { GitHubCalendar } from "react-github-calendar";
 
 const testimonials = [
   {
-    name: "Alex Johnson",
+    name: "Shikuku",
     quote:
-      "Seamless delivery and technical depth. The product quality was above our expectations from day one.",
+       "Winfred did an outstanding job building my crochet website. The layout, responsiveness, and attention to detail went beyond my expectations, resulting in a product that felt professional and complete.",
   },
   {
-    name: "Ava Chen",
+    name: "Guild Code Community Lead",
     quote:
-      "Strong ownership, clear communication, and clean execution. The implementation was reliable and fast.",
+       "Winfred consistently demonstrates strong leadership and technical skill while handling backend development. They build well-structured and reliable systems that support the community platform effectively.",
   },
 ];
 
