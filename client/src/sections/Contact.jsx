@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative mx-auto overflow-hidden rounded-[28px] border border-white/10 bg-linear-to-r from-[#140d22] via-[#1b0f2d] to-[#2a1244] px-4 py-20 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:px-8">
+    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-linear-to-r from-[#140d22] via-[#1b0f2d] to-[#2a1244] px-4 py-20 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:px-8">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-white/5 to-transparent" />
         <div className="absolute left-1/3 top-8 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[100px]" />
@@ -86,7 +86,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center gap-2 text-sm text-white/70">
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/15 text-[10px] text-[#c9b3ff]">
+              <span className="inline-flex h-5 w-5 items-center justify-center border border-white/15 text-[10px] text-[#c9b3ff]">
                 ⓘ
               </span>
               <span>Calendly booking (optional)</span>
@@ -115,7 +115,7 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="h-11 w-full rounded-lg border border-white/10 bg-black/45 px-4 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
+                className="h-11 w-full border border-white/10 bg-black/45 px-4 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
               />
             </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="h-11 w-full rounded-lg border border-white/10 bg-black/45 px-4 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
+                className="h-11 w-full border border-white/10 bg-black/45 px-4 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
               />
             </div>
 
@@ -147,14 +147,14 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full resize-none rounded-lg border border-white/10 bg-black/45 px-4 py-3 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
+                className="w-full resize-none border border-white/10 bg-black/45 px-4 py-3 text-sm text-white placeholder-white/35 outline-none transition focus:border-[#b58cff]/60 focus:ring-2 focus:ring-[#b58cff]/25"
               />
             </div>
 
             <button
               type="submit"
               disabled={status === "loading"}
-              className="h-11 w-full rounded-lg bg-linear-to-r from-[#7c3aed] to-[#a855f7] text-sm font-medium text-white shadow-[0_10px_28px_rgba(124,58,237,0.35)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+              className="h-11 w-full bg-linear-to-r from-[#7c3aed] to-[#a855f7] text-sm font-medium text-white shadow-[0_10px_28px_rgba(124,58,237,0.35)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {status === "loading" ? "Sending..." : "Contact"}
             </button>
