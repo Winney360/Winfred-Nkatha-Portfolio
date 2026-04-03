@@ -9,23 +9,39 @@ const experience = [
     date: "Feb '24 2026 - Present",
     logo: "/guild.jpeg",
     description:
-      "Leading backend development as the sole backend engineer, building a scalable system for a community platform.",
+      "Leading backend development as a sole backend engineer, building a scalable system for a community platform.",
   },
   {
     role: "UI/UX Student",
     company: "FaithTech Digital Program",
     date: "Feb '26 – April '26",
-    logo: "",
+    logo: "/faith.png",
     description:
-      "Shipped internal tooling, streamlined onboarding flows, and delivered analytics views used by the team.",
+      "Currently developing UI/UX skills, focusing on user-centered design and modern interface principles.",
   },
   {
-    role: "Frontend Engineer",
-    company: "Freelance",
-    date: "Mar '22 – Jul '23",
-    logo: "",
+    role: "Leadership Fellow",
+    company: "Taifa Teule Experience (TLX)",
+    date: "Sep '25 – Dec '25",
+    logo: "/tlx.jpeg",
     description:
-      "Designed and delivered client-facing interfaces with a focus on clarity, responsiveness, and polish.",
+      "Engaged in a leadership program focused on building leadership capacity, collaboration, and personal growth within a community of emerging leaders",
+  },
+  {
+    role: "Software Development Fellow",
+    company: "Taifa Teule Experience (TLX)",
+    date: "Sep '25 – Dec '25",
+    logo: "/plp.png",
+    description:
+      "Completed hands-on training in the MERN stack while building full-stack applications and strengthening practical development skills.",
+  },
+  {
+    role: "BSc. Mathematics and Computer Science Student",
+    company: "Jomo Kenyatta University of Agriculture and Technology (JKUAT)",
+    date: "Sep '24 – Present",
+    logo: "/jkuat.png",
+    description:
+      "Pursuing a degree in Mathematics and Computer Science, building strong foundations in algorithms, programming, and analytical thinking.",
   },
 ];
 
