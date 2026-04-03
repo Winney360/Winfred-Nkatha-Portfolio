@@ -68,9 +68,9 @@ const Experience = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.45 }}
                   transition={{ delay: idx * 0.08, duration: 0.65, ease: "easeOut" }}
-                  className="relative grid items-center gap-4 md:grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] md:gap-6"
+                  className="relative grid items-start gap-4 md:grid-cols-2 md:gap-x-16"
                 >
-                  <div className={`order-2 md:order-none ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-3 md:justify-self-start"}`}>
+                  <div className={`order-2 md:order-none ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-2 md:justify-self-start"}`}>
                     <div className="mx-auto max-w-md">
                       <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-start md:flex-row-reverse" : "justify-start"}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
@@ -94,11 +94,7 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  <div className="relative order-1 mx-auto flex h-14 w-14 items-center justify-center md:order-none md:col-start-2">
-                    <span className="absolute h-3 w-3 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)]" />
-                  </div>
-
-                  <div className={`hidden md:block ${isLeft ? "md:col-start-3" : "md:col-start-1"}`} />
+                  <span className="pointer-events-none absolute left-1/2 top-3 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)] md:block" />
                 </motion.div>
               );
             })}
