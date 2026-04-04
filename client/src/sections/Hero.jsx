@@ -6,7 +6,7 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[88vh] overflow-hidden bg-black px-4 pb-6 pt-5 md:min-h-screen md:px-8 md:pb-12 md:pt-6">
+    <section className="relative min-h-[66vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:min-h-screen md:px-8 md:pb-12 md:pt-6">
       <div className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 md:px-8 md:pt-6">
         <nav className="relative rounded-xl border border-violet-300/15 bg-[#1a0a3e]/55 px-4 py-2 backdrop-blur-md md:px-6 md:py-3">
           <div className="flex items-center justify-between">
@@ -18,7 +18,6 @@ const Hero = () => {
                 <li><a href="#projects" className="transition-colors hover:text-white">Projects</a></li>
                 <li><a href="#skills" className="transition-colors hover:text-white">Skills</a></li>
                 <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
-                <li><a href="#contact" className="transition-colors hover:text-white">Contact</a></li>
               </ul>
 
               <a
@@ -68,7 +67,6 @@ const Hero = () => {
                 <li><a href="#projects" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Projects</a></li>
                 <li><a href="#skills" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Skills</a></li>
                 <li><a href="#experience" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Experience</a></li>
-                <li><a href="#contact" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Contact</a></li>
               </ul>
               <a
                 href="#contact"
