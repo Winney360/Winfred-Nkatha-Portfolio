@@ -89,19 +89,19 @@ const Hero = () => {
         <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-[#a855f7]/25 blur-[100px] opacity-60" />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 md:hidden">
-        <img src={heroImage} alt="" aria-hidden="true" className="h-full w-full object-cover object-center opacity-65" />
-        <div className="absolute inset-0 bg-linear-to-b from-black/45 via-black/60 to-black/80" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 top-auto h-[82%] md:hidden">
+        <img src={heroImage} alt="" aria-hidden="true" className="h-full w-full object-cover object-bottom opacity-65" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/35 via-black/60 to-black/85" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mt-12 w-full pt-14 ml-5 lg:pt-16 md:mt-15">
+      <div className="relative z-10 mt-12 w-full pt-14 ml-5 md:ml-0 md:mt-12 md:pt-12 lg:ml-5 lg:mt-15 lg:pt-16">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="z-10 w-full lg:w-3/4"
+              className="z-10 w-full md:w-3/4 lg:w-3/4"
             >
               <h1 className="text-balance text-[2.4rem] font-bold leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <motion.span 
@@ -164,7 +164,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:-bottom-48 md:h-screen md:w-1/2 md:-mr-16 lg:-bottom-64 lg:h-screen lg:w-1/2 lg:-mr-20"
+              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:-bottom-64 md:-mr-12 md:h-[92vh] md:w-[56%] lg:-bottom-64 lg:h-screen lg:w-1/2 lg:-mr-20"
             >
               {/* Image subtle purple glow */}
               <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
@@ -174,7 +174,7 @@ const Hero = () => {
               <motion.img
                 src={heroImage}
                 alt="3D Glowing Mesh Portfolio"
-                className="relative h-full w-full bg-transparent object-contain"
+                className="relative h-full w-full bg-transparent object-contain md:object-right-bottom"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
