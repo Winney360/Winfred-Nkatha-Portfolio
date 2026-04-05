@@ -174,7 +174,7 @@ const Hero = () => {
               <motion.img
                 src={heroImage}
                 alt="3D Glowing Mesh Portfolio"
-                className="relative h-full w-full bg-transparent object-contain md:object-right-bottom"
+                className="relative h-full w-full bg-transparent object-contain md:object-bottom-right"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
