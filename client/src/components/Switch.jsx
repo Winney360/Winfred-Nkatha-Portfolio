@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
 import React, { useEffect, useRef, useState } from 'react';
+import ThreeDButton from './ThreeDButton';
 
 const Switch = () => {
   const [status, setStatus] = useState('idle');
@@ -73,97 +72,15 @@ const Switch = () => {
     status === 'idle' ? 'Download Resume' : status === 'downloading' ? 'Downloading...' : 'Open';
 
   return (
-    <StyledWrapper>
-      <button
+    <ThreeDButton
         type="button"
-        className={`button ${status}`}
         onClick={handleClick}
         disabled={status === 'downloading'}
+        size="md"
       >
-        {status !== 'open' && (
-          <span className="circle" aria-hidden="true">
-            <svg className="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 19V5m0 14-4-4m4 4 4-4" />
-            </svg>
-          </span>
-        )}
-        <span className="title">{buttonText}</span>
-      </button>
-    </StyledWrapper>
+        {buttonText}
+    </ThreeDButton>
   );
 }
-
-const StyledWrapper = styled.div`
-  .button {
-    background-color: transparent;
-    border: 2px solid rgb(145, 67, 217);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    border-radius: 50px;
-    width: 132px;
-    height: 36px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    padding: 3px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .button.open {
-    justify-content: center;
-  }
-
-  .button:disabled {
-    cursor: default;
-  }
-
-  .button .title {
-    font-size: 9px;
-    color: #ddd6fe;
-    transition: all 0.4s ease;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .button.open .title {
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .button .circle {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: rgb(145, 67, 217);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s ease;
-    position: relative;
-    box-shadow: 0 0 0 0 rgb(255, 255, 255);
-    overflow: hidden;
-  }
-
-  .button .circle .icon {
-    color: #fff;
-    width: 20px;
-    transition: transform 0.4s ease;
-  }
-
-  .button.downloading .circle .icon {
-    animation: spin 0.9s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
 
 export default Switch;

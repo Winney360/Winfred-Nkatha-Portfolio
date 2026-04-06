@@ -25,6 +25,7 @@ import {
   SiVite,
   SiPython,
 } from "react-icons/si";
+import ThreeDButton from "../components/ThreeDButton";
 
 const projectsData = [
   {
@@ -184,17 +185,14 @@ const Projects = () => {
       {/* Filter Buttons */}
       <div className="mb-9 flex flex-wrap gap-2.5">
         {categories.map((cat) => (
-          <button
+          <ThreeDButton
             key={cat}
             onClick={() => setSelected(cat)}
-            className={`rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors
-              ${selected === cat
-                  ? "border-violet-300/40 bg-[#7c3aed] text-white"
-                  : "border-white/15 bg-[#1e1234]/90 text-slate-300 hover:bg-[#2a1947] hover:text-white"}
-            `}
+            size="xs"
+            active={selected === cat}
           >
             {cat}
-          </button>
+          </ThreeDButton>
         ))}
       </div>
       {/* Projects Grid */}
@@ -275,22 +273,24 @@ const Projects = () => {
               <p className="-mt-1 line-clamp-2 min-h-9 text-xs text-slate-400">{project.impact}</p>
 
               <div className="mt-auto flex gap-2 pt-2">
-                <a
+                <ThreeDButton
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#7c3aed] px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#8b5cf6]"
+                  size="xs"
+                  className="pair"
                 >
                   Live Demo <FaExternalLinkAlt className="text-[10px]" />
-                </a>
-                <a
+                </ThreeDButton>
+                <ThreeDButton
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition-colors hover:bg-white/10"
+                  size="xs"
+                  className="pair"
                 >
                   GitHub Repo <FaGithub className="text-sm" />
-                </a>
+                </ThreeDButton>
               </div>
             </div>
           </motion.div>

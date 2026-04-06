@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero.png";
 import Switch from "../components/Switch";
+import ThreeDButton from "../components/ThreeDButton";
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,12 +35,9 @@ const Hero = () => {
                 <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
               </ul>
 
-              <a
-                href="#contact"
-                className="hidden rounded-lg border border-violet-200/20 bg-linear-to-r from-[#e9dcff] to-[#c9b0ff] px-3 py-1.5 text-[10px] font-semibold text-[#1f0f47] shadow-md shadow-violet-900/25 md:inline-flex"
-              >
+              <ThreeDButton href="#contact" className="hidden md:inline-block" size="sm">
                 Contact Me
-              </a>
+              </ThreeDButton>
 
               <button
                 type="button"
@@ -82,13 +80,9 @@ const Hero = () => {
                 <li><a href="#skills" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Skills</a></li>
                 <li><a href="#experience" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Experience</a></li>
               </ul>
-              <a
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-violet-200/20 bg-linear-to-r from-[#e9dcff] to-[#c9b0ff] px-3 py-2 text-xs font-semibold text-[#1f0f47] shadow-md shadow-violet-900/25"
-              >
+              <ThreeDButton href="#contact" onClick={() => setIsMenuOpen(false)} className="mt-3" fullWidth>
                 Contact Me
-              </a>
+              </ThreeDButton>
             </motion.div>
           )}
         </nav>
@@ -145,12 +139,9 @@ const Hero = () => {
               </p>
 
               <div className="mt-10 flex items-center gap-2 sm:gap-4">
-                <a
-                  href="#projects"
-                  className="group whitespace-nowrap rounded-xl border border-violet-100/20 bg-linear-to-r from-[#e9dcff] to-[#d0b5ff] px-4 py-2.5 text-xs font-bold text-[#1f0f47] shadow-lg shadow-violet-700/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-violet-500/60 sm:px-7 sm:py-3 sm:text-sm"
-                >
+                <ThreeDButton href="#projects" className="whitespace-nowrap" size="md">
                   View My Work
-                </a>
+                </ThreeDButton>
                 <div className="flex justify-center">
                   <Switch />
                 </div>
