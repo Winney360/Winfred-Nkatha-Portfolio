@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero.png";
+import Switch from "../components/Switch";
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -150,13 +151,9 @@ const Hero = () => {
                 >
                   View My Work
                 </a>
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="whitespace-nowrap rounded-xl border border-violet-400/40 bg-violet-600/20 px-4 py-2.5 text-xs font-bold text-violet-100 transition-all duration-300 hover:border-violet-300/60 hover:bg-violet-600/35 hover:text-white sm:px-7 sm:py-3 sm:text-sm"
-                >
-                  Download Resume
-                </a>
+                <div className="flex justify-center">
+                  <Switch />
+                </div>
               </div>
 
               <motion.div
