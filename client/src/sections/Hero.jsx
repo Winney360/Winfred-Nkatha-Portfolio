@@ -10,7 +10,20 @@ const Hero = () => {
       <div className="fixed inset-x-0 top-0 z-50">
         <nav className="w-full border-b border-violet-300/15 bg-[#1a0a3e]/70 px-4 py-2 backdrop-blur-md md:px-8 md:py-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-violet-100 md:text-sm">Developer</span>
+            <span
+              className="inline-block w-32 leading-none text-[1.25rem] text-violet-200 md:w-44 md:text-[1.55rem] lg:w-52 lg:text-[1.75rem]"
+              style={{
+                fontFamily: '"Edwardian Script ITC", "Snell Roundhand", "Brush Script MT", "Segoe Script", cursive',
+                fontStyle: "italic",
+                letterSpacing: "0.04em",
+                transform: "scaleX(1.2)",
+                transformOrigin: "left center",
+                textShadow:
+                  "0 0 10px rgba(168, 85, 247, 0.65), 0 0 24px rgba(168, 85, 247, 0.55), 0 0 42px rgba(147, 51, 234, 0.45)",
+              }}
+            >
+              Winnie
+            </span>
 
             <div className="ml-auto flex items-center gap-8">
               <ul className="hidden items-center gap-8 text-[15px] text-violet-200/85 md:flex">
