@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import React, { useEffect, useRef, useState } from 'react';
 
 const Switch = () => {
-  const [isDownloaded, setIsDownloaded] = useState(false);
+  const [status, setStatus] = useState('idle');
   const resetTimerRef = useRef(null);
+  const RESUME_PATH = '/resume.pdf';
+  const RESUME_NAME = 'Winfred_Nkatha_Resume.pdf';
 
   useEffect(() => {
     return () => {
@@ -14,122 +16,125 @@ const Switch = () => {
     };
   }, []);
 
-  const handleClick = () => {
-    if (!isDownloaded) {
-      // Download the resume
+  const showOpenForFiveSeconds = () => {
+    if (resetTimerRef.current) {
+      clearTimeout(resetTimerRef.current);
+    }
+    resetTimerRef.current = setTimeout(() => {
+      setStatus('idle');
+    }, 5000);
+  };
+
+  const handleDownload = async () => {
+    if (status === 'downloading') {
+      return;
+    }
+
+    try {
+      setStatus('downloading');
+
+      const response = await fetch(RESUME_PATH, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error('Resume download failed');
+      }
+
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = '/resume.pdf';
-      link.download = 'Winfred_Nkatha_Resume.pdf';
+      link.href = blobUrl;
+      link.download = RESUME_NAME;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      setIsDownloaded(true);
+      window.URL.revokeObjectURL(blobUrl);
 
-      // Open appears after animation delay (3.5s), keep it visible for 5s, then reset.
-      if (resetTimerRef.current) {
-        clearTimeout(resetTimerRef.current);
-      }
-      resetTimerRef.current = setTimeout(() => {
-        setIsDownloaded(false);
-      }, 8500);
-    } else {
-      // Open the downloaded file
-      window.open('/resume.pdf', '_blank');
+      setStatus('open');
+      showOpenForFiveSeconds();
+    } catch {
+      // Fallback if fetch fails for any reason.
+      window.open(RESUME_PATH, '_blank');
+      setStatus('open');
+      showOpenForFiveSeconds();
     }
   };
 
+  const handleClick = () => {
+    if (status === 'idle') {
+      handleDownload();
+      return;
+    }
+
+    if (status === 'open') {
+      window.open(RESUME_PATH, '_blank');
+    }
+  };
+
+  const buttonText =
+    status === 'idle' ? 'Download Resume' : status === 'downloading' ? 'Downloading...' : 'Open';
+
   return (
     <StyledWrapper>
-      <div className="container">
-        <label className="label">
-          <input 
-            type="checkbox" 
-            className="input" 
-            onClick={handleClick}
-            checked={isDownloaded}
-            readOnly
-          />
-          <span className="circle"><svg className="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <button
+        type="button"
+        className={`button ${status}`}
+        onClick={handleClick}
+        disabled={status === 'downloading'}
+      >
+        {status !== 'open' && (
+          <span className="circle" aria-hidden="true">
+            <svg className="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 19V5m0 14-4-4m4 4 4-4" />
             </svg>
-            <div className="square" />
           </span>
-          <p className="title">Download Resume</p>
-          <p className="title">Open</p>
-        </label>
-      </div>
+        )}
+        <span className="title">{buttonText}</span>
+      </button>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  .container {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .label {
+  .button {
     background-color: transparent;
     border: 2px solid rgb(145, 67, 217);
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
     border-radius: 50px;
-    width: 160px;
+    width: 132px;
+    height: 36px;
     cursor: pointer;
     transition: all 0.4s ease;
-    padding: 5px;
-    position: relative;
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  .label::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    width: 8px;
-    height: 8px;
-    transition: all 0.4s ease;
-    border-radius: 100%;
-    margin: auto;
-    opacity: 0;
-    visibility: hidden;
+  .button.open {
+    justify-content: center;
   }
 
-  .label .input {
-    display: none;
+  .button:disabled {
+    cursor: default;
   }
 
-  .label .title {
-    font-size: 10px;
+  .button .title {
+    font-size: 9px;
     color: #ddd6fe;
     transition: all 0.4s ease;
-    position: absolute;
-    right: 18px;
-    bottom: 14px;
+    line-height: 1;
     text-align: center;
+    white-space: nowrap;
   }
 
-  .label .title:last-child {
-    font-size: 14px;
+  .button.open .title {
+    font-size: 12px;
     font-weight: 700;
   }
 
-  .label .title:last-child {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .label .circle {
-    height: 45px;
-    width: 45px;
+  .button .circle {
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     background-color: rgb(145, 67, 217);
     display: flex;
@@ -141,141 +146,24 @@ const StyledWrapper = styled.div`
     overflow: hidden;
   }
 
-  .label .circle .icon {
+  .button .circle .icon {
     color: #fff;
-    width: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.4s ease;
+    width: 20px;
+    transition: transform 0.4s ease;
   }
 
-  .label .circle .square {
-    aspect-ratio: 1;
-    width: 15px;
-    border-radius: 2px;
-    background-color: #fff;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.4s ease;
+  .button.downloading .circle .icon {
+    animation: spin 0.9s linear infinite;
   }
 
-  .label .circle::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: rgb(109, 40, 161);
-    width: 100%;
-    height: 0;
-    transition: all 0.4s ease;
-  }
-
-  .label:has(.input:checked) {
-    width: 57px;
-    animation: installed 0.4s ease 3.5s forwards;
-  }
-
-  .label:has(.input:checked)::before {
-    animation: rotate 3s ease-in-out 0.4s forwards;
-  }
-
-  .label .input:checked + .circle {
-    animation:
-      pulse 1s forwards,
-      circleDelete 0.2s ease 3.5s forwards;
-    rotate: 180deg;
-  }
-
-  .label .input:checked + .circle::before {
-    animation: installing 3s ease-in-out forwards;
-  }
-
-  .label .input:checked + .circle .icon {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .label .input:checked ~ .circle .square {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .label .input:checked ~ .title {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .label .input:checked ~ .title:last-child {
-    animation: showInstalledMessage 0.4s ease 3.5s forwards;
-  }
-
-  @keyframes pulse {
-    0% {
-      scale: 0.95;
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    70% {
-      scale: 1;
-      box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
-    }
-    100% {
-      scale: 0.95;
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-  }
-
-  @keyframes installing {
+  @keyframes spin {
     from {
-      height: 0;
+      transform: rotate(0deg);
     }
     to {
-      height: 100%;
+      transform: rotate(360deg);
     }
   }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(-90deg) translate(27px) rotate(0);
-      opacity: 1;
-      visibility: visible;
-    }
-    99% {
-      transform: rotate(270deg) translate(27px) rotate(270deg);
-      opacity: 1;
-      visibility: visible;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  @keyframes installed {
-    100% {
-      width: 150px;
-      border-color: rgb(145, 67, 217);
-    }
-  }
-
-  @keyframes circleDelete {
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  @keyframes showInstalledMessage {
-    100% {
-      opacity: 1;
-      visibility: visible;
-      right: 56px;
-    }
-  }`;
+`;
 
 export default Switch;
