@@ -6,7 +6,7 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[66vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:min-h-screen md:px-8 md:pb-12 md:pt-6">
+    <section className="relative min-h-[66vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:min-h-[82vh] md:px-8 md:pb-0 md:pt-6 lg:min-h-screen">
       <div className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 md:px-8 md:pt-6">
         <nav className="relative rounded-xl border border-violet-300/15 bg-[#1a0a3e]/55 px-4 py-2 backdrop-blur-md md:px-6 md:py-3">
           <div className="flex items-center justify-between">
@@ -95,7 +95,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mt-12 w-full pt-14 ml-5 md:ml-0 md:mt-12 md:pt-12 lg:ml-5 lg:mt-15 lg:pt-16">
+      <div className="relative z-10 mt-12 w-full pt-14 ml-5 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -164,7 +164,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:-bottom-64 md:-mr-12 md:h-[92vh] md:w-[56%] lg:-bottom-64 lg:h-screen lg:w-1/2 lg:-mr-20"
+              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:bottom-0 md:-mr-8 md:h-[76vh] md:w-[48%] lg:-bottom-20 lg:h-[88vh] lg:w-1/2 lg:-mr-16"
             >
               {/* Image subtle purple glow */}
               <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
@@ -174,7 +174,7 @@ const Hero = () => {
               <motion.img
                 src={heroImage}
                 alt="3D Glowing Mesh Portfolio"
-                className="relative h-full w-full bg-transparent object-contain md:object-bottom-right"
+                className="relative h-full w-full bg-transparent object-contain md:object-right-bottom"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
