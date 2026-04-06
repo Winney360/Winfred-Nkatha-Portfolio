@@ -63,7 +63,7 @@ const Skills = () => {
         <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">Skills</h2>
 
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-4">
-          <div className="space-y-4">
+          <div className="space-y-4 pr-6 md:pr-0">
             {Object.entries(groupedSkills).map(([groupName, items]) => (
               <div key={groupName}>
                 <h3 className="mb-2 text-[20px] font-medium text-white">{groupName}</h3>
