@@ -95,7 +95,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mt-12 w-full pt-14 ml-5 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
+      <div className="relative z-10 mt-12 w-full pt-14 ml-2 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
