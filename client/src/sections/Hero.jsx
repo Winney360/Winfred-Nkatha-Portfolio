@@ -35,9 +35,11 @@ const Hero = () => {
                 <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
               </ul>
 
-              <ThreeDButton href="#contact" className="hidden md:inline-block" size="sm">
-                Contact Me
-              </ThreeDButton>
+              <div className="hidden md:block">
+                <ThreeDButton href="#contact" size="sm">
+                  Contact Me
+                </ThreeDButton>
+              </div>
 
               <button
                 type="button"
