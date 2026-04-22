@@ -12,8 +12,7 @@ import Contact from "./sections/Contact";
 
 function App() {
   return (
-    <>
-      
+    <main>
       <Hero />
       <FeaturedProject />
       <Projects />
@@ -22,7 +21,7 @@ function App() {
       <About />
       <SocialProof />
       <Contact />
-    </>
+    </main>
   );
 }
 
