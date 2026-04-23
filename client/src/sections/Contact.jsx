@@ -94,7 +94,7 @@ const Contact = () => {
               <span>nkathawinnie94@gmail.com</span>
             </a>
 
-            <div className="flex flex-wrap items-center gap-2 text-white/75 md:hidden">
+            <div className="flex items-center gap-2 text-white/75 md:hidden">
               <a
                 href="mailto:nkathawinnie94@gmail.com"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-transform hover:scale-110"
