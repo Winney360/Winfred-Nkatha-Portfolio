@@ -105,13 +105,13 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mt-12 w-full pt-14 ml-2 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
+      <div className="relative z-10 mt-12 w-full pt-14 md:mt-8 md:pt-8 md:grid md:grid-cols-[3fr_2fr] md:items-center md:gap-6 lg:block lg:mt-10 lg:pt-12">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="z-10 w-full md:w-3/4 lg:w-3/4"
+              className="z-10 w-full lg:w-3/4"
             >
               <h1 className="text-balance text-[2.4rem] font-bold leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <motion.span 
@@ -167,7 +167,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:bottom-0 md:-mr-8 md:h-[76vh] md:w-[48%] lg:-bottom-20 lg:h-[88vh] lg:w-1/2 lg:-mr-16"
+              className="pointer-events-none z-0 hidden md:relative md:block md:h-[55vh] md:w-full md:mr-0 lg:absolute lg:right-0 lg:h-[88vh] lg:w-1/2 lg:-mr-16 lg:-bottom-20"
             >
               {/* Image subtle purple glow */}
               <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
@@ -177,7 +177,7 @@ const Hero = () => {
               <motion.img
                 src={heroImage}
                 alt="3D Glowing Mesh Portfolio"
-                className="relative h-full w-full bg-transparent object-contain md:object-right-bottom"
+                className="relative h-full w-full bg-transparent object-contain md:object-bottom-right"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
