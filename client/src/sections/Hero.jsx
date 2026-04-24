@@ -167,7 +167,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:bottom-0 md:-mr-8 md:h-[76vh] md:w-[48%] lg:-bottom-20 lg:h-[88vh] lg:w-1/2 lg:-mr-16"
+              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:bottom-0 md:-mr-4 md:h-[55vh] md:w-[35%] lg:-bottom-20 lg:h-[88vh] lg:w-1/2 lg:-mr-16"
             >
               {/* Image subtle purple glow */}
               <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
