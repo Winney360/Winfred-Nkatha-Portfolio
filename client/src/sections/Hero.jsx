@@ -8,7 +8,7 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[66vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:px-8 md:pb-0 md:pt-6 min-[768px]:max-[1199px]:min-h-[45vh] min-[1200px]:min-h-screen">
+    <section className="relative min-h-[66vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:px-8 md:pb-0 md:pt-6 min-[768px]:max-[1199px]:min-h-[520px] min-[1200px]:min-h-screen">
       <div className="fixed inset-x-0 top-0 z-50">
         <nav className="w-full border-b border-violet-300/15 bg-[#1a0a3e]/70 px-4 py-2 backdrop-blur-md md:px-8 md:py-3">
           <div className="flex items-center justify-between">
