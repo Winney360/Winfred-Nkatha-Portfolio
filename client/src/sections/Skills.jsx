@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import claudeLogo from "../assets/claude.png";
 import cursorLogo from "../assets/cursor.png";
 import vscodeIcon from "../assets/vscode.png";
 import figmaLogo from "../assets/figma-logo.svg";
@@ -10,6 +9,7 @@ import mongodbLogo from "../assets/mongodb.svg";
 import mysqlLogo from "../assets/mysql.png";
 import postmanLogo from "../assets/postman.png";
 import {
+  SiAngular,
   SiExpress,
   SiGit,
   SiJavascript,
@@ -37,7 +37,7 @@ const groupedSkills = {
 };
 
 const clusterNodes = [
-  { label: "Claude", icon: claudeLogo, pos: "top-[30px] left-[167px]", isImage: true },
+  { label: "Angular", icon: SiAngular, pos: "top-[30px] left-[167px]", color: "text-[#dd0031]" },
   { label: "MySQL", icon: mysqlLogo, pos: "top-[99px] left-[274px]", isImage: true },
   { label: "Postman", icon: postmanLogo, pos: "top-[210px] left-[267px]", isImage: true },
   { label: "Cursor", icon: cursorLogo, pos: "top-[269px] left-[167px]", isImage: true },
