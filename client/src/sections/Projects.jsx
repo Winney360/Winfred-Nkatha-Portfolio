@@ -183,13 +183,14 @@ const Projects = () => {
         Projects
       </motion.h2>
       {/* Filter Buttons */}
-      <div className="mb-9 flex flex-wrap gap-2.5">
+      <div className="mb-9 flex flex-nowrap gap-1.5 sm:flex-wrap sm:gap-2.5">
         {categories.map((cat) => (
           <ThreeDButton
             key={cat}
             onClick={() => setSelected(cat)}
             size="xs"
             active={selected === cat}
+            className="filter-btn"
           >
             {cat}
           </ThreeDButton>

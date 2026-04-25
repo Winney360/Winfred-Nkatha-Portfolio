@@ -71,6 +71,11 @@ const Wrapper = styled.button`
     min-width: 4.5rem;
   }
 
+  &.filter-btn {
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
   &.full-width {
     width: 100%;
     min-width: 100%;
