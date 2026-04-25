@@ -91,10 +91,10 @@ const Skills = () => {
 
           <div className="mx-auto w-full max-w-96 pt-1 pr-6 sm:pr-3 md:pr-0 md:mx-0 md:justify-self-start lg:-ml-40">
             <div className="relative mx-auto h-96 w-105 origin-center -translate-x-8 scale-100 sm:-translate-x-6 sm:scale-110 md:translate-x-0 lg:scale-115">
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7e22ce]/35 blur-[110px]" />
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a855f7]/25 blur-[85px]" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7e22ce]/24 blur-[110px] md:bg-[#7e22ce]/35" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a855f7]/17 blur-[85px] md:bg-[#a855f7]/25" />
               <div className="absolute left-1/2 top-1/2 h-61 w-61 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-400/45" />
-              <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/65 bg-[#070314] shadow-[0_0_85px_rgba(168,85,247,0.9)] md:bg-[#2a1545]/94" />
+              <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/65 bg-[#070314] shadow-[0_0_60px_rgba(168,85,247,0.6)] md:bg-[#2a1545]/94 md:shadow-[0_0_85px_rgba(168,85,247,0.9)]" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
                 <p className="text-[14px] font-bold leading-none text-white">Intermediate</p>
               </div>
