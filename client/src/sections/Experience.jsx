@@ -56,7 +56,7 @@ const getInitials = (name) =>
 
 const Experience = () => {
   return (
-    <section id="experience" className="w-full bg-linear-to-b from-[#070311] via-[#0b0618] to-[#090413]">
+    <section id="experience" className="w-full bg-black md:bg-linear-to-b md:from-[#070311] md:via-[#0b0618] md:to-[#090413]">
       <div className="mx-auto flex max-w-6xl flex-col px-4 py-24 lg:min-h-screen lg:justify-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

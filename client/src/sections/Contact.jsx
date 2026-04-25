@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-linear-to-r from-[#140d22] via-[#1b0f2d] to-[#2a1244] px-6 py-14 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:px-8 md:py-20">
+    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-black px-6 py-14 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:bg-linear-to-r md:from-[#140d22] md:via-[#1b0f2d] md:to-[#2a1244] md:px-8 md:py-20">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-white/5 to-transparent" />
         <div className="absolute left-1/3 top-8 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[100px]" />
