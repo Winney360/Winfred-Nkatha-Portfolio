@@ -1,11 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero.png";
 import Switch from "../components/Switch";
 import ThreeDButton from "../components/ThreeDButton";
 
+const NAME = "Winfred Nkatha";
+const NAME_GRADIENT = {
+  backgroundImage: "linear-gradient(90deg, #9143d9, #d946ef, #9143d9)",
+  backgroundSize: "200% 100%",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+  textShadow: "0 0 30px rgba(217, 70, 239, 0.6)",
+  filter: "drop-shadow(0 0 20px rgba(217, 70, 239, 0.5))",
+};
+
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [typedName, setTypedName] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let t;
+    if (!isDeleting && typedName.length < NAME.length) {
+      t = setTimeout(() => setTypedName(NAME.slice(0, typedName.length + 1)), 120);
+    } else if (!isDeleting && typedName.length === NAME.length) {
+      t = setTimeout(() => setIsDeleting(true), 1800);
+    } else if (isDeleting && typedName.length > 0) {
+      t = setTimeout(() => setTypedName(NAME.slice(0, typedName.length - 1)), 70);
+    } else if (isDeleting && typedName.length === 0) {
+      t = setTimeout(() => setIsDeleting(false), 500);
+    }
+    return () => clearTimeout(t);
+  }, [typedName, isDeleting]);
 
   return (
     <section className="relative min-h-[55vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:px-8 md:pb-0 md:pt-6 md:min-h-[66vh] min-[768px]:max-[1199px]:min-h-130 min-[1200px]:min-h-screen">
@@ -109,22 +136,35 @@ const Hero = () => {
               className="z-10 w-full md:w-3/4 lg:w-3/4"
             >
               <h1 className="text-balance text-center text-[2.4rem] font-bold leading-[1.1] text-white md:text-left md:text-[3.8rem] lg:text-[4rem]">
-                Hi, I&apos;m <motion.span 
-                  className="text-[#9143d9] font-semibold"
-                  style={{
-                    backgroundImage: "linear-gradient(90deg, #9143d9, #d946ef, #9143d9)",
-                    backgroundSize: "200% 100%",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    textShadow: "0 0 30px rgba(217, 70, 239, 0.6)",
-                    filter: "drop-shadow(0 0 20px rgba(217, 70, 239, 0.5))"
-                  }}
+                Hi
+                <motion.span
+                  className="ml-2 inline-block md:hidden"
+                  aria-hidden="true"
+                  animate={{ rotate: [0, 18, -10, 18, -4, 12, 0] }}
+                  transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.2, ease: "easeInOut" }}
+                  style={{ transformOrigin: "70% 70%" }}
+                >
+                  👋
+                </motion.span>
+                , I&apos;m
+                <br className="md:hidden" />
+                <span className="md:hidden">
+                  <span className="font-semibold" style={NAME_GRADIENT}>{typedName}</span>
+                  <span
+                    aria-hidden="true"
+                    className="ml-0.5 inline-block h-[0.85em] w-[3px] translate-y-[0.1em] animate-pulse bg-violet-300"
+                  />
+                  {typedName === NAME && "."}
+                </span>
+                <motion.span
+                  className="hidden text-[#9143d9] font-semibold md:inline"
+                  style={NAME_GRADIENT}
                   animate={{ backgroundPosition: ["0% 0%", "100% 0%", "0% 0%"] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
                   Winfred Nkatha
-                </motion.span>.
+                </motion.span>
+                <span className="hidden md:inline">.</span>
                 <br />
                 Frontend-Focused Full<br className="hidden md:inline" /> Stack Developer.
               </h1>
