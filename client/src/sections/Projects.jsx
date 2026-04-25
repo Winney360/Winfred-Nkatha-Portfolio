@@ -205,7 +205,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-violet-300/20 bg-[#100722] shadow-[0_10px_25px_rgba(17,7,34,0.55)] transition-transform duration-300 hover:-translate-y-1"
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-violet-300/20 bg-[#070314] shadow-[0_10px_25px_rgba(17,7,34,0.55)] transition-transform duration-300 hover:-translate-y-1 md:bg-[#100722]"
           >
             {/* Card preview */}
             <div className="relative p-3 pb-0">
