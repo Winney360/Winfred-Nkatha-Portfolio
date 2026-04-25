@@ -8,7 +8,7 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[66vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:px-8 md:pb-0 md:pt-6 min-[768px]:max-[1199px]:min-h-[520px] min-[1200px]:min-h-screen">
+    <section className="relative min-h-[55vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:px-8 md:pb-0 md:pt-6 md:min-h-[66vh] min-[768px]:max-[1199px]:min-h-130 min-[1200px]:min-h-screen">
       <div className="fixed inset-x-0 top-0 z-50">
         <nav className="w-full border-b border-violet-300/15 bg-[#1a0a3e]/70 px-4 py-2 backdrop-blur-md md:px-8 md:py-3">
           <div className="flex items-center justify-between">
@@ -100,7 +100,7 @@ const Hero = () => {
       </div>
 
 {/* Main Content */}
-      <div className="relative z-10 mt-12 w-full pt-14 ml-2 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
+      <div className="relative z-10 mt-4 w-full pt-6 ml-2 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -129,11 +129,11 @@ const Hero = () => {
                 Frontend-Focused Full<br className="hidden md:inline" /> Stack Developer.
               </h1>
 
-              <p className="mt-6 max-w-2xl text-sm leading-relaxed text-violet-200/80 md:text-base">
+              <p className="mt-6 max-w-2xl text-balance text-center text-sm leading-relaxed text-violet-200/80 md:text-left md:text-base">
                 I build fast, scalable, and visually polished web applications using React, JavaScript, and AI integration—turning ideas into seamless, user-centered digital experiences.
               </p>
 
-              <div className="mt-10 flex items-center gap-2 sm:gap-4">
+              <div className="mt-10 flex items-center justify-center gap-2 sm:gap-4 md:justify-start">
                 <ThreeDButton href="#projects" className="whitespace-nowrap" size="md">
                   View My Work
                 </ThreeDButton>
@@ -146,7 +146,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="mt-8 flex items-center gap-3 text-[11px] tracking-wide text-violet-300/70"
+                className="mt-8 flex items-center justify-center gap-3 text-[11px] tracking-wide text-violet-300/70 md:justify-start"
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-violet-400" />
                 <span>1+ Year Hands-on Experience</span>
