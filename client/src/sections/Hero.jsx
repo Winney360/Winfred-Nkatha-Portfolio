@@ -5,6 +5,12 @@ import Switch from "../components/Switch";
 import ThreeDButton from "../components/ThreeDButton";
 
 const NAME = "Winfred Nkatha";
+const NAV_LINKS = [
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+];
 const NAME_GRADIENT = {
   backgroundImage: "linear-gradient(90deg, #9143d9, #d946ef, #9143d9)",
   backgroundSize: "200% 100%",
@@ -19,6 +25,23 @@ const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [typedName, setTypedName] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+    );
+    NAV_LINKS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     let t;
@@ -103,15 +126,41 @@ const Hero = () => {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="mt-3 rounded-lg border border-violet-300/20 bg-[#12072c]/95 p-3 md:hidden"
             >
-              <ul className="space-y-2 text-sm text-violet-100/90">
-                <li><a href="#about" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">About</a></li>
-                <li><a href="#projects" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Projects</a></li>
-                <li><a href="#skills" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Skills</a></li>
-                <li><a href="#experience" onClick={() => setIsMenuOpen(false)} className="block rounded-md px-2 py-1.5 hover:bg-violet-500/15">Experience</a></li>
+              <ul className="space-y-1 text-sm text-violet-100/90">
+                {NAV_LINKS.map((item, idx) => {
+                  const isActive = activeSection === item.id;
+                  return (
+                    <motion.li
+                      key={item.id}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.06, duration: 0.22, ease: "easeOut" }}
+                    >
+                      <motion.a
+                        href={`#${item.id}`}
+                        onClick={() => setIsMenuOpen(false)}
+                        whileTap={{ scale: 0.97 }}
+                        className={`block rounded-md px-2.5 py-2 transition-colors duration-200 ${
+                          isActive
+                            ? "bg-violet-500/25 text-white"
+                            : "hover:bg-violet-500/15 active:bg-violet-500/30"
+                        }`}
+                      >
+                        {item.label}
+                      </motion.a>
+                    </motion.li>
+                  );
+                })}
               </ul>
-              <ThreeDButton href="#contact" onClick={() => setIsMenuOpen(false)} className="mt-3" fullWidth>
-                Contact Me
-              </ThreeDButton>
+              <div className="mt-3 flex justify-center">
+                <ThreeDButton
+                  href="#contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  size="xs"
+                >
+                  Contact Me
+                </ThreeDButton>
+              </div>
             </motion.div>
           )}
         </nav>
