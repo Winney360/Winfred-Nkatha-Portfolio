@@ -99,12 +99,7 @@ const Hero = () => {
         <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-[#a855f7]/25 blur-[100px] opacity-60" />
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 top-auto h-[82%] md:hidden">
-        <img src={heroImage} alt="" aria-hidden="true" className="h-full w-full object-cover object-bottom opacity-65" />
-        <div className="absolute inset-0 bg-linear-to-b from-black/35 via-black/60 to-black/85" />
-      </div>
-
-      {/* Main Content */}
+{/* Main Content */}
       <div className="relative z-10 mt-12 w-full pt-14 ml-2 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
             {/* Left: Text Content */}
             <motion.div
@@ -113,7 +108,7 @@ const Hero = () => {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="z-10 w-full md:w-3/4 lg:w-3/4"
             >
-              <h1 className="text-balance text-[2.4rem] font-bold leading-[1.1] text-white md:text-[3.8rem] lg:text-[4rem]">
+              <h1 className="text-balance text-center text-[2.4rem] font-bold leading-[1.1] text-white md:text-left md:text-[3.8rem] lg:text-[4rem]">
                 Hi, I&apos;m <motion.span 
                   className="text-[#9143d9] font-semibold"
                   style={{
@@ -131,9 +126,7 @@ const Hero = () => {
                   Winfred Nkatha
                 </motion.span>.
                 <br />
-                Frontend-Focused Full
-                <br />
-                Stack Developer.
+                Frontend-Focused Full<br className="hidden md:inline" /> Stack Developer.
               </h1>
 
               <p className="mt-6 max-w-2xl text-sm leading-relaxed text-violet-200/80 md:text-base">
