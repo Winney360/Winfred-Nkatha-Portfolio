@@ -166,7 +166,7 @@ const Hero = () => {
                 </motion.span>
                 <span className="hidden md:inline">.</span>
                 <br />
-                Frontend-Focused Full<br className="hidden md:inline" /> Stack Developer.
+                Frontend-Focused<br className="md:hidden" /> Full<br className="hidden md:inline" /> Stack Developer.
               </h1>
 
               <p className="mt-6 max-w-2xl text-balance text-center text-sm leading-relaxed text-violet-200/80 md:text-left md:text-base">
