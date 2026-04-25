@@ -127,7 +127,7 @@ const Hero = () => {
       </div>
 
 {/* Main Content */}
-      <div className="relative z-10 mt-4 w-full pt-6 ml-2 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
+      <div className="relative z-10 mt-4 w-full pt-6 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
             {/* Left: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -135,7 +135,7 @@ const Hero = () => {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="z-10 w-full md:w-3/4 lg:w-3/4"
             >
-              <h1 className="text-balance text-center text-[2.4rem] font-bold leading-[1.1] text-white md:text-left md:text-[3.8rem] lg:text-[4rem]">
+              <h1 className="text-balance text-center text-[1.85rem] font-bold leading-[1.15] text-white md:text-left md:text-[3.8rem] md:leading-[1.1] lg:text-[4rem]">
                 Hi
                 <motion.span
                   className="ml-2 inline-block md:hidden"
