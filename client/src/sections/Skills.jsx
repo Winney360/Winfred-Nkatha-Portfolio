@@ -48,7 +48,7 @@ const clusterNodes = [
 const Skills = () => {
   return (
     <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="skills">
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 hidden md:block">
         <div className="absolute left-1/3 top-10 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[90px]" />
         <div className="absolute -bottom-16 right-10 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[110px]" />
       </div>
@@ -73,7 +73,7 @@ const Skills = () => {
                     return (
                       <div
                         key={skill.name}
-                        className="group flex aspect-square w-full max-w-22 flex-col items-center justify-center rounded-xl border border-violet-300/20 bg-[#221238]/72 p-1.5 shadow-lg shadow-black/25 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5 md:h-30 md:w-30 md:max-w-none md:flex-none md:p-2"
+                        className="group flex aspect-square w-full max-w-22 flex-col items-center justify-center rounded-xl border border-violet-300/20 bg-[#070314] p-1.5 shadow-lg shadow-black/25 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5 md:h-30 md:w-30 md:max-w-none md:flex-none md:bg-[#221238]/72 md:p-2"
                       >
                         {skill.isImage ? (
                           <img src={skill.icon} alt={skill.name} className="mb-1 h-6 w-6 object-contain md:h-8 md:w-8" />
@@ -94,7 +94,7 @@ const Skills = () => {
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7e22ce]/35 blur-[110px]" />
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a855f7]/25 blur-[85px]" />
               <div className="absolute left-1/2 top-1/2 h-61 w-61 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-400/45" />
-              <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/65 bg-[#2a1545]/94 shadow-[0_0_85px_rgba(168,85,247,0.9)]" />
+              <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/65 bg-[#070314] shadow-[0_0_85px_rgba(168,85,247,0.9)] md:bg-[#2a1545]/94" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
                 <p className="text-[14px] font-bold leading-none text-white">Intermediate</p>
               </div>
@@ -104,7 +104,7 @@ const Skills = () => {
                 return (
                   <div
                     key={node.label}
-                    className={`absolute ${node.pos} flex h-22 w-22 flex-col items-center justify-center border border-violet-300/28 bg-[#24133b]/82 text-center shadow-md shadow-black/30 backdrop-blur-sm [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
+                    className={`absolute ${node.pos} flex h-22 w-22 flex-col items-center justify-center border border-violet-300/28 bg-[#070314] text-center shadow-md shadow-black/30 backdrop-blur-sm md:bg-[#24133b]/82 [clip-path:polygon(25%_6%,75%_6%,100%_50%,75%_94%,25%_94%,0%_50%)]`}
                   >
                     {node.isImage ? (
                       <img src={node.icon} alt={node.label} className="mb-1 h-5 w-5 object-contain" />
