@@ -15,7 +15,7 @@ const Hero = () => {
           muted
           playsInline
           preload="auto"
-          className="absolute inset-y-0 left-[12.5%] h-full w-[75%] object-cover object-center"
+          className="absolute inset-y-0 left-[12.5%] h-full w-[75%] object-cover object-center brightness-50"
           aria-hidden="true"
         />
       </div>
@@ -26,9 +26,9 @@ const Hero = () => {
         transition={{ duration: 0.75, ease: "easeOut" }}
         className="absolute left-4 top-2 z-10 text-left md:left-8 md:top-4"
       >
-        <h1 className="max-w-[9ch] text-balance text-[clamp(2.9rem,13vw,8.6rem)] font-semibold leading-[0.95] tracking-wider text-white md:max-w-5xl md:text-[clamp(3.8rem,10vw,8.6rem)] md:leading-[0.9]">
-          <span className="block">Architecting the</span>
-          <span className="block">Modern Web</span>
+        <h1 className="text-balance text-[clamp(2.9rem,13vw,8.6rem)] font-semibold leading-[0.95] tracking-wider text-slate-100 md:max-w-5xl md:text-[clamp(3.8rem,10vw,8.6rem)] md:leading-[0.9]">
+          <span className="block whitespace-nowrap">Architecting the</span>
+          <span className="block whitespace-nowrap">Modern Web</span>
         </h1>
       </motion.div>
 
