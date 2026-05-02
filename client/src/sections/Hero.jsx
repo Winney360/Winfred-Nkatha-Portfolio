@@ -1,269 +1,74 @@
-import React, { useEffect, useState } from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
-import heroImage from "../assets/hero.png";
-import Switch from "../components/Switch";
-import ThreeDButton from "../components/ThreeDButton";
-
-const NAME = "Winfred Nkatha";
-const NAV_LINKS = [
-  { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
-];
-const NAME_GRADIENT = {
-  backgroundImage: "linear-gradient(90deg, #9143d9, #d946ef, #9143d9)",
-  backgroundSize: "200% 100%",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  backgroundClip: "text",
-  textShadow: "0 0 30px rgba(217, 70, 239, 0.6)",
-  filter: "drop-shadow(0 0 20px rgba(217, 70, 239, 0.5))",
-};
+import { FaArrowRight } from "react-icons/fa";
+import Starfield from "../components/Starfield";
 
 const Hero = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [typedName, setTypedName] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
-    );
-    NAV_LINKS.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    let t;
-    if (!isDeleting && typedName.length < NAME.length) {
-      t = setTimeout(() => setTypedName(NAME.slice(0, typedName.length + 1)), 120);
-    } else if (!isDeleting && typedName.length === NAME.length) {
-      t = setTimeout(() => setIsDeleting(true), 1800);
-    } else if (isDeleting && typedName.length > 0) {
-      t = setTimeout(() => setTypedName(NAME.slice(0, typedName.length - 1)), 70);
-    } else if (isDeleting && typedName.length === 0) {
-      t = setTimeout(() => setIsDeleting(false), 500);
-    }
-    return () => clearTimeout(t);
-  }, [typedName, isDeleting]);
-
   return (
-    <section className="relative min-h-[55vh] overflow-hidden bg-black px-4 pb-0 pt-5 md:px-8 md:pb-0 md:pt-6 md:min-h-[66vh] min-[768px]:max-[1199px]:min-h-130 min-[1200px]:min-h-screen">
-      <div className="fixed inset-x-0 top-0 z-50">
-        <nav className="w-full border-b border-violet-300/15 bg-[#1a0a3e]/70 px-4 py-2 backdrop-blur-md md:px-8 md:py-3">
-          <div className="flex items-center justify-between">
-            <span
-              className="inline-block w-32 leading-none text-[1.25rem] text-violet-200 md:w-44 md:text-[1.55rem] lg:w-52 lg:text-[1.75rem]"
-              style={{
-                fontFamily: '"Edwardian Script ITC", "Snell Roundhand", "Brush Script MT", "Segoe Script", cursive',
-                fontStyle: "italic",
-                letterSpacing: "0.04em",
-                transform: "scaleX(1.2)",
-                transformOrigin: "left center",
-                textShadow:
-                  "0 0 10px rgba(168, 85, 247, 0.65), 0 0 24px rgba(168, 85, 247, 0.55), 0 0 42px rgba(147, 51, 234, 0.45)",
-              }}
-            >
-              Winnie
-            </span>
-
-            <div className="ml-auto flex items-center gap-8">
-              <ul className="hidden items-center gap-8 text-[15px] text-violet-200/85 md:flex">
-                <li><a href="#about" className="transition-colors hover:text-white">About</a></li>
-                <li><a href="#projects" className="transition-colors hover:text-white">Projects</a></li>
-                <li><a href="#skills" className="transition-colors hover:text-white">Skills</a></li>
-                <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
-              </ul>
-
-              <div className="hidden md:block">
-                <ThreeDButton href="#contact" size="sm">
-                  Contact Me
-                </ThreeDButton>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen((open) => !open)}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-violet-300/25 bg-violet-500/10 text-violet-100 md:hidden"
-                aria-label="Toggle menu"
-                aria-expanded={isMenuOpen}
-              >
-                <span className="relative block h-3.5 w-4">
-                  <span
-                    className={`absolute left-0 top-0 block h-0.5 w-4 rounded-full bg-current transition-transform duration-200 ${
-                      isMenuOpen ? "translate-y-1.5 rotate-45" : ""
-                    }`}
-                  />
-                  <span
-                    className={`absolute left-0 top-1.5 block h-0.5 w-4 rounded-full bg-current transition-opacity duration-200 ${
-                      isMenuOpen ? "opacity-0" : "opacity-100"
-                    }`}
-                  />
-                  <span
-                    className={`absolute left-0 top-3 block h-0.5 w-4 rounded-full bg-current transition-transform duration-200 ${
-                      isMenuOpen ? "-translate-y-1.5 -rotate-45" : ""
-                    }`}
-                  />
-                </span>
-              </button>
-            </div>
-          </div>
-
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="mt-3 rounded-lg border border-violet-300/20 bg-[#12072c]/95 p-3 md:hidden"
-            >
-              <ul className="space-y-1 text-sm text-violet-100/90">
-                {NAV_LINKS.map((item, idx) => {
-                  const isActive = activeSection === item.id;
-                  return (
-                    <motion.li
-                      key={item.id}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.06, duration: 0.22, ease: "easeOut" }}
-                    >
-                      <motion.a
-                        href={`#${item.id}`}
-                        onClick={() => setIsMenuOpen(false)}
-                        whileTap={{ scale: 0.97 }}
-                        className={`block rounded-md px-2.5 py-2 transition-colors duration-200 ${
-                          isActive
-                            ? "bg-violet-500/25 text-white"
-                            : "hover:bg-violet-500/15 active:bg-violet-500/30"
-                        }`}
-                      >
-                        {item.label}
-                      </motion.a>
-                    </motion.li>
-                  );
-                })}
-              </ul>
-              <div className="mt-3 flex justify-center">
-                <ThreeDButton
-                  href="#contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  size="xs"
-                >
-                  Contact Me
-                </ThreeDButton>
-              </div>
-            </motion.div>
-          )}
-        </nav>
+    <section className="relative min-h-[120vh] overflow-hidden bg-black px-4 pb-8 pt-5 text-white md:px-8 md:pt-6">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[120vh] overflow-hidden">
+        <Starfield count={260} />
+        <video
+          src="/globe.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-y-0 left-[12.5%] h-full w-[75%] object-cover object-center"
+          aria-hidden="true"
+        />
       </div>
 
-      {/* Background gradient */}
-      <div className="pointer-events-none absolute inset-0 hidden md:block">
-        <div className="absolute -top-32 left-1/3 h-128 w-lg rounded-full bg-[#6b21a8]/30 blur-[120px]" />
-        <div className="absolute -bottom-32 -right-32 h-160 w-160 rounded-full bg-[#7e22ce]/25 blur-[120px]" />
-        <div className="absolute top-1/2 right-1/4 h-112 w-md rounded-full bg-[#a855f7]/20 blur-[100px]" />
-        {/* Top-left subtle purple glow */}
-        <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-[#a855f7]/25 blur-[100px] opacity-60" />
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        className="absolute left-4 top-2 z-10 text-left md:left-8 md:top-4"
+      >
+        <h1 className="max-w-[9ch] text-balance text-[clamp(2.9rem,13vw,8.6rem)] font-semibold leading-[0.95] tracking-wider text-white md:max-w-5xl md:text-[clamp(3.8rem,10vw,8.6rem)] md:leading-[0.9]">
+          <span className="block">Architecting the</span>
+          <span className="block">Modern Web</span>
+        </h1>
+      </motion.div>
 
-{/* Main Content */}
-      <div className="relative z-10 mt-4 w-full pt-6 md:ml-4 md:mt-8 md:pt-8 lg:ml-5 lg:mt-10 lg:pt-12">
-            {/* Left: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="z-10 w-full md:w-3/4 lg:w-3/4"
-            >
-              <h1 className="text-balance text-center text-[1.85rem] font-bold leading-[1.15] text-white md:text-left md:text-[3.8rem] md:leading-[1.1] lg:text-[4rem]">
-                Hi
-                <motion.span
-                  className="ml-2 inline-block md:hidden"
-                  aria-hidden="true"
-                  animate={{ rotate: [0, 18, -10, 18, -4, 12, 0] }}
-                  transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.2, ease: "easeInOut" }}
-                  style={{ transformOrigin: "70% 70%" }}
-                >
-                  👋
-                </motion.span>
-                , I&apos;m
-                <br className="md:hidden" />
-                <span className="md:hidden">
-                  <span className="font-semibold" style={NAME_GRADIENT}>{typedName}</span>
-                  <span
-                    aria-hidden="true"
-                    className="ml-0.5 inline-block h-[0.85em] w-[3px] translate-y-[0.1em] animate-pulse bg-violet-300"
-                  />
-                  {typedName === NAME && "."}
-                </span>
-                <motion.span
-                  className="hidden text-[#9143d9] font-semibold md:inline"
-                  style={NAME_GRADIENT}
-                  animate={{ backgroundPosition: ["0% 0%", "100% 0%", "0% 0%"] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  Winfred Nkatha
-                </motion.span>
-                <span className="hidden md:inline">.</span>
-                <br />
-                Frontend-Focused<br className="md:hidden" /> Full<br className="hidden md:inline" /> Stack Developer.
-              </h1>
+      <div className="relative z-10 mx-auto flex min-h-[120vh] max-w-7xl flex-col justify-end pt-2 md:pt-4">
+        <div className="flex items-end justify-between gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            className="flex items-center gap-3 text-sm font-medium tracking-wide text-emerald-300/90"
+          >
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_18px_rgba(163,230,53,0.8)]" />
+            <span>Available for new projects</span>
+          </motion.div>
 
-              <p className="mt-6 max-w-2xl text-balance text-center text-sm leading-relaxed text-violet-200/80 md:text-left md:text-base">
-                I build fast, scalable, and visually polished web applications using React, JavaScript, and AI integration—turning ideas into seamless, user-centered digital experiences.
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.12, ease: "easeOut" }}
+            className="flex flex-col items-start gap-6 md:gap-8"
+          >
+            <div className="relative max-w-[18rem] border border-emerald-400/30 bg-transparent px-4 py-3 text-left sm:max-w-[20rem] md:max-w-xl md:px-8 md:py-5">
+              <span aria-hidden="true" className="pointer-events-none absolute -left-px -top-px h-3 w-3 border-l-2 border-t-2 border-emerald-400 md:h-4 md:w-4" />
+              <span aria-hidden="true" className="pointer-events-none absolute -right-px -top-px h-3 w-3 border-r-2 border-t-2 border-emerald-400 md:h-4 md:w-4" />
+              <span aria-hidden="true" className="pointer-events-none absolute -bottom-px -left-px h-3 w-3 border-b-2 border-l-2 border-emerald-400 md:h-4 md:w-4" />
+              <span aria-hidden="true" className="pointer-events-none absolute -bottom-px -right-px h-3 w-3 border-b-2 border-r-2 border-emerald-400 md:h-4 md:w-4" />
+              <p className="text-[0.45rem] leading-relaxed text-slate-100 sm:text-[1rem] md:max-w-lg md:text-[1.55rem]">
+                Hi, I&apos;m Winfred. I specialize in modern web technologies, turning complex ideas into fast, reliable, and maintainable applications.
               </p>
+            </div>
 
-              <div className="mt-10 flex items-center justify-center gap-2 sm:gap-4 md:justify-start">
-                <ThreeDButton href="#projects" className="whitespace-nowrap" size="md">
-                  View My Work
-                </ThreeDButton>
-                <div className="flex justify-center">
-                  <Switch />
-                </div>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="mt-8 flex items-center justify-center gap-3 text-[11px] tracking-wide text-violet-300/70 md:justify-start"
-              >
-                <div className="h-1.5 w-1.5 rounded-full bg-violet-400" />
-                <span>1+ Year Hands-on Experience</span>
-                <div className="h-1 w-1 rounded-full bg-violet-400/60" />
-                <span>7+ Projects Shipped</span>
-              </motion.div>
-            </motion.div>
-
-            {/* Bottom-right hero image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-96 w-96 md:block md:bottom-0 md:-mr-4 md:h-[55vh] md:w-[35%] lg:-bottom-20 lg:h-[88vh] lg:w-1/2 lg:-mr-16"
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-3 rounded-none bg-emerald-500 px-5 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-black transition-transform hover:-translate-y-0.5 hover:bg-emerald-300"
             >
-              {/* Image subtle purple glow */}
-              <div className="absolute -inset-16 rounded-2xl bg-[#a855f7]/35 blur-[80px] opacity-40" />
-              <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-[#9333ea]/25 blur-[90px]" />
-              
-              {/* Transparent PNG image only */}
-              <motion.img
-                src={heroImage}
-                alt="3D Glowing Mesh Portfolio"
-                className="relative h-full w-full bg-transparent object-contain md:object-right-bottom"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
-              />
-            </motion.div>
+              View Projects
+              <FaArrowRight className="text-base" />
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

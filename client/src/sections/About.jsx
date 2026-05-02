@@ -6,8 +6,8 @@ const About = () => {
   return (
     <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="about">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/3 top-10 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[90px]" />
-        <div className="absolute -bottom-16 right-10 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[110px]" />
+        <div className="absolute left-1/3 top-10 h-72 w-72 rounded-full bg-[#22c55e]/20 blur-[90px]" />
+        <div className="absolute -bottom-16 right-10 h-80 w-80 rounded-full bg-[#16a34a]/15 blur-[110px]" />
       </div>
 
       <motion.div
@@ -20,13 +20,13 @@ const About = () => {
         <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
           <div className="md:order-2">
             <h2 className="-mt-2 text-3xl font-bold text-white md:text-4xl">About</h2>
-            <p className="mt-2 text-lg text-violet-100/95 md:text-xl">
+            <p className="mt-2 text-lg text-emerald-100/95 md:text-xl">
               Full-Stack Developer specializing in frontend engineering and scalable web applications.
             </p>
 
-            <div className="relative mt-6 overflow-hidden rounded-2xl border border-violet-300/15 bg-linear-to-b from-[#2a0d4b] via-[#1a0a34] to-[#0f0820] shadow-[0_20px_60px_rgba(124,58,237,0.45)] md:hidden">
-              <div className="absolute inset-0 bg-radial from-violet-400/25 via-violet-500/10 to-transparent" />
-              <div className="absolute -right-12 top-1/4 h-36 w-36 rounded-full bg-violet-400/20 blur-[70px]" />
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-emerald-300/15 bg-linear-to-b from-[#0d2818] via-[#061511] to-[#030804] shadow-[0_20px_60px_rgba(34,197,94,0.45)] md:hidden">
+              <div className="absolute inset-0 bg-radial from-emerald-400/25 via-emerald-500/10 to-transparent" />
+              <div className="absolute -right-12 top-1/4 h-36 w-36 rounded-full bg-emerald-400/20 blur-[70px]" />
               <img
                 src={aboutImage}
                 alt="Developer portrait"
@@ -34,7 +34,7 @@ const About = () => {
               />
             </div>
 
-            <div className="mt-7 space-y-4 text-sm leading-relaxed text-violet-200/85 md:text-base">
+            <div className="mt-7 space-y-4 text-sm leading-relaxed text-emerald-100/85 md:text-base">
               <p>
                 I design and build responsive, high-performance web applications using
                 React, Node.js, and modern web technologies, with a strong focus on user
@@ -59,9 +59,9 @@ const About = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             className="relative mx-auto hidden w-full max-w-[320px] md:order-1 md:block"
           >
-            <div className="relative overflow-hidden rounded-2xl border border-violet-300/15 bg-linear-to-b from-[#2a0d4b] via-[#1a0a34] to-[#0f0820] shadow-[0_20px_60px_rgba(124,58,237,0.45)]">
-              <div className="absolute inset-0 bg-radial from-violet-400/25 via-violet-500/10 to-transparent" />
-              <div className="absolute -right-12 top-1/4 h-36 w-36 rounded-full bg-violet-400/20 blur-[70px]" />
+            <div className="relative overflow-hidden rounded-2xl border border-emerald-300/15 bg-linear-to-b from-[#0d2818] via-[#061511] to-[#030804] shadow-[0_20px_60px_rgba(34,197,94,0.45)]">
+              <div className="absolute inset-0 bg-radial from-emerald-400/25 via-emerald-500/10 to-transparent" />
+              <div className="absolute -right-12 top-1/4 h-36 w-36 rounded-full bg-emerald-400/20 blur-[70px]" />
               <img
                 src={aboutImage}
                 alt="Developer portrait"

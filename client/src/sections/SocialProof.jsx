@@ -36,21 +36,21 @@ const SocialProof = () => {
     <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8">
       <style>{`
         .react-activity-calendar__tooltip {
-          background: linear-gradient(135deg, #2a1240 0%, #3f1a63 100%) !important;
-          color: #f3e8ff !important;
-          border: 1px solid #7e22ce !important;
-          box-shadow: 0 10px 30px rgba(76, 29, 149, 0.45) !important;
+          background: linear-gradient(135deg, #052e16 0%, #14532d 100%) !important;
+          color: #dcfce7 !important;
+          border: 1px solid #22c55e !important;
+          box-shadow: 0 10px 30px rgba(20, 83, 45, 0.45) !important;
           z-index: 9999 !important;
         }
 
         .react-activity-calendar__tooltip[data-color-scheme='dark'] {
-          background: linear-gradient(135deg, #2a1240 0%, #3f1a63 100%) !important;
-          color: #f3e8ff !important;
+          background: linear-gradient(135deg, #052e16 0%, #14532d 100%) !important;
+          color: #dcfce7 !important;
         }
 
         .react-activity-calendar__tooltip .react-activity-calendar__tooltip-arrow,
         .react-activity-calendar__tooltip[data-color-scheme='dark'] .react-activity-calendar__tooltip-arrow {
-          fill: #3f1a63 !important;
+          fill: #14532d !important;
         }
       `}</style>
 
@@ -71,7 +71,7 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-2xl border border-violet-500/30 bg-linear-to-b from-[#1f1038]/95 to-[#130925] p-5 shadow-[0_10px_35px_rgba(76,29,149,.35)]"
+          className="rounded-2xl border border-emerald-500/30 bg-linear-to-b from-[#0f2818]/95 to-[#051107] p-5 shadow-[0_10px_35px_rgba(34,197,94,.35)]"
         >
           {testimonials.map((t, idx) => (
             <div key={t.name}>
@@ -93,7 +93,7 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
-          className="rounded-2xl border border-violet-500/30 bg-linear-to-b from-[#190d2e] to-[#10081d] p-5 shadow-[0_10px_35px_rgba(76,29,149,.35)]"
+          className="rounded-2xl border border-emerald-500/30 bg-linear-to-b from-[#051107] to-[#020804] p-5 shadow-[0_10px_35px_rgba(34,197,94,.35)]"
         >
           <div className="flex items-center justify-between gap-3 mb-4">
             <h3 className="text-[#c9d1d9] text-sm font-semibold">Contribution graph</h3>
@@ -120,7 +120,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mb-4 rounded-lg border border-violet-500/25 bg-[#120a22] px-3 pt-3 pb-2 overflow-visible text-violet-200/75 [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#c4b5fd]">
+          <div className="mb-4 rounded-lg border border-emerald-500/25 bg-[#051107] px-3 pt-3 pb-2 overflow-visible text-emerald-100/75 [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#86efac]">
             <GitHubCalendar
               username={githubUsername}
               year={selectedYear}
@@ -132,7 +132,7 @@ const SocialProof = () => {
               showColorLegend={false}
               showMonthLabels={true}
               showTotalCount={true}
-              style={{ color: "#c4b5fd" }}
+              style={{ color: "#86efac" }}
               tooltips={{
                 activity: {
                   text: (activity) =>
@@ -147,7 +147,7 @@ const SocialProof = () => {
               }}
             />
 
-            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-violet-300/70">
+            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-emerald-300/70">
               <span className="mr-0.5">Less</span>
               {githubDarkTheme.dark.map((color) => (
                 <span
@@ -160,7 +160,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mt-2 rounded-lg border border-violet-500/25 bg-[#0f081b] px-3 py-2 text-xs text-violet-200/75">
+          <div className="mt-2 rounded-lg border border-emerald-500/25 bg-[#030904] px-3 py-2 text-xs text-emerald-100/75">
             <a
               href={`https://github.com/${githubUsername}`}
               target="_blank"

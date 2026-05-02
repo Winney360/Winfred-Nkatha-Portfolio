@@ -103,7 +103,7 @@ const Wrapper = styled.button`
     padding: 0.6rem 0.9rem;
     transform: translateY(0);
     text-align: center;
-    color: #ede9fe;
+    color: #dcfce7;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
     font-weight: 700;
     font-size: 0.76rem;
@@ -129,7 +129,7 @@ const Wrapper = styled.button`
     z-index: -1;
     inset: 0;
     border-radius: 8px;
-    background-image: radial-gradient(#7c3aed, #4c1d95);
+    background-image: radial-gradient(#22c55e, #15803d);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 1px 2px 1px rgba(0, 0, 0, 0.18);
     transition: transform 0.18s ease, border-radius 0.18s ease, filter 0.18s ease;
   }
@@ -142,7 +142,7 @@ const Wrapper = styled.button`
     width: calc(100% - 8px);
     height: calc(100% - 8px);
     border-radius: 10px;
-    background-color: #3b0764;
+    background-color: #051107;
     background-image: radial-gradient(12px at 0 0, rgba(255, 255, 255, 0.08), transparent), radial-gradient(12px at 100% 0, rgba(255, 255, 255, 0.08), transparent);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.48), inset 0 -1px 2px rgba(0, 0, 0, 0.42);
     transition: transform 0.18s ease;
@@ -162,7 +162,7 @@ const Wrapper = styled.button`
 
   &:hover .button-top::after {
     filter: brightness(0.94);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 8px rgba(88, 28, 135, 0.22), 0 0 16px rgba(49, 13, 82, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 8px rgba(34, 197, 94, 0.22), 0 0 16px rgba(22, 163, 74, 0.18);
   }
 
   &:active .button-top,

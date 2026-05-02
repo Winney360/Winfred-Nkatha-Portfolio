@@ -69,7 +69,7 @@ const Experience = () => {
         </motion.h2>
         <div className="relative md:px-10">
           <div className="absolute left-2 top-0 h-full md:left-1/2 md:-translate-x-1/2">
-            <div className="h-full w-px bg-linear-to-b from-[#6f5ce7]/10 via-[#8a75ff]/65 to-[#6f5ce7]/10" />
+            <div className="h-full w-px bg-linear-to-b from-[#22c55e]/10 via-[#4ade80]/65 to-[#22c55e]/10" />
           </div>
 
           <div className="space-y-10 md:space-y-12">
@@ -98,18 +98,18 @@ const Experience = () => {
                           )}
                         </div>
                         <div className={`${isLeft ? "text-left md:text-right" : "text-left"}`}>
-                          <div className="text-[11px] font-medium tracking-[0.2em] text-[#b19cff]">{exp.date}</div>
+                          <div className="text-[11px] font-medium tracking-[0.2em] text-[#86efac]">{exp.date}</div>
                           <h3 className="mt-1 text-lg font-semibold text-white md:text-[1.05rem]">{exp.role}</h3>
-                          <div className="mt-1 text-xs text-[#9f8bc3]">{exp.company}</div>
+                          <div className="mt-1 text-xs text-[#6ee7b7]">{exp.company}</div>
                         </div>
                       </div>
-                      <p className={`max-w-sm text-sm leading-6 text-[#a89bc7] ${isLeft ? "text-left md:ml-auto md:text-right" : "text-left"}`}>
+                      <p className={`max-w-sm text-sm leading-6 text-[#a7f3d0] ${isLeft ? "text-left md:ml-auto md:text-right" : "text-left"}`}>
                         {exp.description}
                       </p>
                     </div>
                   </div>
 
-                  <span className="pointer-events-none absolute left-2 top-3 h-3 w-3 -translate-x-1/2 rounded-full bg-[#a58cff] shadow-[0_0_0_8px_rgba(165,140,255,0.12)] md:left-1/2 md:-translate-x-1/2" />
+                  <span className="pointer-events-none absolute left-2 top-3 h-3 w-3 -translate-x-1/2 rounded-full bg-[#4ade80] shadow-[0_0_0_8px_rgba(74,222,128,0.12)] md:left-1/2 md:-translate-x-1/2" />
                 </motion.div>
               );
             })}

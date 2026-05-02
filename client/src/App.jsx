@@ -9,11 +9,15 @@ import Skills from "./sections/Skills";
 import Experience from "./sections/Experience";
 import SocialProof from "./sections/SocialProof";
 import Contact from "./sections/Contact";
+import TechMarquee from "./components/TechMarquee";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <main>
+    <main className="bg-black pt-14 md:pt-20">
+      <Navbar />
       <Hero />
+      <TechMarquee />
       <FeaturedProject />
       <Projects />
       <Skills />

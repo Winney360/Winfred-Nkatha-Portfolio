@@ -168,8 +168,8 @@ const Projects = () => {
       className="relative overflow-hidden bg-black px-4 py-18 md:px-8"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/3 top-12 h-72 w-72 rounded-full bg-[#7e22ce]/20 blur-[90px]" />
-        <div className="absolute -bottom-20 right-8 h-80 w-80 rounded-full bg-[#9333ea]/15 blur-[110px]" />
+        <div className="absolute left-1/3 top-12 h-72 w-72 rounded-full bg-emerald-500/15 blur-[90px]" />
+        <div className="absolute -bottom-20 right-8 h-80 w-80 rounded-full bg-lime-400/10 blur-[110px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
@@ -205,7 +205,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-violet-300/20 bg-[#070314] shadow-[0_10px_25px_rgba(17,7,34,0.55)] transition-transform duration-300 hover:-translate-y-1 md:bg-[#100722]"
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-emerald-300/20 bg-[#030904] shadow-[0_10px_25px_rgba(5,17,7,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-lime-400/60 hover:shadow-[0_15px_40px_rgba(74,222,128,0.18)] md:bg-[#051107]"
           >
             {/* Card preview */}
             <div className="relative p-3 pb-0">
@@ -243,7 +243,7 @@ const Projects = () => {
 
             {/* Card Content */}
             <div className="flex min-h-66 flex-1 flex-col gap-3 p-4 pt-3">
-              <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-white">{project.title}</h3>
+              <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-lime-400 transition-colors group-hover:text-lime-300">{project.title}</h3>
               <p className="line-clamp-2 min-h-10 text-sm text-slate-300">{project.description}</p>
 
               <div className="flex min-h-7 flex-wrap content-start gap-1.5">
@@ -251,13 +251,13 @@ const Projects = () => {
                   (() => {
                     const assetIcon = techAssetIcons[tech];
                     const Icon = techIcons[tech] || FaGithub;
-                    const iconColorClass = techIconColors[tech] || "text-violet-100";
+                    const iconColorClass = techIconColors[tech] || "text-emerald-100";
                     return (
                       <span
                         key={tech}
                         title={tech}
                         aria-label={tech}
-                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-violet-300/20 bg-violet-500/15 text-violet-100"
+                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-emerald-300/20 bg-emerald-500/15 text-emerald-100"
                       >
                         {assetIcon ? (
                           <img src={assetIcon} alt="" className="h-4 w-4 object-contain" />
