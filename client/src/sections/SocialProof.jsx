@@ -71,8 +71,12 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="border border-emerald-400/30 bg-black p-5"
+          className="relative border border-emerald-400/30 bg-black p-5"
         >
+          <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-4 w-4 border-l-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
+          <span aria-hidden="true" className="pointer-events-none absolute right-0 top-0 z-20 h-4 w-4 border-r-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
+          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 z-20 h-4 w-4 border-b-2 border-l-2 border-emerald-400 md:h-5 md:w-5" />
+          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 z-20 h-4 w-4 border-b-2 border-r-2 border-emerald-400 md:h-5 md:w-5" />
           {testimonials.map((t, idx) => (
             <div key={t.name}>
               <div className="text-amber-300 text-xs tracking-[0.18em] mb-2">★★★★★</div>
@@ -93,8 +97,12 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
-          className="border border-emerald-400/30 bg-black p-5"
+          className="relative border border-emerald-400/30 bg-black p-5"
         >
+          <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-4 w-4 border-l-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
+          <span aria-hidden="true" className="pointer-events-none absolute right-0 top-0 z-20 h-4 w-4 border-r-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
+          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 z-20 h-4 w-4 border-b-2 border-l-2 border-emerald-400 md:h-5 md:w-5" />
+          <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 z-20 h-4 w-4 border-b-2 border-r-2 border-emerald-400 md:h-5 md:w-5" />
           <div className="flex items-center justify-between gap-3 mb-4">
             <h3 className="text-[#c9d1d9] text-sm font-semibold">Contribution graph</h3>
 
@@ -120,7 +128,7 @@ const SocialProof = () => {
             </div>
           </div>
 
-          <div className="mb-4 border border-emerald-400/25 bg-neutral-800 px-3 pt-3 pb-2 overflow-visible text-emerald-100/75 [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#86efac]">
+          <div className="mb-4 border border-[#30363d] bg-[#0d1117] px-3 pt-3 pb-2 overflow-visible text-[#c9d1d9] [&_svg]:w-full [&_svg]:h-auto [&_text]:fill-[#7d8590]">
             <GitHubCalendar
               username={githubUsername}
               year={selectedYear}
@@ -147,7 +155,7 @@ const SocialProof = () => {
               }}
             />
 
-            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-emerald-300/70">
+            <div className="mt-1 flex items-center justify-end gap-1 text-[10px] leading-none text-[#7d8590]">
               <span className="mr-0.5">Less</span>
               {githubDarkTheme.dark.map((color) => (
                 <span

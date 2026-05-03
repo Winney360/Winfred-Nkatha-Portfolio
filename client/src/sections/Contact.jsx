@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-black px-6 py-14 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:px-8 md:py-20">
+    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-black px-6 pt-6 pb-14 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:px-8 md:pt-8 md:pb-20">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-white/5 to-transparent" />
         <div className="absolute left-1/3 top-8 h-72 w-72 rounded-full bg-emerald-500/15 blur-[100px]" />
@@ -76,11 +76,11 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
-          className="p-5 md:p-8 lg:p-10"
+          className="p-5 pt-2 md:p-8 md:pt-3 lg:p-10 lg:pt-4"
         >
-          <div className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#86efac]">
-            Contact
-          </div>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm">
+            [ CONTACT ]
+          </h2>
           <h2 className="mt-2 max-w-md text-[1.85rem] font-semibold leading-[1.05] text-white md:text-[2.75rem]">
             Let’s build something impactful together.
           </h2>

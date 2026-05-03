@@ -15,7 +15,7 @@ const About = () => {
         <div className="grid items-start gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
           <div className="md:order-1">
             <h2 className="mb-8 text-left text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:mb-10 md:text-sm">[ ABOUT ]</h2>
-            <div className="relative mx-auto w-full max-w-[320px] overflow-hidden border border-emerald-400/30">
+            <div className="relative mx-auto w-full max-w-[320px] overflow-hidden border border-emerald-400/30 bg-neutral-800">
               <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-4 w-4 border-l-2 border-t-2 border-emerald-400 md:h-6 md:w-6" />
               <span aria-hidden="true" className="pointer-events-none absolute right-0 top-0 z-20 h-4 w-4 border-r-2 border-t-2 border-emerald-400 md:h-6 md:w-6" />
               <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 z-20 h-4 w-4 border-b-2 border-l-2 border-emerald-400 md:h-6 md:w-6" />
@@ -29,7 +29,7 @@ const About = () => {
           </div>
 
           <div className="md:order-2 md:pt-12">
-            <p className="text-lg text-slate-100 md:text-xl">
+            <p className="text-lg text-emerald-300 md:text-xl">
               Full-Stack Developer specializing in frontend engineering and scalable web applications.
             </p>
 
