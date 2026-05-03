@@ -167,20 +167,15 @@ const Projects = () => {
       id="projects"
       className="relative overflow-hidden bg-black px-4 py-18 md:px-8"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/3 top-12 h-72 w-72 rounded-full bg-emerald-500/15 blur-[90px]" />
-        <div className="absolute -bottom-20 right-8 h-80 w-80 rounded-full bg-lime-400/10 blur-[110px]" />
-      </div>
-
       <div className="relative z-10 mx-auto w-full max-w-6xl">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.7 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="mb-5 text-3xl font-bold tracking-tight text-white md:text-4xl"
+        className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
       >
-        Projects
+        [ PROJECTS ]
       </motion.h2>
       {/* Filter Buttons */}
       <div className="mb-9 flex flex-nowrap gap-1.5 sm:flex-wrap sm:gap-2.5">
@@ -205,19 +200,22 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
-            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-emerald-300/20 bg-[#030904] shadow-[0_10px_25px_rgba(5,17,7,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-lime-400/60 hover:shadow-[0_15px_40px_rgba(74,222,128,0.18)] md:bg-[#051107]"
+            className="group relative flex h-full flex-col overflow-hidden border border-emerald-400/30 bg-black transition-transform duration-300 hover:-translate-y-1"
           >
+            <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-4 w-4 border-l-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
+            <span aria-hidden="true" className="pointer-events-none absolute right-0 top-0 z-20 h-4 w-4 border-r-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 z-20 h-4 w-4 border-b-2 border-l-2 border-emerald-400 md:h-5 md:w-5" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 z-20 h-4 w-4 border-b-2 border-r-2 border-emerald-400 md:h-5 md:w-5" />
             {/* Card preview */}
-            <div className="relative p-3 pb-0">
-              <div className={`relative h-40 overflow-hidden rounded-xl border border-white/10 ${project.image ? "bg-black/30" : `bg-linear-to-br ${project.accent}`}`}>
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.imageAlt || `${project.title} preview`}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
+            <div className={`relative h-40 overflow-hidden ${project.image ? "bg-black/30" : `bg-linear-to-br ${project.accent}`}`}>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.imageAlt || `${project.title} preview`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
                   <>
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.42),transparent_24%),radial-gradient(circle_at_75%_80%,rgba(80,35,170,0.28),transparent_38%)]" />
                     <div className="absolute left-3 right-3 top-3 rounded-lg border border-black/20 bg-black/35 p-2 backdrop-blur-sm">
@@ -236,9 +234,8 @@ const Projects = () => {
                       <div className="h-10 rounded-md border border-white/20 bg-black/25" />
                       <div className="h-10 rounded-md border border-white/20 bg-black/20" />
                     </div>
-                  </>
-                )}
-              </div>
+                </>
+              )}
             </div>
 
             {/* Card Content */}
