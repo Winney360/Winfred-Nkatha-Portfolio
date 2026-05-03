@@ -25,7 +25,6 @@ import {
   SiVite,
   SiPython,
 } from "react-icons/si";
-import ThreeDButton from "../components/ThreeDButton";
 
 const projectsData = [
   {
@@ -179,17 +178,23 @@ const Projects = () => {
       </motion.h2>
       {/* Filter Buttons */}
       <div className="mb-9 flex flex-nowrap gap-1.5 sm:flex-wrap sm:gap-2.5">
-        {categories.map((cat) => (
-          <ThreeDButton
-            key={cat}
-            onClick={() => setSelected(cat)}
-            size="xs"
-            active={selected === cat}
-            className="filter-btn"
-          >
-            {cat}
-          </ThreeDButton>
-        ))}
+        {categories.map((cat) => {
+          const isActive = selected === cat;
+          return (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setSelected(cat)}
+              className={`inline-flex items-center rounded-none border px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] transition-transform hover:-translate-y-0.5 ${
+                isActive
+                  ? "bg-emerald-500 text-black hover:bg-emerald-300"
+                  : "border-emerald-400/40 bg-transparent text-emerald-300 hover:bg-emerald-500/10"
+              }`}
+            >
+              {cat}
+            </button>
+          );
+        })}
       </div>
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr">
@@ -240,10 +245,10 @@ const Projects = () => {
 
             {/* Card Content */}
             <div className="flex min-h-66 flex-1 flex-col gap-3 p-4 pt-3">
-              <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-lime-400 transition-colors group-hover:text-lime-300">{project.title}</h3>
+              <h3 className="line-clamp-2 min-h-12 text-base font-semibold text-slate-400 transition-colors group-hover:text-slate-300">{project.title}</h3>
               <p className="line-clamp-2 min-h-10 text-sm text-slate-300">{project.description}</p>
 
-              <div className="flex min-h-7 flex-wrap content-start gap-1.5">
+              <div className="flex min-h-7 flex-wrap content-start items-center gap-3">
                 {project.tech.map((tech) => (
                   (() => {
                     const assetIcon = techAssetIcons[tech];
@@ -254,12 +259,12 @@ const Projects = () => {
                         key={tech}
                         title={tech}
                         aria-label={tech}
-                        className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-emerald-300/20 bg-emerald-500/15 text-emerald-100"
+                        className="inline-flex items-center"
                       >
                         {assetIcon ? (
-                          <img src={assetIcon} alt="" className="h-4 w-4 object-contain" />
+                          <img src={assetIcon} alt="" className="h-5 w-5 object-contain" />
                         ) : (
-                          <Icon className={`text-sm ${iconColorClass}`} />
+                          <Icon className={`text-xl ${iconColorClass}`} />
                         )}
                         <span className="sr-only">{tech}</span>
                       </span>
@@ -271,24 +276,22 @@ const Projects = () => {
               <p className="-mt-1 line-clamp-2 min-h-9 text-xs text-slate-400">{project.impact}</p>
 
               <div className="mt-auto flex gap-2 pt-2">
-                <ThreeDButton
+                <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  size="xs"
-                  className="pair"
+                  className="inline-flex items-center gap-1.5 rounded-none border bg-emerald-500 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-black transition-transform hover:-translate-y-0.5 hover:bg-emerald-300"
                 >
                   Live Demo <FaExternalLinkAlt className="text-[10px]" />
-                </ThreeDButton>
-                <ThreeDButton
+                </a>
+                <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  size="xs"
-                  className="pair"
+                  className="inline-flex items-center gap-1.5 rounded-none border bg-emerald-500 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-black transition-transform hover:-translate-y-0.5 hover:bg-emerald-300"
                 >
                   GitHub Repo <FaGithub className="text-sm" />
-                </ThreeDButton>
+                </a>
               </div>
             </div>
           </motion.div>
