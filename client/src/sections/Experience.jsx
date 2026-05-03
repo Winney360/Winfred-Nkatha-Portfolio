@@ -63,9 +63,9 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.7 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mb-10 text-3xl font-bold text-white md:text-4xl"
+          className="mb-10 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
         >
-          Experience / Journey
+          [ EXPERIENCE / JOURNEY ]
         </motion.h2>
         <div className="relative md:px-10">
           <div className="absolute left-2 top-0 h-full md:left-1/2 md:-translate-x-1/2">
@@ -98,12 +98,12 @@ const Experience = () => {
                           )}
                         </div>
                         <div className={`${isLeft ? "text-left md:text-right" : "text-left"}`}>
-                          <div className="text-[11px] font-medium tracking-[0.2em] text-[#86efac]">{exp.date}</div>
-                          <h3 className="mt-1 text-lg font-semibold text-white md:text-[1.05rem]">{exp.role}</h3>
-                          <div className="mt-1 text-xs text-[#6ee7b7]">{exp.company}</div>
+                          <div className="text-[11px] font-medium tracking-[0.2em] text-slate-400">{exp.date}</div>
+                          <h3 className="mt-1 text-lg font-semibold text-slate-100 md:text-[1.05rem]">{exp.role}</h3>
+                          <div className="mt-1 text-xs text-slate-300">{exp.company}</div>
                         </div>
                       </div>
-                      <p className={`max-w-sm text-sm leading-6 text-[#a7f3d0] ${isLeft ? "text-left md:ml-auto md:text-right" : "text-left"}`}>
+                      <p className={`max-w-sm text-sm leading-6 text-slate-100 ${isLeft ? "text-left md:ml-auto md:text-right" : "text-left"}`}>
                         {exp.description}
                       </p>
                     </div>
