@@ -50,7 +50,7 @@ const Hero = () => {
             transition={{ duration: 0.75, delay: 0.12, ease: "easeOut" }}
             className="flex flex-col items-start gap-6 md:gap-8"
           >
-            <div className="relative max-w-[28rem] border border-emerald-400/30 bg-transparent px-4 py-3 text-left sm:max-w-[20rem] md:max-w-xl md:px-8 md:py-5">
+            <div className="relative max-w-[18rem] border border-emerald-400/30 bg-transparent px-4 py-1 text-left sm:max-w-[20rem] md:max-w-xl md:px-8 md:py-2">
               <span aria-hidden="true" className="pointer-events-none absolute -left-px -top-px h-3 w-3 border-l-2 border-t-2 border-emerald-400 md:h-4 md:w-4" />
               <span aria-hidden="true" className="pointer-events-none absolute -right-px -top-px h-3 w-3 border-r-2 border-t-2 border-emerald-400 md:h-4 md:w-4" />
               <span aria-hidden="true" className="pointer-events-none absolute -bottom-px -left-px h-3 w-3 border-b-2 border-l-2 border-emerald-400 md:h-4 md:w-4" />
