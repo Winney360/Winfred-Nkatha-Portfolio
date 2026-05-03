@@ -5,7 +5,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import FeaturedProject from "./sections/FeaturedProject";
 import Projects from "./sections/Projects";
-import Skills from "./sections/Skills";
+import Expertise from "./sections/Expertise";
 import Experience from "./sections/Experience";
 import SocialProof from "./sections/SocialProof";
 import Contact from "./sections/Contact";
@@ -20,7 +20,7 @@ function App() {
       <TechMarquee />
       <FeaturedProject />
       <Projects />
-      <Skills />
+      <Expertise/>
       <Experience />
       <About />
       <SocialProof />

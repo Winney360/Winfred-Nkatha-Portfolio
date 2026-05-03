@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
+  { id: "expertise", label: "Expertise" },
   { id: "experience", label: "Experience" },
 ];
 
@@ -53,7 +53,7 @@ const Navbar = () => {
             <ul className="hidden items-center gap-8 text-[15px] text-slate-100 md:flex">
               <li><a href="#about" className="transition-colors hover:text-slate-300">ABOUT</a></li>
               <li><a href="#projects" className="transition-colors hover:text-slate-300">PROJECTS</a></li>
-              <li><a href="#skills" className="transition-colors hover:text-slate-300">SKILLS</a></li>
+              <li><a href="#expertise" className="transition-colors hover:text-slate-300">EXPERTISE</a></li>
               <li><a href="#experience" className="transition-colors hover:text-slate-300">EXPERIENCE</a></li>
             </ul>
 

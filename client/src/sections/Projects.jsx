@@ -172,12 +172,12 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.7 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
+        className="mb-5 text-right text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
       >
         [ PROJECTS ]
       </motion.h2>
       {/* Filter Buttons */}
-      <div className="mb-9 flex flex-nowrap gap-1.5 sm:flex-wrap sm:gap-2.5">
+      <div className="mb-9 flex flex-nowrap justify-end gap-1.5 sm:flex-wrap sm:gap-2.5">
         {categories.map((cat) => {
           const isActive = selected === cat;
           return (
