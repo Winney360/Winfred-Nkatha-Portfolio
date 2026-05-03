@@ -50,19 +50,19 @@ const Navbar = () => {
           </span>
 
           <div className="ml-auto flex items-center gap-8">
-            <ul className="hidden items-center gap-8 text-[15px] text-emerald-100/80 md:flex">
-              <li><a href="#about" className="transition-colors hover:text-white">About</a></li>
-              <li><a href="#projects" className="transition-colors hover:text-white">Projects</a></li>
-              <li><a href="#skills" className="transition-colors hover:text-white">Skills</a></li>
-              <li><a href="#experience" className="transition-colors hover:text-white">Experience</a></li>
+            <ul className="hidden items-center gap-8 text-[15px] text-slate-100 md:flex">
+              <li><a href="#about" className="transition-colors hover:text-slate-300">ABOUT</a></li>
+              <li><a href="#projects" className="transition-colors hover:text-slate-300">PROJECTS</a></li>
+              <li><a href="#skills" className="transition-colors hover:text-slate-300">SKILLS</a></li>
+              <li><a href="#experience" className="transition-colors hover:text-slate-300">EXPERIENCE</a></li>
             </ul>
 
             <div className="hidden md:block">
               <a
                 href="#contact"
-                className="inline-flex items-center rounded-none border border-lime-400/35 bg-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-black transition-transform hover:-translate-y-0.5 hover:bg-lime-300"
+                className="inline-flex items-center rounded-none border  bg-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-black transition-transform hover:-translate-y-0.5 hover:bg-emerald-300"
               >
-                Contact Me
+                LET'S TALK
               </a>
             </div>
 

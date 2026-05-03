@@ -29,7 +29,7 @@ const TechMarquee = () => {
   const items = [...techs, ...techs];
 
   return (
-    <div className="relative w-full overflow-hidden border-y border-green-400/15 bg-black">
+    <div className="relative w-full overflow-hidden border-y border-emerald-300/20 bg-black">
       <motion.div
         className="flex w-max gap-14 py-6"
         animate={{ x: ["0%", "-50%"] }}
@@ -38,7 +38,7 @@ const TechMarquee = () => {
         {items.map(({ name, Icon }, idx) => (
           <div
             key={`${name}-${idx}`}
-            className="flex shrink-0 items-center gap-3 text-slate-400 transition-colors hover:text-green-400"
+            className="flex shrink-0 items-center gap-3 text-emerald-500 transition-colors hover:text-emerald-300"
           >
             <Icon className="text-2xl" />
             <span className="text-sm font-semibold uppercase tracking-[0.18em]">
