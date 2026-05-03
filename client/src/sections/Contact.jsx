@@ -81,7 +81,7 @@ const Contact = () => {
           <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm">
             [ CONTACT ]
           </h2>
-          <h2 className="mt-2 max-w-md text-[1.85rem] font-semibold leading-[1.05] text-white md:text-[2.75rem]">
+          <h2 className="mt-6 max-w-md text-[1.85rem] font-semibold leading-[1.05] text-white md:mt-8 md:text-[2.75rem]">
             Let’s build something impactful together.
           </h2>
           <p className="mt-4 max-w-sm text-sm leading-6 text-white/70 md:text-base">
