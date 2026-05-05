@@ -11,10 +11,12 @@ import SocialProof from "./sections/SocialProof";
 import Contact from "./sections/Contact";
 import TechMarquee from "./components/TechMarquee";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
 
 function App() {
   return (
     <main className="bg-black pt-14 md:pt-20">
+      <Loader />
       <Navbar />
       <Hero />
       <TechMarquee />
