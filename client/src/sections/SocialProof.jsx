@@ -57,19 +57,19 @@ const SocialProof = () => {
       <div className="mx-auto w-full max-w-6xl">
 
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
         className="mb-10 text-right text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
       >
         [ SOCIAL PROOF ]
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative border border-emerald-400/30 bg-black p-5"
         >
@@ -93,10 +93,10 @@ const SocialProof = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
           className="relative border border-emerald-400/30 bg-black p-5"
         >
           <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-4 w-4 border-l-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />

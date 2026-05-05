@@ -67,7 +67,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
           className="p-5 pt-2 md:p-8 md:pt-3 lg:p-10 lg:pt-4"
         >
@@ -149,9 +149,9 @@ const Contact = () => {
 
         <div className="bg-[#020805]/55 p-5 md:p-8 lg:p-10">
           <motion.form
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
             onSubmit={handleSubmit}
             ref={formRef}

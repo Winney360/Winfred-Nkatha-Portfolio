@@ -50,10 +50,10 @@ const Skills = () => {
   return (
     <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="skills">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
         className="relative z-10 mx-auto w-full max-w-6xl"
       >
         <h2 className="mb-8 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm">[ TECHNICAL EXPERTISE ]</h2>

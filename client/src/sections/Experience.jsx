@@ -59,10 +59,10 @@ const Experience = () => {
     <section id="experience" className="w-full bg-black">
       <div className="mx-auto flex max-w-6xl flex-col px-4 py-24 lg:min-h-screen lg:justify-center">
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.7 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
           className="mb-10 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
         >
           [ EXPERIENCE / JOURNEY ]
@@ -81,8 +81,8 @@ const Experience = () => {
                   key={exp.role + exp.company}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.45 }}
-                  transition={{ delay: idx * 0.08, duration: 0.65, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: idx * 0.08, duration: 0.55, ease: "easeOut" }}
                   className="relative grid items-start gap-4 pl-10 md:pl-0 md:grid-cols-2 md:gap-x-16"
                 >
                   <div className={`order-2 md:order-0 ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-2 md:justify-self-start"}`}>

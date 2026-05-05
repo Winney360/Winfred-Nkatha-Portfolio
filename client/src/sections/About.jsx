@@ -6,10 +6,10 @@ const About = () => {
   return (
     <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="about">
       <motion.div
-        initial={{ opacity: 0, y: 36 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.75, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
         className="relative z-10 mx-auto w-full max-w-6xl"
       >
         <div className="grid items-start gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">

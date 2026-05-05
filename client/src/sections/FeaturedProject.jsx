@@ -11,10 +11,10 @@ const FeaturedProject = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
         className="relative mx-auto w-full max-w-7xl overflow-hidden border border-emerald-400/30 bg-black shadow-2xl md:ml-4"
       >
         <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-5 w-5 border-l-2 border-t-2 border-emerald-400 md:h-7 md:w-7" />

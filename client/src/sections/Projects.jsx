@@ -168,10 +168,10 @@ const Projects = () => {
     >
       <div className="relative z-10 mx-auto w-full max-w-6xl">
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
         className="mb-5 text-right text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm"
       >
         [ PROJECTS ]
@@ -201,10 +201,10 @@ const Projects = () => {
         {filtered.map((project, idx) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: idx * 0.1, duration: 0.7, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 32, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: (idx % 3) * 0.08, duration: 0.55, ease: "easeOut" }}
             className="group relative flex h-full flex-col overflow-hidden border border-emerald-400/30 bg-black transition-transform duration-300 hover:-translate-y-1"
           >
             <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-20 h-4 w-4 border-l-2 border-t-2 border-emerald-400 md:h-5 md:w-5" />
