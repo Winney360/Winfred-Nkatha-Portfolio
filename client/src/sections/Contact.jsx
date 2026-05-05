@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-import ThreeDButton from "../components/ThreeDButton";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -206,9 +205,13 @@ const Contact = () => {
               />
             </div>
 
-            <ThreeDButton type="submit" disabled={status === "loading"} fullWidth>
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="inline-flex w-full items-center justify-center rounded-none border bg-emerald-500 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-black transition-transform hover:-translate-y-0.5 hover:bg-emerald-300 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-emerald-500"
+            >
               {status === "loading" ? "Sending..." : status === "success" ? "Sent!" : status === "error" ? "Try again" : "Contact"}
-            </ThreeDButton>
+            </button>
           </motion.form>
         </div>
       </div>
