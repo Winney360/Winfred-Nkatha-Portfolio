@@ -75,12 +75,10 @@ const Contact = () => {
           <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm">
             [ CONTACT ]
           </h2>
-          <h2 className="mt-6 max-w-md text-[1.85rem] font-semibold leading-[1.05] text-white md:mt-8 md:text-[2.75rem]">
+          <h2 className="mt-6 max-w-md text-base font-semibold leading-[1.05] text-white md:mt-8 md:text-[2.75rem]">
             Let’s build something impactful together.
           </h2>
-          <p className="mt-4 max-w-sm text-sm leading-6 text-white/70 md:text-base">
-            Let&apos;s build something impactful.
-          </p>
+          
 
           <div className="mt-7 space-y-4 text-sm text-white/80 md:mt-8">
             <a href="mailto:nkathawinnie94@gmail.com" className="hidden items-center gap-3 break-all transition-colors hover:text-white md:flex">
@@ -88,10 +86,10 @@ const Contact = () => {
               <span>nkathawinnie94@gmail.com</span>
             </a>
 
-            <div className="flex flex-wrap items-center gap-2 text-white/75 md:hidden">
+            <div className="flex flex-nowrap items-center gap-1.5 text-white/75 md:hidden">
               <a
                 href="mailto:nkathawinnie94@gmail.com"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-transform hover:scale-110"
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-transform hover:scale-110"
                 aria-label="Email"
               >
                 <FaEnvelope className="text-[#a7f3d0] text-xl" />
@@ -103,7 +101,7 @@ const Contact = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-transform hover:scale-110"
+                  className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-transform hover:scale-110"
                   aria-label={link.label}
                 >
                   {link.icon}
@@ -114,12 +112,10 @@ const Contact = () => {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 text-xs whitespace-nowrap text-white/80 transition-colors hover:text-white"
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#a7f3d0] transition-transform hover:scale-110"
+                aria-label="Book Calendly"
               >
-                <span className="inline-flex h-4 w-4 items-center justify-center border border-white/15 text-[9px] text-[#a7f3d0]">
-                  ⓘ
-                </span>
-                <span>Book Calendly</span>
+                <span className="text-base">ⓘ</span>
               </a>
             </div>
 
