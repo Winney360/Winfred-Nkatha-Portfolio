@@ -63,13 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-black px-6 pt-6 pb-14 shadow-[0_24px_80px_rgba(10,6,20,0.75)] md:px-8 md:pt-8 md:pb-20">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-white/5 to-transparent" />
-        <div className="absolute left-1/3 top-8 h-72 w-72 rounded-full bg-emerald-500/15 blur-[100px]" />
-        <div className="absolute -bottom-20 right-0 h-80 w-80 rounded-full bg-lime-400/10 blur-[120px]" />
-      </div>
-
+    <section id="contact" className="relative mx-auto overflow-hidden border border-white/10 bg-black px-6 pt-6 pb-14 md:px-8 md:pt-8 md:pb-20">
       <div className="relative grid gap-4 md:grid-cols-[1.05fr_0.95fr] md:gap-0">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
