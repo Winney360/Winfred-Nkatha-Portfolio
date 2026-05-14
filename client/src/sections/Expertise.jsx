@@ -48,7 +48,7 @@ const clusterNodes = [
 
 const Skills = () => {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="skills">
+    <section className="relative overflow-hidden bg-black px-4 py-20 md:px-8" id="expertise">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -6,7 +6,7 @@ const experience = [
   {
     role: "Team lead / Backend Engineer",
     company: "Guild Code",
-    date: "Feb '24 2026 - Present",
+    date: "Feb '26 2026 - Present",
     logo: "/guild.jpeg",
     description:
       "Leading backend development as a sole backend engineer, building a scalable system for a community platform.",

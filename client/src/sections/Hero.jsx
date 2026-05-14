@@ -56,7 +56,7 @@ const Hero = () => {
               <span aria-hidden="true" className="pointer-events-none absolute -bottom-px -left-px h-3 w-3 border-b-2 border-l-2 border-emerald-400 md:h-4 md:w-4" />
               <span aria-hidden="true" className="pointer-events-none absolute -bottom-px -right-px h-3 w-3 border-b-2 border-r-2 border-emerald-400 md:h-4 md:w-4" />
               <p className="text-sm leading-relaxed text-slate-100 sm:text-base md:max-w-lg md:text-[1.55rem]">
-                Hi, I&apos;m Winfred Nkatha. I specialize in modern web technologies, turning complex ideas into fast, reliable, and maintainable applications.
+                Hi, I&apos;m Winfred Nkatha. I am a Frontend-focused Full Stack Developer turning ideas into modern, reliable web applications.
               </p>
             </div>
 

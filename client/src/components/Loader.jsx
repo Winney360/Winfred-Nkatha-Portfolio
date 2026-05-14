@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const MIN_DISPLAY_MS = 5000;
+const MIN_DISPLAY_MS = 3000;
 
 const Loader = () => {
   const [isLoading, setIsLoading] = useState(true);
