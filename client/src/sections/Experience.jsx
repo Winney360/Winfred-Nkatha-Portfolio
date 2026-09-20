@@ -4,6 +4,14 @@ import { FaBriefcase } from "react-icons/fa";
 
 const experience = [
   {
+    role: "AI & Programming Intern",
+    company: "Samsung Innovation Campus (SIC) - JKUAT",
+    date: "Mar '26 2026 - Present",
+    logo: "/sic.png",
+    description:
+      "Completing industry-focused training in Python, AI, and machine learning through hands-on projects and real-world software development.",
+  },
+  {
     role: "Team lead / Backend Engineer",
     company: "Guild Code",
     date: "Feb '26 2026 - Present",
