@@ -7,7 +7,7 @@ import crochetPreview from "../assets/projects/crochet.png";
 import cropPreview from "../assets/projects/crop.png";
 import html5Logo from "../assets/html5.png";
 import mongodbLogo from "../assets/mongodb.svg";
-import unsaidPreview from "../assets/projects/unsaid.png";
+import guildCodePreview from "../assets/projects/guild.png";
 import resumePreview from "../assets/projects/resume.png";
 import {
   SiChartdotjs,
@@ -27,6 +27,30 @@ import {
 } from "react-icons/si";
 
 const projectsData = [
+  {
+    title: "Guild Code Community Hub",
+    description: "A full-stack community platform that enables developers, designers, and data enthusiasts to connect, collaborate on projects, manage events, and grow together.",
+    image: guildCodePreview,
+    imageAlt: "Guild Code Community Hub preview",
+    tech: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    impact: "Enabled organized collaboration through role-based access, project management, event coordination, and community engagement.",
+    live: "https://guild-code-community.vercel.app/",
+    github: "https://github.com/Winney360/Guild_Code_Community_Hub",
+    categories: ["Full Stack"],
+    accent: "from-[#e9d5ff] via-[#c084fc] to-[#7c3aed]",
+  },
+  {
+    title: "Crochet Portfolio & Management Platform",
+    description: "A responsive website designed to showcase crochet designs and enhance the client’s online presence.",
+    image: crochetPreview,
+    imageAlt: "Crochet Portfolio preview",
+    tech: ["React", "Vite", "Tailwind CSS", "Express", "JavaScript", "MongoDB"],
+    impact: "Improved visibility and streamlined content and staff management.",
+    live: "https://shikuku-crochet.vercel.app/",
+    github: "https://github.com/Winney360/Crochet.git",
+    categories: ["Frontend","Full Stack"],
+    accent: "from-[#f5efff] via-[#e7d8ff] to-[#c9a5ff]",
+  },
   {
     title: "Assignment Hub : Assignment Distribution Platform",
     description: "A MERN platform where teachers upload assignments and students access them using unique codes.",
@@ -52,18 +76,6 @@ const projectsData = [
     accent: "from-[#32204d] via-[#4a2a73] to-[#8a63be]",
   },
   {
-    title: "Crochet Portfolio & Management Platform",
-    description: "A responsive website designed to showcase crochet designs and enhance the client’s online presence.",
-    image: crochetPreview,
-    imageAlt: "Crochet Portfolio preview",
-    tech: ["React", "Vite", "Tailwind CSS", "Express", "JavaScript", "MongoDB"],
-    impact: "Improved visibility and streamlined content and staff management.",
-    live: "https://shikuku-crochet.vercel.app/",
-    github: "https://github.com/Winney360/Crochet.git",
-    categories: ["Frontend","Full Stack"],
-    accent: "from-[#f5efff] via-[#e7d8ff] to-[#c9a5ff]",
-  },
-  {
     title: "CropConnect : Agriculture Platform",
     description: "A platform designed to connect farmers with markets and improve access to agricultural resources.",
     image: cropPreview,
@@ -74,18 +86,6 @@ const projectsData = [
     github: "https://github.com/Winney360/AgriFlow.git",
     categories: ["Full Stack"],
     accent: "from-[#6456df] via-[#8d6cfb] to-[#c0a7ff]",
-  },
-  {
-    title: "UNSAID : Emotional Translation Platform",
-    description: "An AI-powered platform that translates raw emotions into clear, respectful communication to help users express themselves effectively.",
-    image: unsaidPreview,
-    imageAlt: "UNSAID preview",
-    tech: ["React", "Node.js", "gemini-1.5-pro", "Tailwind CSS", "MongoDB"],
-    impact: "Improved emotional clarity and enabled safer, more structured communication.",
-    live: "https://unsaid-green.vercel.app/",
-    github: "https://github.com/Winney360/Unsaid.git",
-    categories: ["AI"],
-    accent: "from-[#eee4ff] via-[#d8c2ff] to-[#ad8cef]",
   },
   {
     title: "Resume Matcher : AI Resume Matching System",
