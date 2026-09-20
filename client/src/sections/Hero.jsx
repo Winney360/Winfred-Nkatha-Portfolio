@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
+import { FaCheck, FaDownload } from "react-icons/fa";
 import Starfield from "../components/Starfield";
 
 const Hero = () => {
@@ -40,7 +40,7 @@ const Hero = () => {
             transition={{ duration: 0.75, ease: "easeOut" }}
             className="flex items-center gap-3 text-sm font-medium tracking-wide text-emerald-300/90"
           >
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_18px_rgba(163,230,53,0.8)]" />
+            <FaCheck className="text-sm text-emerald-400 shadow-[0_0_18px_rgba(74,222,128,0.7)]" aria-hidden="true" />
             <span>Available for new projects</span>
           </motion.div>
 
