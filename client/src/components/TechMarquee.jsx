@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaMobileAlt } from "react-icons/fa";
 import {
   SiExpress,
   SiGit,
@@ -23,6 +24,7 @@ const techs = [
   { name: "Vite", Icon: SiVite },
   { name: "Next.js", Icon: SiNextdotjs },
   { name: "Git", Icon: SiGit },
+  { name: "Daraja APIs", Icon: FaMobileAlt },
 ];
 
 const TechMarquee = () => {
