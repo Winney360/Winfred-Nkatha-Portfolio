@@ -30,23 +30,18 @@ const About = () => {
 
           <div className="md:order-2 md:pt-12">
             <p className="text-lg text-emerald-300 md:text-xl">
-              Full-Stack Developer specializing in frontend engineering and scalable web applications.
+              Frontend-Focused Full-Stack Software Developer building scalable web applications, AI-powered solutions, and business automation tools.
             </p>
 
             <div className="mt-7 space-y-4 text-sm leading-relaxed text-slate-100 md:text-base">
               <p>
-                I design and build responsive, high-performance web applications using
-                React, Node.js, and modern web technologies, with a strong focus on user
-                experience and clean, maintainable code.
+                I design and develop responsive, high-performance applications using React, TypeScript, Node.js, and modern web technologies, focusing on clean architecture, intuitive user experiences, and maintainable code.
               </p>
               <p>
-                I combine frontend development with backend understanding to build systems
-                that are scalable, efficient, and production-ready.
+                My expertise extends beyond frontend development into backend systems, REST APIs, and database-driven applications, enabling me to build secure, scalable, and production-ready solutions.
               </p>
               <p>
-                My experience includes building full-stack applications, contributing to
-                community-driven platforms, and working in collaborative team environments
-                where I take ownership of features and delivery.
+                I have experience developing full-stack applications, leading backend development for collaborative platforms, and working in team environments where I take ownership of features from design and implementation to deployment. I am also exploring artificial intelligence, data-driven applications, and automation to build smarter solutions for real-world challenges.
               </p>
             </div>
           </div>
