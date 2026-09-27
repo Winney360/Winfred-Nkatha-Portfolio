@@ -9,7 +9,7 @@ import html5Logo from "../assets/html5.png";
 import mongodbLogo from "../assets/mongodb.svg";
 import mysqlLogo from "../assets/mysql.png";
 import postmanLogo from "../assets/postman.png";
-import { FaMobileAlt } from "react-icons/fa";
+import paystackLogo from "../assets/paystack.svg";
 import {
   SiExpress,
   SiGit,
@@ -38,7 +38,7 @@ const groupedSkills = {
 };
 
 const clusterNodes = [
-  { label: "Daraja APIs", icon: FaMobileAlt, pos: "top-[30px] left-[167px]", color: "text-green-400" },
+  { label: "Paystack", icon: paystackLogo, pos: "top-[30px] left-[167px]", isImage: true },
   { label: "MySQL", icon: mysqlLogo, pos: "top-[99px] left-[274px]", isImage: true },
   { label: "Postman", icon: postmanLogo, pos: "top-[210px] left-[267px]", isImage: true },
   { label: "Cursor", icon: cursorLogo, pos: "top-[269px] left-[167px]", isImage: true },
