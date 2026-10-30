@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaBriefcase } from "react-icons/fa";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 const experience = [
   {
@@ -70,10 +69,135 @@ const getInitials = (name) =>
     .join("")
     .toUpperCase();
 
+const Step = ({ exp, index, total, prefersReducedMotion }) => {
+  const ref = useRef(null);
+  const isActive = useInView(ref, { margin: "-38% 0px -38% 0px" });
+
+  const indent = `calc(${index} * var(--step))`;
+  const previousIndent = `calc(${Math.max(index - 1, 0)} * var(--step))`;
+  const cardOffset = `calc(${index} * var(--step) + var(--gap))`;
+
+  const lineColor = isActive
+    ? "rgba(52, 211, 153, 0.85)"
+    : "rgba(52, 211, 153, 0.28)";
+
+  return (
+    <li ref={ref} className="relative pb-10 md:pb-14">
+      {/* Tread */}
+      <motion.span
+        aria-hidden="true"
+        className="absolute top-0 h-px origin-left"
+        style={{
+          left: previousIndent,
+          width:
+            index === 0 ? "var(--gap)" : "calc(var(--step) + var(--gap))",
+        }}
+        initial={prefersReducedMotion ? false : { scaleX: 0 }}
+        whileInView={prefersReducedMotion ? undefined : { scaleX: 1 }}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 0.45, delay: 0.3, ease: "easeOut" }}
+        animate={{ backgroundColor: lineColor }}
+      />
+
+      {/* Riser */}
+      <motion.span
+        aria-hidden="true"
+        className="absolute top-0 h-full w-px origin-top"
+        style={{ left: indent }}
+        initial={prefersReducedMotion ? false : { scaleY: 0 }}
+        whileInView={prefersReducedMotion ? undefined : { scaleY: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+        animate={{ backgroundColor: lineColor }}
+      />
+
+      <div style={{ marginLeft: cardOffset }} className="max-w-[38rem]">
+        <motion.article
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.45 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className={`relative border p-5 transition-colors duration-500 md:p-6 ${
+            isActive
+              ? "border-emerald-400/45 bg-emerald-400/[0.03]"
+              : "border-white/10 bg-black"
+          }`}
+        >
+          {isActive && (
+            <>
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-px -top-px h-3 w-3 border-l-2 border-t-2 border-emerald-400"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-px -right-px h-3 w-3 border-b-2 border-r-2 border-emerald-400"
+              />
+            </>
+          )}
+
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white">
+              {exp.logo ? (
+                <img
+                  src={exp.logo}
+                  alt={exp.company}
+                  className="h-full w-full rounded-md object-cover"
+                />
+              ) : (
+                <span className="text-[11px] font-bold tracking-wide text-slate-700">
+                  {getInitials(exp.company)}
+                </span>
+              )}
+            </div>
+
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span
+                  className={`font-mono text-[10px] tracking-[0.25em] transition-colors duration-500 ${
+                    isActive ? "text-emerald-300" : "text-slate-600"
+                  }`}
+                >
+                  {String(total - index).padStart(2, "0")}
+                </span>
+                <span className="font-mono text-[10px] tracking-[0.18em] text-slate-500">
+                  {exp.date}
+                </span>
+              </div>
+
+              <h3 className="mt-1.5 text-base font-semibold text-slate-100 md:text-lg">
+                {exp.role}
+              </h3>
+              <p className="mt-0.5 text-xs text-slate-400">{exp.company}</p>
+              <p className="mt-2.5 text-sm leading-6 text-slate-300">
+                {exp.description}
+              </p>
+            </div>
+          </div>
+        </motion.article>
+      </div>
+
+      {index === total - 1 && (
+        <div
+          className="absolute bottom-0 flex items-center"
+          style={{ left: indent }}
+        >
+          <span className="h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-emerald-400" />
+          <span className="ml-2 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.3em] text-emerald-400/70 md:text-[10px]">
+            Where it all started
+          </span>
+        </div>
+      )}
+    </li>
+  );
+};
+
 const Experience = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section id="experience" className="w-full bg-black">
-      <div className="mx-auto flex max-w-6xl flex-col px-4 py-24 lg:min-h-screen lg:justify-center">
+      <div className="mx-auto max-w-6xl px-4 py-24 md:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,54 +207,18 @@ const Experience = () => {
         >
           [ EXPERIENCE / JOURNEY ]
         </motion.h2>
-        <div className="relative md:px-10">
-          <div className="absolute left-2 top-0 h-full md:left-1/2 md:-translate-x-1/2">
-            <div className="h-full w-px bg-linear-to-b from-[#22c55e]/10 via-[#4ade80]/65 to-[#22c55e]/10" />
-          </div>
 
-          <div className="space-y-10 md:space-y-12">
-            {experience.map((exp, idx) => {
-              const isLeft = idx % 2 === 0;
-
-              return (
-                <motion.div
-                  key={exp.role + exp.company}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: idx * 0.08, duration: 0.55, ease: "easeOut" }}
-                  className="relative grid items-start gap-4 pl-10 md:pl-0 md:grid-cols-2 md:gap-x-16"
-                >
-                  <div className={`order-2 md:order-0 ${isLeft ? "md:col-start-1 md:justify-self-end md:text-right" : "md:col-start-2 md:justify-self-start"}`}>
-                    <div className="w-full max-w-md md:mx-auto">
-                      <div className={`mb-3 flex items-center gap-3 ${isLeft ? "justify-start md:flex-row-reverse" : "justify-start"}`}>
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
-                          {exp.logo ? (
-                            <img src={exp.logo} alt={exp.company} className="h-full w-full rounded-md object-cover" />
-                          ) : (
-                            <span className="text-[11px] font-bold tracking-wide text-slate-700">
-                              {getInitials(exp.company)}
-                            </span>
-                          )}
-                        </div>
-                        <div className={`${isLeft ? "text-left md:text-right" : "text-left"}`}>
-                          <div className="text-[11px] font-medium tracking-[0.2em] text-slate-400">{exp.date}</div>
-                          <h3 className="mt-1 text-lg font-semibold text-slate-100 md:text-[1.05rem]">{exp.role}</h3>
-                          <div className="mt-1 text-xs text-slate-300">{exp.company}</div>
-                        </div>
-                      </div>
-                      <p className={`max-w-sm text-sm leading-6 text-slate-100 ${isLeft ? "text-left md:ml-auto md:text-right" : "text-left"}`}>
-                        {exp.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <span className="pointer-events-none absolute left-2 top-3 h-3 w-3 -translate-x-1/2 rounded-full bg-[#4ade80] shadow-[0_0_0_8px_rgba(74,222,128,0.12)] md:left-1/2 md:-translate-x-1/2" />
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+        <ol className="relative list-none [--gap:1.25rem] [--step:0px] md:[--gap:1.75rem] md:[--step:3rem]">
+          {experience.map((exp, idx) => (
+            <Step
+              key={exp.role + exp.company}
+              exp={exp}
+              index={idx}
+              total={experience.length}
+              prefersReducedMotion={prefersReducedMotion}
+            />
+          ))}
+        </ol>
       </div>
     </section>
   );
