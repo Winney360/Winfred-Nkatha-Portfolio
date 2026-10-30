@@ -1,27 +1,68 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const MIN_DISPLAY_MS = 3000;
+const CURTAIN_DURATION_MS = 1300;
+
+const EASE_CURTAIN = [0.87, 0, 0.13, 1];
+const EASE_OUT = [0.22, 1, 0.36, 1];
+
+const WavyDots = ({ prefersReducedMotion }) => (
+  <span className="flex items-end gap-1.5" aria-hidden="true">
+    {[0, 1, 2, 3, 4].map((i) => (
+      <motion.span
+        key={i}
+        className="h-1.5 w-1.5 rounded-full bg-emerald-400/80"
+        animate={prefersReducedMotion ? { y: 0 } : { y: [0, -6, 0] }}
+        transition={
+          prefersReducedMotion
+            ? { duration: 0 }
+            : {
+                duration: 1.1,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.11,
+              }
+        }
+      />
+    ))}
+  </span>
+);
 
 const Loader = () => {
+  const prefersReducedMotion = useReducedMotion();
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpening, setIsOpening] = useState(false);
 
   useEffect(() => {
     const start = Date.now();
+    let openTimer;
+    let unmountTimer;
 
     const finish = () => {
-      const elapsed = Date.now() - start;
-      const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
-      setTimeout(() => setIsLoading(false), remaining);
+      const remaining = Math.max(0, MIN_DISPLAY_MS - (Date.now() - start));
+
+      openTimer = setTimeout(() => {
+        setIsOpening(true);
+        unmountTimer = setTimeout(
+          () => setIsLoading(false),
+          prefersReducedMotion ? 250 : CURTAIN_DURATION_MS
+        );
+      }, remaining);
     };
 
     if (document.readyState === "complete") {
       finish();
     } else {
       window.addEventListener("load", finish);
-      return () => window.removeEventListener("load", finish);
     }
-  }, []);
+
+    return () => {
+      window.removeEventListener("load", finish);
+      clearTimeout(openTimer);
+      clearTimeout(unmountTimer);
+    };
+  }, [prefersReducedMotion]);
 
   useEffect(() => {
     document.body.style.overflow = isLoading ? "hidden" : "";
@@ -30,224 +71,100 @@ const Loader = () => {
     };
   }, [isLoading]);
 
+  if (!isLoading) return null;
+
+  const curtainTransition = {
+    duration: prefersReducedMotion ? 0 : CURTAIN_DURATION_MS / 1000,
+    ease: prefersReducedMotion ? "linear" : EASE_CURTAIN,
+  };
+
+  const textIn = (fromX, delay) => ({
+    initial: prefersReducedMotion ? false : { opacity: 0, x: fromX },
+    animate: { opacity: 1, x: 0 },
+    transition: {
+      duration: prefersReducedMotion ? 0 : 1.1,
+      delay: prefersReducedMotion ? 0 : delay,
+      ease: EASE_OUT,
+    },
+  });
+
   return (
-    <AnimatePresence>
-      {isLoading && (
-        <motion.div
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black"
-        >
-          <style>{loaderStyles}</style>
+    <div
+      className="fixed inset-0 z-[100] overflow-hidden bg-black"
+      role="status"
+      aria-live="polite"
+    >
+      <span className="sr-only">Loading portfolio</span>
 
-          <div className="cooking-stage">
-            <div className="cooking-bubble" />
-            <div className="cooking-bubble" />
-            <div className="cooking-bubble" />
-            <div className="cooking-bubble" />
-            <div className="cooking-bubble" />
-            <div className="cooking-area">
-              <div className="cooking-sides">
-                <div className="cooking-pan" />
-                <div className="cooking-handle" />
-              </div>
-              <div className="cooking-pancake">
-                <div className="cooking-pastry" />
-              </div>
-            </div>
-          </div>
+      {/* Left curtain */}
+      <motion.div
+        aria-hidden="true"
+        initial={false}
+        animate={{ x: isOpening ? "-100%" : "0%" }}
+        transition={curtainTransition}
+        className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-black will-change-transform"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0) 2px, rgba(255,255,255,0) 34px, rgba(0,0,0,0.5) 58px)",
+          }}
+        />
+        <div className="absolute inset-y-0 right-0 w-px bg-emerald-400/70" />
 
-          <div className="mt-2 flex items-baseline gap-1 text-emerald-500">
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] md:text-sm">
-              Cooking
-            </span>
-            <span className="flex gap-0.5">
-              {[0, 1, 2].map((i) => (
-                <motion.span
-                  key={i}
-                  animate={{ opacity: [0.2, 1, 0.2] }}
-                  transition={{
-                    duration: 1.2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.18,
-                  }}
-                  className="text-xs font-semibold md:text-sm"
-                >
-                  .
-                </motion.span>
-              ))}
-            </span>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        <div className="absolute inset-y-0 right-0 flex items-center pr-[3vw] md:pr-[4vw]">
+          <motion.span
+            {...textIn(-70, 0.15)}
+            className="block text-[clamp(1.5rem,5.5vw,4.5rem)] font-semibold leading-none tracking-[-0.03em] text-slate-100"
+          >
+            WINFRED
+          </motion.span>
+        </div>
+      </motion.div>
+
+      {/* Right curtain */}
+      <motion.div
+        aria-hidden="true"
+        initial={false}
+        animate={{ x: isOpening ? "100%" : "0%" }}
+        transition={{ ...curtainTransition, delay: prefersReducedMotion ? 0 : 0.05 }}
+        className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-black will-change-transform"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(90deg, rgba(0,0,0,0.5) 0px, rgba(255,255,255,0) 24px, rgba(255,255,255,0) 56px, rgba(255,255,255,0.025) 58px)",
+          }}
+        />
+        <div className="absolute inset-y-0 left-0 w-px bg-emerald-400/70" />
+
+        <div className="absolute inset-y-0 left-0 flex items-center pl-[3vw] md:pl-[4vw]">
+          <motion.span
+            {...textIn(70, 0.28)}
+            className="block text-[clamp(1.5rem,5.5vw,4.5rem)] font-semibold leading-none tracking-[-0.03em] text-slate-100"
+          >
+            NKATHA
+          </motion.span>
+        </div>
+      </motion.div>
+
+      {/* Loading cue */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-[13vh] flex flex-col items-center gap-4"
+        animate={{ opacity: isOpening ? 0 : 1, y: isOpening ? 8 : 0 }}
+        transition={{ duration: prefersReducedMotion ? 0 : 0.25, ease: "easeOut" }}
+      >
+        <span className="text-[9px] font-semibold uppercase tracking-[0.4em] text-slate-500 md:text-[10px]">
+          Cooking something
+        </span>
+
+        <WavyDots prefersReducedMotion={prefersReducedMotion} />
+      </motion.div>
+    </div>
   );
 };
-
-const loaderStyles = `
-.cooking-stage {
-  position: relative;
-  width: 40vh;
-  height: 40vh;
-  max-width: 320px;
-  max-height: 320px;
-  overflow: hidden;
-}
-
-.cooking-area {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
-  background-color: transparent;
-  transform-origin: 15% 60%;
-  animation: cooking-flip 2.1s ease-in-out infinite;
-}
-
-.cooking-sides {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: 15% 60%;
-  animation: cooking-switchSide 2.1s ease-in-out infinite;
-}
-
-.cooking-handle {
-  position: absolute;
-  bottom: 18%;
-  right: 80%;
-  width: 35%;
-  height: 20%;
-  background-color: transparent;
-  border-top: 0.6vh solid #cbd5e1;
-  border-left: 0.6vh solid transparent;
-  border-radius: 100%;
-  transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
-}
-
-.cooking-pan {
-  position: absolute;
-  bottom: 20%;
-  right: 30%;
-  width: 50%;
-  height: 8%;
-  background-color: #cbd5e1;
-  border-radius: 0 0 1.4em 1.4em;
-  transform-origin: -15% 0;
-}
-
-.cooking-pancake {
-  position: absolute;
-  top: 24%;
-  width: 100%;
-  height: 100%;
-  transform: rotateX(85deg);
-  animation: cooking-jump 2.1s ease-in-out infinite;
-}
-
-.cooking-pastry {
-  position: absolute;
-  bottom: 26%;
-  right: 37%;
-  width: 40%;
-  height: 45%;
-  background-color: #ffffff;
-  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.4);
-  border-radius: 100%;
-  transform-origin: -20% 0;
-  animation: cooking-fly 2.1s ease-in-out infinite;
-}
-
-.cooking-bubble {
-  position: absolute;
-  border-radius: 100%;
-  box-shadow: 0 0 0.4vh rgba(255, 255, 255, 0.5);
-  opacity: 0;
-}
-
-.cooking-bubble:nth-child(1) {
-  margin-top: 2.5vh;
-  left: 58%;
-  width: 1.8vh;
-  height: 1.8vh;
-  background-color: rgba(255, 255, 255, 0.55);
-  animation: cooking-bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
-}
-
-.cooking-bubble:nth-child(2) {
-  margin-top: 3vh;
-  left: 52%;
-  width: 1.5vh;
-  height: 1.5vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  animation: cooking-bubble 2s ease-in-out 0.35s infinite;
-}
-
-.cooking-bubble:nth-child(3) {
-  margin-top: 1.8vh;
-  left: 50%;
-  width: 1.2vh;
-  height: 1.2vh;
-  background-color: rgba(255, 255, 255, 0.45);
-  animation: cooking-bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-}
-
-.cooking-bubble:nth-child(4) {
-  margin-top: 2.7vh;
-  left: 56%;
-  width: 1vh;
-  height: 1vh;
-  background-color: rgba(255, 255, 255, 0.4);
-  animation: cooking-bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-}
-
-.cooking-bubble:nth-child(5) {
-  margin-top: 2.7vh;
-  left: 63%;
-  width: 0.9vh;
-  height: 0.9vh;
-  background-color: rgba(255, 255, 255, 0.35);
-  animation: cooking-bubble 1.6s ease-in-out 1s infinite;
-}
-
-@keyframes cooking-flip {
-  0% { transform: rotate(0deg); }
-  5% { transform: rotate(-27deg); }
-  30%, 50% { transform: rotate(0deg); }
-  55% { transform: rotate(27deg); }
-  83.3% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
-}
-
-@keyframes cooking-switchSide {
-  0% { transform: rotateY(0deg); }
-  50% { transform: rotateY(180deg); }
-  100% { transform: rotateY(0deg); }
-}
-
-@keyframes cooking-jump {
-  0% { top: 24%; transform: rotateX(85deg); }
-  25% { top: 10%; transform: rotateX(0deg); }
-  50% { top: 30%; transform: rotateX(85deg); }
-  75% { transform: rotateX(0deg); }
-  100% { transform: rotateX(85deg); }
-}
-
-@keyframes cooking-fly {
-  0% { bottom: 26%; transform: rotate(0deg); }
-  10% { bottom: 40%; }
-  50% { bottom: 26%; transform: rotate(-190deg); }
-  80% { bottom: 40%; }
-  100% { bottom: 26%; transform: rotate(0deg); }
-}
-
-@keyframes cooking-bubble {
-  0% { transform: scale(0.15, 0.15); top: 80%; opacity: 0; }
-  50% { transform: scale(1.1, 1.1); opacity: 1; }
-  100% { transform: scale(0.33, 0.33); top: 60%; opacity: 0; }
-}
-`;
 
 export default Loader;
