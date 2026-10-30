@@ -33,7 +33,7 @@ const experience = [
     date: "Feb '26 – April '26",
     logo: "/faith.png",
     description:
-      "Currently developing UI/UX skills, focusing on user-centered design and modern interface principles.",
+      "Developed UI/UX skills, focusing on user-centered design and modern interface principles.",
   },
   {
     role: "Leadership Fellow",
@@ -45,7 +45,7 @@ const experience = [
   },
   {
     role: "Software Development Fellow",
-    company: "Taifa Teule Experience (TLX)",
+    company: "Power Learning Project (PLP)",
     date: "Sep '25 – Dec '25",
     logo: "/plp.png",
     description:
