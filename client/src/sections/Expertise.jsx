@@ -17,6 +17,7 @@ import {
   SiNodedotjs,
   SiReact,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 
 const groupedSkills = {
@@ -24,6 +25,7 @@ const groupedSkills = {
     { name: "React", icon: SiReact, color: "text-cyan-400" },
     { name: "Tailwind CSS v4", icon: SiTailwindcss, color: "text-sky-400" },
     { name: "JavaScript", icon: SiJavascript, color: "text-yellow-300" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-[#3178c6]" },
   ],
   Backend: [
     { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
