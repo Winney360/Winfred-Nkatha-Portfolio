@@ -4,6 +4,14 @@ import { FaBriefcase } from "react-icons/fa";
 
 const experience = [
   {
+    role: "Website Development Trainee",
+    company: "eMobilis Technology Training Institute",
+    date: "Oct '26 - Present",
+    logo: "/eMobilis.png",
+    description:
+      "Participating in a practical website development program focused on building modern web applications using frontend technologies, responsive design principles, and software development practices.",
+  },
+  {
     role: "AI & Programming Intern",
     company: "Samsung Innovation Campus (SIC) - JKUAT",
     date: "Mar '26 2026 - Present",
