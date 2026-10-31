@@ -182,10 +182,17 @@ const Step = ({ exp, index, total, prefersReducedMotion }) => {
           className="absolute bottom-0 flex items-center"
           style={{ left: indent }}
         >
-          <span className="h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-emerald-400" />
-          <span className="ml-2 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.3em] text-emerald-400/70 md:text-[10px]">
-            Where it all started
+          <span className="relative flex h-2 w-2 -translate-x-1/2 items-center justify-center">
+            <span className="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-emerald-400/50" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
           </span>
+          <span className="ml-2.5 h-px w-5 bg-gradient-to-r from-emerald-400/80 to-emerald-400/20" />
+          <span className="ml-2 inline-flex items-center gap-1 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.3em] text-emerald-400/80 md:text-[10px]">
+            <span className="text-emerald-500/60">//</span>
+            <span>Where it all started</span>
+            <span className="inline-block animate-pulse font-bold text-emerald-400">_</span>
+          </span>
+          <span className="ml-3 hidden h-px w-16 bg-gradient-to-r from-emerald-400/30 to-transparent sm:inline-block" />
         </div>
       )}
     </li>
