@@ -56,11 +56,11 @@ const Skills = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.65, ease: "easeOut" }}
-        className="relative z-10 mx-auto w-full max-w-6xl"
+        className="relative z-10 mx-auto w-full max-w-7xl"
       >
-        <h2 className="mb-8 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm">[ TECHNICAL EXPERTISE ]</h2>
+        <h2 className="mb-8 text-right text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500 md:text-sm">[ TECHNICAL EXPERTISE ]</h2>
 
-        <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_360px] md:items-center md:gap-4">
+        <div className="grid items-center gap-10 md:grid-cols-[1fr_420px] lg:gap-16">
           <div className="space-y-4 pr-6 md:pr-0">
             {Object.entries(groupedSkills).map(([groupName, items]) => (
               <div key={groupName}>
@@ -89,8 +89,8 @@ const Skills = () => {
             ))}
           </div>
 
-          <div className="mx-auto w-full max-w-96 pt-1 pr-6 sm:pr-3 md:pr-0 md:mx-0 md:justify-self-start lg:-ml-40">
-            <div className="relative mx-auto h-96 w-105 origin-center -translate-x-8 scale-100 sm:-translate-x-6 sm:scale-110 md:translate-x-0 lg:scale-115">
+          <div className="mx-auto flex w-full max-w-[420px] items-center justify-center pt-1 md:justify-self-end">
+            <div className="relative mx-auto h-96 w-105 origin-center scale-100 sm:scale-105 md:scale-100 lg:scale-105">
               <Starfield count={70} />
               <div className="absolute left-1/2 top-1/2 h-61 w-61 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-400/45" />
               <div className="absolute left-1/2 top-1/2 h-30 w-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-300/65 bg-black" />
